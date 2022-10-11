@@ -350,14 +350,6 @@ new minerskin[MAX_PLAYERS];
 new PlayerBar:MiningBar[MAX_PLAYERS];
 
 
-new Float:MinerAreaPos[6] = {
-	448.9433, //pos x
-	-853.2693, //pos y
-	29.8050, // pos z
-	40.0, //rangepoint
-	0.0, //virtual
-	0.0	//interior
-};
 
 new Float:NewbieAreaPos[6] = {
 	1642.687,
@@ -26347,7 +26339,6 @@ public OnPlayerConnect(playerid)
     online++;
 
     SetPVarInt(playerid, "Intro", 0);
-	SetPVarInt(playerid, "MiningArea", CreateDynamicSphere(MinerAreaPos[0], MinerAreaPos[1], MinerAreaPos[2], MinerAreaPos[3], .worldid = floatround(MinerAreaPos[4]), .interiorid = floatround(MinerAreaPos[5])));
 	SetPVarInt(playerid, "NewbieArea", CreateDynamicSphere(NewbieAreaPos[0], NewbieAreaPos[1], NewbieAreaPos[2], NewbieAreaPos[3], .worldid = floatround(NewbieAreaPos[4]), .interiorid = floatround(NewbieAreaPos[5])));
     if (SvGetVersion(playerid) == SV_NULL)
     {
@@ -28680,40 +28671,6 @@ public OnPlayerLeaveDynamicArea(playerid, areaid)
             SetTimerEx("HideTurfs", 5000, false, "i", playerid);
         }
     }
-    foreach(Player, i)
-	{
-	    if(GetPVarType(i, "MiningArea"))
-	    {
-	        if(areaid == GetPVarInt(i, "MiningArea") && PlayerInfo[playerid][pJob] == JOB_NONE)
-	        {
-				SendClientMessage(playerid, -1, "You leaving mining area");
-				PlayerInfo[playerid][pMining] = 0;
-				SetPlayerSkin(playerid, PlayerInfo[playerid][pSkin]);
-				RemovePlayerAttachedObject(playerid, 3);
-				RemovePlayerAttachedObject(playerid, 4);	
-				RemovePlayerAttachedObject(playerid, 9);
-				PlayerInfo[playerid][pJob] = JOB_NONE;								
-				DisablePlayerCheckpoint(playerid);	
-
-				mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE users SET job = -1 WHERE uid = %i", PlayerInfo[playerid][pID]);
-				mysql_tquery(connectionID, queryBuffer);
-			}	
-			else if(areaid == GetPVarInt(i, "MiningArea") && PlayerInfo[playerid][pSecondJob] == JOB_NONE)
-			{	
-				SendClientMessage(playerid, -1, "You leaving mining area");
-				PlayerInfo[playerid][pMining] = 0;
-				SetPlayerSkin(playerid, PlayerInfo[playerid][pSkin]);
-				RemovePlayerAttachedObject(playerid, 3);
-				RemovePlayerAttachedObject(playerid, 4);	
-				RemovePlayerAttachedObject(playerid, 9);				
-				DisablePlayerCheckpoint(playerid);	
-				PlayerInfo[playerid][pSecondJob] = JOB_NONE;
-				
-				mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE users SET secondjob = -1 WHERE uid = %i", PlayerInfo[playerid][pID]);
-				mysql_tquery(connectionID, queryBuffer);
-			}								
-	    }
-	}
     foreach(Player, i)
 	{	
 	    if(GetPVarType(i, "NewbieArea"))
