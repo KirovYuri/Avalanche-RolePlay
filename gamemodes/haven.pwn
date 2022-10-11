@@ -608,6 +608,8 @@ new PlayerShots[MAX_PLAYERS];
 new aimWarnings[MAX_PLAYERS];
 new szMiscArray[4096];
 
+forward Float:player_get_speed(playerid);
+
 /*new pRobHouse[MAX_PLAYERS] = 0;
 new robHouseTimer[MAX_PLAYERS];*/
 //Fixed /RELOG CMD
@@ -684,7 +686,6 @@ new skladplants;
 //===================================
 
 // Speedo
-new PlayerText:SpeedPlayerTD[MAX_PLAYERS][30];
 new PlayerText:ModernPlayerText[MAX_PLAYERS][2];
 
 // Actor Job Represent
@@ -764,6 +765,12 @@ new CarWindows[MAX_VEHICLES] = 0;
 new quizQuestion[72];
 new quizAnswer[32];
 new CreateQuiz = -1;
+
+// Vehicle HUD Text
+new PlayerText:_vhudTextFuel[MAX_PLAYERS];
+new PlayerText:_vhudTextSpeed[MAX_PLAYERS];
+new PlayerText:_vhudSeatBelt[MAX_PLAYERS];
+new PlayerText:_vhudLights[MAX_PLAYERS];
 
 // Seatbelt
 new ExBJck[MAX_PLAYERS];
@@ -17933,6 +17940,9 @@ public SecondTimer()
 			AntiCarSurf(i);
 			SavePlayerVariables(i);
 
+			static
+				Float: fCurrentSpeed;
+
 			#if defined Christmas
 				if(PlayerInfo[i][pLastCarolTime] > 0)
 				{
@@ -17952,6 +17962,7 @@ public SecondTimer()
 	    	if(GetPlayerState(i) == PLAYER_STATE_DRIVER)
 			{ // UpdateSpeedo
 				new vehicleid = GetPlayerVehicleID(i);
+				fCurrentSpeed = player_get_speed(i);
 				if(GetPlayerState(i) == PLAYER_STATE_DRIVER && VehicleHasEngine(vehicleid))
 			    {
 	        		new
@@ -17960,24 +17971,9 @@ public SecondTimer()
 					GetVehicleHealth(vehicleid, health);
 					if(VehicleHasEngine(vehicleid))
 					{
-                        format(string, sizeof(string), "Fuel: ~g~%i", vehicleFuel[vehicleid]);
-						PlayerTextDrawSetString(i, SpeedPlayerTD[i][26], string);
-
-                        format(string, sizeof(string), "%s", GetVehicleName(vehicleid));
-				        PlayerTextDrawSetString(i, SpeedPlayerTD[i][29], string);
-
-						format(string, sizeof(string), "%.0f", GetVehicleSpeedMPH(vehicleid));
-						PlayerTextDrawSetString(i, SpeedPlayerTD[i][22], string);
-
-						if(!GetVehicleParams(vehicleid, VEHICLE_ENGINE))
+						if (PlayerInfo[i][pSpeedometer] != 0)
 						{
-						    format(string, sizeof(string), "Engine: ~r~Off");
-							PlayerTextDrawSetString(i, SpeedPlayerTD[i][28], string);
-						}
-						else
-						{
-						   	format(string, sizeof(string), "Engine: ~g~On");
-							PlayerTextDrawSetString(i, SpeedPlayerTD[i][28], string);
+							UpdateVehicleHUDForPlayer(i, floatround(vehicleFuel[vehicleid]), floatround(fCurrentSpeed));
 						}
 					} 	
 					for(new x = 0; x < MAX_DEPLOYABLES; x++)
@@ -27902,426 +27898,44 @@ public OnPlayerConnect(playerid)
     PlayerTextDrawSetProportional(playerid, HungerTD[playerid][8], 1);
     PlayerTextDrawSetSelectable(playerid, HungerTD[playerid][8], 0);
 
-    // SpeedMeter
-    SpeedPlayerTD[playerid][0] = CreatePlayerTextDraw(playerid, 476.000000, 379.000000, "ld_pool:ball");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][0], 4);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][0], 0.600000, 2.000000);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][0], 17.000000, 20.500000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][0], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][0], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][0], 3);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][0], 1296911871);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][0], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][0], 1296911666);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][0], 1);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][0], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][0], 0);
-    
-    SpeedPlayerTD[playerid][1] = CreatePlayerTextDraw(playerid, 525.000000, 381.000000, "_");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][1], 1);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][1], 0.600000, 1.750002);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][1], 298.500000, 75.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][1], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][1], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][1], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][1], -1094795521);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][1], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][1], 1296911871);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][1], 1);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][1], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][1], 0);
-    
-    SpeedPlayerTD[playerid][2] = CreatePlayerTextDraw(playerid, 542.000000, 406.000000, "_");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][2], 1);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][2], 0.600000, 1.750002);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][2], 298.500000, 75.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][2], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][2], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][2], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][2], -1094795521);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][2], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][2], 1296911871);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][2], 1);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][2], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][2], 0);
-    
-    SpeedPlayerTD[playerid][3] = CreatePlayerTextDraw(playerid, 528.000000, 384.000000, "_");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][3], 1);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][3], 0.600000, 1.250002);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][3], 298.500000, 75.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][3], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][3], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][3], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][3], -1094795521);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][3], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][3], 255);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][3], 1);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][3], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][3], 0);
-    
-    SpeedPlayerTD[playerid][4] = CreatePlayerTextDraw(playerid, 547.000000, 408.000000, "_");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][4], 1);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][4], 0.600000, 1.250002);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][4], 298.500000, 75.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][4], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][4], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][4], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][4], -1094795521);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][4], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][4], 255);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][4], 1);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][4], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][4], 0);
-    
-    SpeedPlayerTD[playerid][5] = CreatePlayerTextDraw(playerid, 540.000000, 344.000000, "ld_pool:ball");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][5], 4);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][5], 0.600000, 2.000000);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][5], 95.500000, 93.500000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][5], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][5], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][5], 1);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][5], -1094795521);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][5], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][5], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][5], 1);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][5], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][5], 0);
-    
-    SpeedPlayerTD[playerid][6] = CreatePlayerTextDraw(playerid, 542.000000, 346.000000, "ld_pool:ball");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][6], 4);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][6], 0.600000, 2.000000);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][6], 91.500000, 89.500000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][6], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][6], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][6], 1);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][6], 255);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][6], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][6], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][6], 1);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][6], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][6], 0);
-    
-    SpeedPlayerTD[playerid][7] = CreatePlayerTextDraw(playerid, 588.000000, 348.000000, "120");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][7], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][7], 0.170831, 0.749997);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][7], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][7], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][7], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][7], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][7], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][7], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][7], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][7], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][7], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][7], 0);
-    
-    SpeedPlayerTD[playerid][8] = CreatePlayerTextDraw(playerid, 605.000000, 352.000000, "140");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][8], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][8], 0.170831, 0.749997);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][8], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][8], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][8], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][8], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][8], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][8], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][8], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][8], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][8], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][8], 0);
-    
-    SpeedPlayerTD[playerid][9] = CreatePlayerTextDraw(playerid, 615.000000, 361.000000, "160");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][9], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][9], 0.170831, 0.749997);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][9], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][9], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][9], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][9], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][9], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][9], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][9], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][9], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][9], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][9], 0);
-    
-    SpeedPlayerTD[playerid][10] = CreatePlayerTextDraw(playerid, 622.000000, 371.000000, "180");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][10], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][10], 0.170831, 0.749997);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][10], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][10], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][10], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][10], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][10], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][10], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][10], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][10], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][10], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][10], 0);
-    
-    SpeedPlayerTD[playerid][11] = CreatePlayerTextDraw(playerid, 624.000000, 382.000000, "200");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][11], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][11], 0.170831, 0.749997);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][11], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][11], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][11], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][11], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][11], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][7], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][11], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][11], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][11], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][11], 0);
-    
-    SpeedPlayerTD[playerid][12] = CreatePlayerTextDraw(playerid, 571.000000, 352.000000, "100");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][12], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][12], 0.170831, 0.749997);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][12], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][12], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][12], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][12], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][12], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][12], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][12], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][12], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][12], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][12], 0);
-    
-    SpeedPlayerTD[playerid][13] = CreatePlayerTextDraw(playerid, 559.000000, 361.000000, "80");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][13], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][13], 0.170831, 0.749997);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][13], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][13], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][13], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][13], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][13], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][13], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][13], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][13], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][13], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][13], 0);
-    
-    SpeedPlayerTD[playerid][14] = CreatePlayerTextDraw(playerid, 553.000000, 371.000000, "60");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][14], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][14], 0.170831, 0.749997);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][14], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][14], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][14], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][14], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][14], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][14], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][14], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][14], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][14], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][14], 0);
-    
-    SpeedPlayerTD[playerid][15] = CreatePlayerTextDraw(playerid, 550.000000, 382.000000, "40");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][15], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][15], 0.170831, 0.749997);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][15], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][15], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][15], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][15], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][15], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][15], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][15], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][15], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][15], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][15], 0);
-    
-    SpeedPlayerTD[playerid][16] = CreatePlayerTextDraw(playerid, 550.000000, 392.000000, "20");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][16], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][16], 0.170831, 0.749997);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][16], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][16], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][16], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][16], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][16], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][16], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][16], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][16], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][16], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][16], 0);
-    
-    SpeedPlayerTD[playerid][17] = CreatePlayerTextDraw(playerid, 553.000000, 401.000000, "0");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][17], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][17], 0.170831, 0.749997);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][17], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][17], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][17], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][17], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][17], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][17], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][17], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][17], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][17], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][17], 0);
-    
-    SpeedPlayerTD[playerid][18] = CreatePlayerTextDraw(playerid, 589.000000, 408.000000, "_");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][18], 1);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][18], 0.562500, 1.100003);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][18], 297.500000, 40.500000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][18], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][18], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][18], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][18], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][18], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][18], 1296911871);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][18], 1);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][18], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][18], 0);
-    
-    SpeedPlayerTD[playerid][19] = CreatePlayerTextDraw(playerid, 573.000000, 397.000000, "-");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][19], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][19], 3.391663, 1.099997);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][19], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][19], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][19], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][19], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][19], -16776961);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][19], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][19], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][19], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][19], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][19], 0);
-    
-    SpeedPlayerTD[playerid][20] = CreatePlayerTextDraw(playerid, 584.000000, 397.000000, "ld_pool:ball");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][20], 4);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][20], 0.600000, 2.000000);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][20], 8.000000, 8.500000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][20], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][20], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][20], 1);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][20], -16776961);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][20], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][20], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][20], 1);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][20], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][20], 0);
-    
-    SpeedPlayerTD[playerid][21] = CreatePlayerTextDraw(playerid, 588.000000, 376.000000, "sc:rp");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][21], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][21], 0.241666, 0.899999);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][21], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][21], 0);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][21], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][21], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][21], -16776961);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][21], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][21], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][21], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][21], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][21], 0);
-    
-    SpeedPlayerTD[playerid][22] = CreatePlayerTextDraw(playerid, 589.000000, 406.000000, "100"); // Speedmeter
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][22], 3);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][22], 0.341664, 1.399999);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][22], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][22], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][22], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][22], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][22], -16776961);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][22], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][22], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][22], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][22], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][22], 0);
-    
-    SpeedPlayerTD[playerid][23] = CreatePlayerTextDraw(playerid, 589.000000, 420.000000, "KMH");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][23], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][23], 0.241666, 0.899999);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][23], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][23], 0);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][23], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][23], 2);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][23], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][23], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][23], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][23], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][23], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][23], 0);
-    
-    SpeedPlayerTD[playerid][24] = CreatePlayerTextDraw(playerid, 493.000000, 403.000000, "ld_pool:ball");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][24], 4);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][24], 0.600000, 2.000000);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][24], 17.000000, 20.500000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][24], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][24], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][24], 3);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][24], 1296911871);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][24], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][24], 1296911666);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][24], 1);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][24], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][24], 0);
-    
-    SpeedPlayerTD[playerid][25] = CreatePlayerTextDraw(playerid, 495.000000, 405.000000, "ld_pool:ball");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][25], 4);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][25], 0.600000, 2.000000);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][25], 17.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][25], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][25], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][25], 3);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][25], 255);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][25], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][25], 1296911666);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][25], 1);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][25], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][25], 0);
-    
-    SpeedPlayerTD[playerid][26] = CreatePlayerTextDraw(playerid, 543.000000, 409.000000, "Fuel: ~g~100.0");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][26], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][26], 0.179166, 0.899999);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][26], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][26], 0);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][26], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][26], 3);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][26], -16776961);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][26], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][26], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][26], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][26], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][26], 0);
-    
-    SpeedPlayerTD[playerid][27] = CreatePlayerTextDraw(playerid, 478.000000, 381.000000, "ld_pool:ball");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][27], 4);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][27], 0.600000, 2.000000);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][27], 17.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][27], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][27], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][27], 3);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][27], 255);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][27], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][27], 1296911666);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][27], 1);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][27], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][27], 0);
-    
-    SpeedPlayerTD[playerid][28] = CreatePlayerTextDraw(playerid, 534.000000, 385.000000, "Engine: ~g~On");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][28], 2);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][28], 0.195832, 0.899999);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][28], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][28], 0);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][28], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][28], 3);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][28], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][28], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][28], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][28], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][28], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][28], 0);
-    
-    SpeedPlayerTD[playerid][29] = CreatePlayerTextDraw(playerid, 541.000000, 369.000000, "Sultan");
-    PlayerTextDrawFont(playerid, SpeedPlayerTD[playerid][29], 3);
-    PlayerTextDrawLetterSize(playerid, SpeedPlayerTD[playerid][29], 0.241666, 0.899999);
-    PlayerTextDrawTextSize(playerid, SpeedPlayerTD[playerid][29], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, SpeedPlayerTD[playerid][29], 1);
-    PlayerTextDrawSetShadow(playerid, SpeedPlayerTD[playerid][29], 0);
-    PlayerTextDrawAlignment(playerid, SpeedPlayerTD[playerid][29], 3);
-    PlayerTextDrawColor(playerid, SpeedPlayerTD[playerid][29], -1);
-    PlayerTextDrawBackgroundColor(playerid, SpeedPlayerTD[playerid][29], 255);
-    PlayerTextDrawBoxColor(playerid, SpeedPlayerTD[playerid][29], 50);
-    PlayerTextDrawUseBox(playerid, SpeedPlayerTD[playerid][29], 0);
-    PlayerTextDrawSetProportional(playerid, SpeedPlayerTD[playerid][29], 1);
-    PlayerTextDrawSetSelectable(playerid, SpeedPlayerTD[playerid][29], 0);
+
+	PlayerTextDrawDestroy(playerid, _vhudTextFuel[playerid]);
+	_vhudTextFuel[playerid] = CreatePlayerTextDraw(playerid, 495.0, 133.0, "~b~Fuel: N/A");
+	PlayerTextDrawBackgroundColor(playerid, _vhudTextFuel[playerid], 255);
+	PlayerTextDrawFont(playerid, _vhudTextFuel[playerid], 1);
+	PlayerTextDrawLetterSize(playerid, _vhudTextFuel[playerid], 0.270000, 2.000000);
+	PlayerTextDrawColor(playerid, _vhudTextFuel[playerid], -1);
+	PlayerTextDrawSetOutline(playerid, _vhudTextFuel[playerid], 1);
+	PlayerTextDrawSetProportional(playerid, _vhudTextFuel[playerid], 1);
+
+	PlayerTextDrawDestroy(playerid, _vhudTextSpeed[playerid]);
+	_vhudTextSpeed[playerid] = CreatePlayerTextDraw(playerid, 555.0, 133.0, "~b~MPH: N/A");
+	PlayerTextDrawBackgroundColor(playerid, _vhudTextSpeed[playerid], 255);
+	PlayerTextDrawFont(playerid, _vhudTextSpeed[playerid], 1);
+	PlayerTextDrawLetterSize(playerid, _vhudTextSpeed[playerid], 0.270000, 2.000000);
+	PlayerTextDrawColor(playerid, _vhudTextSpeed[playerid], -1);
+	PlayerTextDrawSetOutline(playerid, _vhudTextSpeed[playerid], 1);
+	PlayerTextDrawSetProportional(playerid, _vhudTextSpeed[playerid], 1);
+
+	PlayerTextDrawDestroy(playerid, _vhudSeatBelt[playerid]);
+	_vhudSeatBelt[playerid] = CreatePlayerTextDraw(playerid, 555.0, 150.0, "~b~SB: ~r~OFF");
+	PlayerTextDrawBackgroundColor(playerid, _vhudSeatBelt[playerid], 255);
+	PlayerTextDrawFont(playerid, _vhudSeatBelt[playerid], 1);
+	PlayerTextDrawLetterSize(playerid, _vhudSeatBelt[playerid], 0.270000, 2.000000);
+	PlayerTextDrawColor(playerid, _vhudSeatBelt[playerid], -1);
+	PlayerTextDrawSetOutline(playerid, _vhudSeatBelt[playerid], 1);
+	PlayerTextDrawSetProportional(playerid, _vhudSeatBelt[playerid], 1);
+
+	PlayerTextDrawDestroy(playerid, _vhudLights[playerid]);
+	_vhudLights[playerid] = CreatePlayerTextDraw(playerid, 495.0, 150.0, "~b~Lights: ~r~OFF");
+	PlayerTextDrawBackgroundColor(playerid, _vhudLights[playerid], 255);
+	PlayerTextDrawFont(playerid, _vhudLights[playerid], 1);
+	PlayerTextDrawLetterSize(playerid, _vhudLights[playerid], 0.270000, 2.000000);
+	PlayerTextDrawColor(playerid, _vhudLights[playerid], -1);
+	PlayerTextDrawSetOutline(playerid, _vhudLights[playerid], 1);
+	PlayerTextDrawSetProportional(playerid, _vhudLights[playerid], 1);
+
+
     
 	// GPS
 	PlayerInfo[playerid][pText][0] = CreatePlayerTextDraw(playerid, 155.000000, 429.000000, "Los Santos");
@@ -34110,9 +33724,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 
 	    if(!PlayerInfo[playerid][pToggleTextdraws])
 	    {   // Displaying the Speedo
-			for(new i = 0; i < 30; i ++) {
-				PlayerTextDrawShow(playerid, SpeedPlayerTD[playerid][i]);
-			}
+			ShowVehicleHUDForPlayer(playerid);
 		}
 	    if(VehicleHasEngine(vehicleid) && vehicleFuel[vehicleid] <= 0)
 	    {
@@ -34164,10 +33776,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
          	SetVehicleToRespawn(PlayerInfo[playerid][pTestVehicle]);
          	SCM(playerid, COLOR_LIGHTRED, "** You have exited the vehicle and therefore failed the test.");
 		}
-		// Hiding the Speedo
-		for(new i = 0; i < 30; i ++) {
-			PlayerTextDrawHide(playerid, SpeedPlayerTD[playerid][i]);
-		}
+		HideVehicleHUDForPlayer(playerid); // incase vehicle despawns
 	}
 	else if(newstate == PLAYER_STATE_PASSENGER)
 	{
@@ -34272,6 +33881,16 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 	}
 
 	return 1;
+}
+
+// This needs to be tested! - Akatony
+public Float:player_get_speed(playerid)
+{
+	new
+		Float: fVelocity[3];
+
+	GetVehicleVelocity(GetPlayerVehicleID(playerid), fVelocity[0], fVelocity[1], fVelocity[2]);
+	return floatsqroot((fVelocity[0] * fVelocity[0]) + (fVelocity[1] * fVelocity[1]) + (fVelocity[2] * fVelocity[2])) * 100;
 }
 
 public OnPlayerEditAttachedObject(playerid, response, index, modelid, boneid, Float:fOffsetX, Float:fOffsetY, Float:fOffsetZ, Float:fRotX, Float:fRotY, Float:fRotZ, Float:fScaleX, Float:fScaleY, Float:fScaleZ)
@@ -69639,9 +69258,7 @@ CMD:toggle(playerid, params[])
 	    {
 	        if(GetPlayerState(playerid) == PLAYER_STATE_DRIVER && VehicleHasEngine(GetPlayerVehicleID(playerid)))
 	        {
-				for(new i = 0; i < 30; i ++) {
-					PlayerTextDrawShow(playerid, SpeedPlayerTD[playerid][i]);
-				}
+				ShowVehicleHUDForPlayer(playerid);
 	        }
 	        if(PlayerInfo[playerid][pGPSOn])
 	        {
@@ -80540,19 +80157,19 @@ CMD:switchspeedo(playerid, params[])
 	{
 	    SCM(playerid, COLOR_SYNTAX, "Usage: /switchspeedo [kmh/mph]");
 	}
-	else if(!strcmp(params, "kmh", true))
+	else if(!PlayerInfo[playerid][pSpeedometer])
 	{
 		PlayerInfo[playerid][pSpeedometer] = 1;
 		SCM(playerid, COLOR_AQUA, "Your speedometer will now display speed as "SVRCLR"Kilometers per hour{CCFFFF}.");
-
+		ShowVehicleHUDForPlayer(playerid);
 		mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE users SET speedometer = 1 WHERE uid = %i", PlayerInfo[playerid][pID]);
 		mysql_tquery(connectionID, queryBuffer);
 	}
-	else if(!strcmp(params, "mph", true))
+	else 
 	{
-		PlayerInfo[playerid][pSpeedometer] = 2;
+		PlayerInfo[playerid][pSpeedometer] = 0;
 		SCM(playerid, COLOR_AQUA, "Your speedometer will now display speed as "SVRCLR"Miles per hour{CCFFFF}.");
-
+		HideVehicleHUDForPlayer(playerid);
 		mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE users SET speedometer = 2 WHERE uid = %i", PlayerInfo[playerid][pID]);
 		mysql_tquery(connectionID, queryBuffer);
 	}
@@ -90009,8 +89626,75 @@ LevelCheck(playerid)
 	return 1;
 }
 
+stock UpdateVehicleHUDForPlayer(p, fuel, speed)
+{
+	new str[128], vehicleid = GetPlayerVehicleID(p), szColor[4];
+	new engine,lights,alarm,doors,bonnet,boot,objective;
+	GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
+	switch(speed)
+	{
+	    case 0..40: szColor = "~w~";
+	    case 41..60: szColor = "~y~";
+	    default: szColor = "~r~";
+	}
 
+	if (IsVIPcar(vehicleid) || GetVehicleModel(vehicleid) == 481 || GetVehicleModel(vehicleid) == 509 || GetVehicleModel(vehicleid) == 510)
+		format(str, sizeof(str), "~b~Fuel: ~w~U", fuel);
+	else{
+		format(str, sizeof(str), "~b~Fuel: ~w~%i",fuel);
+		PlayerTextDrawSetString(p, _vhudTextFuel[p], str);
 
+		format(str, sizeof(str), "~b~MPH: %s%i",szColor, speed);
+		PlayerTextDrawSetString(p, _vhudTextSpeed[p], str);
+	}
+	if(ExBJck[p] == 0)
+	{
+		format(str, sizeof(str), "~b~%s: ~r~OFF", IsAMotorBike(vehicleid) ? ("HM"):("SB"));
+		PlayerTextDrawSetString(p, _vhudSeatBelt[p], str);
+	}
+	else if(ExBJck[p] == 1) {
+		format(str, sizeof(str), "~b~HM: ~g~ON");
+		PlayerTextDrawSetString(p, _vhudSeatBelt[p], str);
+	}
+	else {
+		format(str, sizeof(str), "~b~SB: ~g~ON");
+		PlayerTextDrawSetString(p, _vhudSeatBelt[p], str);
+	}
+	if(lights != VEHICLE_PARAMS_ON) {
+		format(str, sizeof(str), "~b~Lights: ~r~OFF");
+		PlayerTextDrawSetString(p, _vhudLights[p], str);	
+	}
+	else {
+		format(str, sizeof(str), "~b~Lights: ~g~ON");
+		PlayerTextDrawSetString(p, _vhudLights[p], str);
+	}
+}
+
+stock ShowVehicleHUDForPlayer(playerid)
+{
+	PlayerTextDrawShow(playerid, _vhudTextFuel[playerid]);
+	PlayerTextDrawShow(playerid, _vhudTextSpeed[playerid]);
+	PlayerTextDrawShow(playerid, _vhudSeatBelt[playerid]);
+	PlayerTextDrawShow(playerid, _vhudLights[playerid]);	
+}
+
+stock HideVehicleHUDForPlayer(playerid)
+{
+	PlayerTextDrawHide(playerid, _vhudTextFuel[playerid]);
+	PlayerTextDrawHide(playerid, _vhudTextSpeed[playerid]);
+	PlayerTextDrawHide(playerid, _vhudSeatBelt[playerid]);
+	PlayerTextDrawHide(playerid, _vhudLights[playerid]);
+	
+}
+
+stock IsVIPcar(carid)
+{
+	for(new i = 0; i < sizeof(VIPVehicles); i++)
+	{
+		if(carid == VIPVehicles[i]) return 1;
+	}
+	return 0;
+}
 
 CMD:play(playerid, params[])
 {
