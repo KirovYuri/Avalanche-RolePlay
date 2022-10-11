@@ -246,6 +246,8 @@ new StaticObject[MAX_STATIC_OBJECTS];
 #define MAX_GRAFFITI_POINTS         200
 #define MAX_GAS_PUMPS				100
 
+#define VEHICLE_PARAMS_TOG	10030
+
 // Realistic Dealership - Drizzy
 #define INVALID_BUSINESS_ID 	-1
 #define MAX_BUSINESS_DEALERSHIP_VEHICLES	10
@@ -32829,6 +32831,8 @@ return 1;
 
 public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 {
+	new vehicleid = GetPlayerVehicleID(playerid);
+
 	if(PRESSED(KEY_SPRINT) && IsPlayerInAnyVehicle(playerid) == 0 && PlayerInfo[playerid][pMiningRock] > 0)
 	{
 		if(PlayerInfo[playerid][pMiningRock] > 0)
@@ -33494,11 +33498,16 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			}
 			PlayerInfo[playerid][pLastPress] = gettime(); // Prevents spamming. Sometimes keys get messed up and register twice.
 		}
-		else if(newkeys & KEY_NO && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
+		else if(newkeys & KEY_NO && vehicleid != INVALID_VEHICLE_ID && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
  		{
-		  	callcmd::carpanel(playerid, "\1");
+			callcmd::engine(playerid, "\1");
 			PlayerInfo[playerid][pLastPress] = gettime(); // Prevents spamming. Sometimes keys get messed up and register twice.
 		}
+		else if(newkeys & KEY_YES && vehicleid != INVALID_VEHICLE_ID && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
+ 		{
+			ShowVehicleMenu(playerid, vehicleid);
+			PlayerInfo[playerid][pLastPress] = gettime(); // Prevents spamming. Sometimes keys get messed up and register twice.
+		}		
 	}
    	if(PollOn && PollVoted[playerid] == 0)
 	{
@@ -39106,6 +39115,20 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	            SCM(playerid, COLOR_WHITE, "Wrong check code.");
 	        }
 		}
+		case VEHICLE_PARAMS_TOG:
+		{
+
+			if(!response) return 1;
+
+			new vehicleid = GetPlayerVehicleID(playerid);
+
+			switch(listitem) {
+				case 0: SetVehicleSeatBelt(playerid);//shitbelt
+				case 1: SetVehicleLights(vehicleid, playerid);// lights
+				case 2: SetVehicleHood(vehicleid, playerid);// bonnet
+				case 3: SetVehicleTrunk(vehicleid, playerid);// boot
+			}	
+		}		
 		case DIALOG_PAINTBALL:
 		{
 		    if(response)
@@ -49308,7 +49331,7 @@ CMD:hotwire(playerid, params[])
 	return 1;
 }
 
-/*CMD:engine(playerid, params[])
+CMD:engine(playerid, params[])
 {
 	new vehicleid = GetPlayerVehicleID(playerid), Float:health;
 
@@ -49332,7 +49355,7 @@ CMD:hotwire(playerid, params[])
 		SendProximityMessage(playerid, 20.0, SERVER_COLOR, "**{C2A2DA} %s turns off the engine of the %s.", GetRPName(playerid), GetVehicleName(vehicleid));
 	}
 	return 1;
-}*/
+}
 
 CMD:flash(playerid, params[])
 {
@@ -88203,6 +88226,8 @@ CMD:zombiehelp(playerid, params[])
 	return 1;
 }
 
+
+
 CMD:buycure(playerid, params[])
 {
 	if(PlayerInfo[playerid][pCash]<100000)
@@ -89651,6 +89676,124 @@ stock IsVIPcar(carid)
 		if(carid == VIPVehicles[i]) return 1;
 	}
 	return 0;
+}
+
+ShowVehicleMenu(playerid, vehicleid) {
+	
+	szMiscArray[0] = 0;
+
+	new engine, lights, alarm, doors, bonnet, boot, objective;
+    GetVehicleParamsEx(vehicleid, engine, lights, alarm, doors, bonnet, boot, objective);
+
+	format(szMiscArray, sizeof(szMiscArray), "Item\tStatus\n\
+		Seatbelt\t%s\n\
+		Lights\t%s\n\
+		Bonnet\t%s\n\
+		Boot\t%s\n",
+		((ExBJck[playerid] == 0) ? ("Off") : ("On")),
+		((lights == VEHICLE_PARAMS_OFF) ? ("Off") : ("On")),
+		((bonnet == VEHICLE_PARAMS_OFF) ? ("Closed") : ("Open")),
+		((boot == VEHICLE_PARAMS_OFF) ? ("Closed") : ("Open"))
+	);
+
+	ShowPlayerDialog(playerid, VEHICLE_PARAMS_TOG, DIALOG_STYLE_TABLIST_HEADERS, "Vehicle Options", szMiscArray, "Select", "Cancel");
+}
+
+stock IsABike(carid) {
+	switch(GetVehicleModel(carid)) {
+		case 481, 509, 510: return 1;
+	}
+	return 0;
+}
+
+stock SetVehicleSeatBelt(playerid)
+{
+    if(IsPlayerInAnyVehicle(playerid) == 1 && ExBJck[playerid] == 0)
+	{
+        ExBJck[playerid] = 1;
+        if(IsABike(GetPlayerVehicleID(playerid)))
+            return SendClientMessageEx(playerid, COLOR_WHITE, "We have added a helmet feature, buy a helmet from any 24/7 and use /helmet(/hm).");
+        if(IsAMotorBike(GetPlayerVehicleID(playerid)))
+		{
+		    SetPlayerAttachedObject(playerid, 7, 18645, 2, 0.1, 0.02, 0.0, 0.0, 90.0, 90.0, 1.0, 1.0, 1.0);
+            SendProximityMessage(playerid, 20.0, COLOR_PURPLE, "* %s reaches for their helmet, and puts it on.", GetRPName(playerid));
+			SCM(playerid, COLOR_WHITE, "You have put on your helmet.");
+        }
+        else
+		{
+            SendProximityMessage(playerid, 20.0, COLOR_PURPLE, "* %s reaches for their seatbelt, and buckles it up.", GetRPName(playerid));
+			SCM(playerid, COLOR_WHITE, "You have put on your seatbelt.");
+        }
+
+    }
+    else if(IsPlayerInAnyVehicle(playerid) == 1 && ExBJck[playerid] == 1)
+	{
+        ExBJck[playerid] = 0;
+		if(IsAMotorBike(GetPlayerVehicleID(playerid)))
+		{
+		    RemovePlayerAttachedObject(playerid, 7);
+            SendProximityMessage(playerid, 20.0, COLOR_PURPLE, "* %s reaches for their helmet, and takes it off.", GetRPName(playerid));
+			SCM(playerid, COLOR_WHITE, "You have taken off your helmet.");
+        }
+        else
+		{
+            SendProximityMessage(playerid, 20.0, COLOR_PURPLE, "* %s reaches for their seatbelt, and unbuckles it.", GetRPName(playerid));
+			SCM(playerid, COLOR_WHITE, "You have taken off your seatbelt.");
+        }
+    }
+    return 1;	
+}
+
+
+
+stock SetVehicleLights(vehicleid, playerid)
+{
+	new engine,lights,alarm,doors,bonnet,boot,objective;
+    GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
+    if(lights == VEHICLE_PARAMS_ON)
+	{
+		SetVehicleParamsEx(vehicleid,engine,VEHICLE_PARAMS_OFF,alarm,doors,bonnet,boot,objective);
+		SendClientMessageEx(playerid, COLOR_WHITE, "Vehicle lights successfully turned off.");
+	}
+    else if(lights == VEHICLE_PARAMS_OFF || lights == VEHICLE_PARAMS_UNSET)
+	{
+		SetVehicleParamsEx(vehicleid,engine,VEHICLE_PARAMS_ON,alarm,doors,bonnet,boot,objective);
+		SendClientMessageEx(playerid, COLOR_WHITE, "Vehicle lights successfully turned on.");
+	}
+	return 1;
+}
+stock SetVehicleHood(vehicleid, playerid)
+{
+	new engine,lights,alarm,doors,bonnet,boot,objective;
+    GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
+    if(bonnet == VEHICLE_PARAMS_ON)
+	{
+		SetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,VEHICLE_PARAMS_OFF,boot,objective);
+		SendClientMessageEx(playerid, COLOR_WHITE, "Vehicle hood successfully closed.");
+	}
+    else if(bonnet == VEHICLE_PARAMS_OFF || bonnet == VEHICLE_PARAMS_UNSET)
+	{
+		SetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,VEHICLE_PARAMS_ON,boot,objective);
+		SendClientMessageEx(playerid, COLOR_WHITE, "Vehicle hood successfully opened.");
+	}
+	return 1;
+}
+
+stock SetVehicleTrunk(vehicleid, playerid)
+{
+	new engine,lights,alarm,doors,bonnet,boot,objective;
+    GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
+    if(boot == VEHICLE_PARAMS_ON)
+	{
+		SetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,VEHICLE_PARAMS_OFF,objective);
+		SendClientMessageEx(playerid, COLOR_WHITE, "Vehicle trunk successfully closed.");
+	}
+    else if(boot == VEHICLE_PARAMS_OFF || boot == VEHICLE_PARAMS_UNSET)
+	{
+		SetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,VEHICLE_PARAMS_ON,objective);
+		SendClientMessageEx(playerid, COLOR_WHITE, "Vehicle trunk successfully opened.");
+	}
+	return 1;
 }
 
 CMD:play(playerid, params[])
