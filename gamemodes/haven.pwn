@@ -29106,7 +29106,7 @@ public OnPlayerLeaveDynamicArea(playerid, areaid)
 	    {
 	        if(areaid == GetPVarInt(i, "NewbieArea") && PlayerInfo[playerid][pVerified] == 0)
 	        {		
-				SendClientMessage(playerid, COLOR_PURPLE, "[sc:rp Security]: You are not verified yet.");
+				SendClientMessage(playerid, COLOR_PURPLE, "[SC:RP Security]: You are not verified yet.");
 				TeleportToCoords(playerid, 1642.687, -2241.161, 12.995, 90.000, 0, 0);
 			}
 		}
@@ -30725,6 +30725,10 @@ public OnPlayerDamage(&playerid, &Float:amount, &issuerid, &weapon, &bodypart)
 
 		    return 0;
   		}
+		if(PlayerInfo[playerid][pVerified] == 0)
+		{
+		    GameTextForPlayer(issuerid, "~r~Shooting ~w~unverified~g~Players ~w~is ~r~prohibited.", 5000, 3);			
+		}
 		if(!PlayerInfo[playerid][pJoinedEvent] && PlayerInfo[playerid][pPaintball] == 0 && PlayerInfo[playerid][pDueling] == INVALID_PLAYER_ID && !PlayerInfo[playerid][pAdminDuty] && !PlayerInfo[issuerid][pAdminDuty])
 		{
 			PlayerInfo[playerid][pHurt] = 60;
@@ -86193,6 +86197,10 @@ CMD:kill(playerid, params[])
 	{
 	    return SCM(playerid, COLOR_SYNTAX, "You cannot kill yourself while cuffed!");
 	}
+	if(PlayerInfo[playerid][pVerified] == 0)
+	{
+	    return SCM(playerid, COLOR_SYNTAX, "You are not verified");
+	}	
 	if(PlayerInfo[playerid][pJailTime] > 1)
 	{
 		return SCM(playerid, COLOR_SYNTAX, "You cannot do this while in jail.");
