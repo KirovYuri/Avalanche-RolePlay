@@ -33502,12 +33502,12 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
  		{
 			callcmd::engine(playerid, "\1");
 			PlayerInfo[playerid][pLastPress] = gettime(); // Prevents spamming. Sometimes keys get messed up and register twice.
-		}
-		else if(newkeys & KEY_YES && vehicleid != INVALID_VEHICLE_ID && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
- 		{
-			ShowVehicleMenu(playerid, vehicleid);
-			PlayerInfo[playerid][pLastPress] = gettime(); // Prevents spamming. Sometimes keys get messed up and register twice.
 		}		
+	}
+	if(newkeys & KEY_LOOK_BEHIND && vehicleid != INVALID_VEHICLE_ID && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
+ 	{
+		ShowVehicleMenu(playerid, vehicleid);
+		PlayerInfo[playerid][pLastPress] = gettime(); // Prevents spamming. Sometimes keys get messed up and register twice.
 	}
    	if(PollOn && PollVoted[playerid] == 0)
 	{
