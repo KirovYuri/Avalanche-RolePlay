@@ -1,0 +1,526 @@
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[14:41:20] password = ""  (string)
+[14:41:20] 
+[14:41:20] Server Plugins
+[14:41:20] --------------
+[14:41:20]  Loading plugin: crashdetect.so
+[14:41:28]   Failed.
+[14:41:28]  Loading plugin: whirlpool.so
+[14:41:28]   Failed.
+[14:41:28]  Loading plugin: pawncmd.so
+[14:41:29]   Failed.
+[14:41:29]  Loading plugin: SKY.so
+[14:41:30]   Failed.
+[14:41:30]  Loading plugin: sscanf.so
+[14:41:30]   Failed.
+[14:41:30]  Loading plugin: streamer.so
+[14:41:31]   Failed.
+[14:41:31]  Loading plugin: discord-connector.so
+[14:41:31]   Failed.
+[14:41:31]  Loading plugin: mysql_static.so
+[14:41:32]   Failed.
+[14:41:32]  Loading plugin: nativechecker.so
+[14:41:33]   Failed.
+[14:41:33]  Loading plugin: sampvoice.so
+[14:41:33]   Failed.
+[14:41:33]  Loading plugin: discord-connector.so
+[14:41:34]   Failed.
+[14:41:34]  Loaded 0 plugins.
+
+[14:41:34] 
+[14:41:34] Filterscripts
+[14:41:34] ---------------
+[14:41:34]   Loading filterscript 'Lex.amx'...
+[14:41:34]   Unable to load filterscript 'Lex.amx'.
+[14:41:34]   Loading filterscript 'android-check.amx'...
+[14:41:34] Android check has been successfully loaded.
+[14:41:34]   Loading filterscript 'yom_buttons.amx'...
+[14:41:34]   Unable to load filterscript 'yom_buttons.amx'.
+[14:41:34]   Loaded 1 filterscripts.
+
+[14:41:34] Script[gamemodes/haven.amx]: Run time error 19: "File or function is not found"
+[14:41:34] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[14:42:22] password = ""  (string)
+[14:42:22] 
+[14:42:22] Server Plugins
+[14:42:22] --------------
+[14:42:22]  Loading plugin: crashdetect.so
+[14:42:25]   Failed.
+[14:42:25]  Loading plugin: whirlpool.so
+[14:42:25]   Failed.
+[14:42:25]  Loading plugin: pawncmd.so
+[14:42:26]   Failed.
+[14:42:26]  Loading plugin: SKY.so
+[14:42:26]   Failed.
+[14:42:26]  Loading plugin: sscanf.so
+[14:42:26]   Failed.
+[14:42:26]  Loading plugin: streamer.so
+[14:42:27]   Failed.
+[14:42:27]  Loading plugin: discord-connector.so
+[14:42:27]   Failed.
+[14:42:27]  Loading plugin: mysql_static.so
+[14:42:27]   Failed.
+[14:42:27]  Loading plugin: nativechecker.so
+[14:42:27]   Failed.
+[14:42:27]  Loading plugin: sampvoice.so
+[14:42:28]   Failed.
+[14:42:28]  Loading plugin: discord-connector.so
+[14:42:28]   Failed.
+[14:42:28]  Loaded 0 plugins.
+
+[14:42:28] 
+[14:42:28] Filterscripts
+[14:42:28] ---------------
+[14:42:28]   Loading filterscript 'Lex.amx'...
+[14:42:28]   Unable to load filterscript 'Lex.amx'.
+[14:42:28]   Loading filterscript 'android-check.amx'...
+[14:42:28] Android check has been successfully loaded.
+[14:42:28]   Loading filterscript 'yom_buttons.amx'...
+[14:42:28]   Unable to load filterscript 'yom_buttons.amx'.
+[14:42:28]   Loaded 1 filterscripts.
+
+[14:42:28] Script[gamemodes/haven.amx]: Run time error 19: "File or function is not found"
+[14:42:28] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[14:43:05] password = ""  (string)
+[14:43:05] 
+[14:43:05] Server Plugins
+[14:43:05] --------------
+[14:43:05]  Loading plugin: sampvoice
+[14:43:05] [sv:dbg:network:init] : module initializing...
+[14:43:05] [dbg:raknet:init] : module initializing...
+[14:43:05] [dbg:raknet:init] : module initialized
+[14:43:05] [sv:dbg:network:init] : module initialized
+[14:43:05] [sv:dbg:main:Load] : creating 8 work threads...
+[14:43:05]  -------------------------------------------    
+[14:43:05]    ___                __   __    _              
+[14:43:05]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[14:43:05]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[14:43:05]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[14:43:05]                   |_|                           
+[14:43:05]  -------------------------------------------    
+[14:43:05]            SampVoice by MOR loaded              
+[14:43:05]  -------------------------------------------    
+[14:43:05]   Loaded.
+[14:43:05]  Loading plugin: crashdetect
+[14:43:05]   CrashDetect plugin 4.19.4
+[14:43:05]   Loaded.
+[14:43:05]  Loading plugin: discord-connector
+[14:43:05]   Failed.
+[14:43:05]  Loading plugin: irc
+[14:43:05]   Failed.
+[14:43:05]  Loading plugin: mysql
+[14:43:05]   Failed.
+[14:43:05]  Loading plugin: sscanf
+[14:43:05] 
+
+[14:43:05]  ===============================
+
+[14:43:05]       sscanf plugin loaded.     
+
+[14:43:05]          Version:  2.8.3        
+
+[14:43:05]   (c) 2018 Alex "Y_Less" Cole  
+
+[14:43:05]  ===============================
+
+[14:43:05]   Loaded.
+[14:43:05]  Loading plugin: streamer
+[14:43:05] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[14:43:05]   Loaded.
+[14:43:05]  Loading plugin: CTime
+[14:43:05]   Failed.
+[14:43:05]  Loading plugin: pawncmd
+[14:43:05] [Pawn.CMD] plugin v3.3.2 by urShadow loaded
+[14:43:05]   Loaded.
+[14:43:05]  Loading plugin: gvar
+[14:43:05] 
+
+*** GVar Plugin v1.3 by Incognito loaded ***
+
+[14:43:05]   Loaded.
+[14:43:05]  Loading plugin: pawn-memory
+[14:43:05] ========================
+[14:43:05] = Memory access plugin =
+[14:43:05] =       Made by BigETI =
+[14:43:05] = Loaded!              =
+[14:43:05] ========================
+[14:43:05]   Loaded.
+[14:43:05]  Loading plugin: timerfix
+[14:43:05]   >> TimerFix v1.7 successfully loaded.
+[14:43:05]   Loaded.
+[14:43:05]  Loading plugin: nativechecker
+[14:43:05]   Loaded.
+[14:43:05]  Loaded 9 plugins.
+
+[14:43:05] 
+[14:43:05] Filterscripts
+[14:43:05] ---------------
+[14:43:05]   Loading filterscript 'Lex.amx'...
+[14:43:05]   Unable to load filterscript 'Lex.amx'.
+[14:43:05]   Loading filterscript 'android-check.amx'...
+[14:43:05] [sv:dbg:main:AmxLoad] : net game pointer (value:00CF9D78) received
+[14:43:05] [sv:dbg:network:bind] : voice server running on port 57853
+[14:43:05] Android check has been successfully loaded.
+[14:43:05]   Loading filterscript 'yom_buttons.amx'...
+[14:43:05]   Unable to load filterscript 'yom_buttons.amx'.
+[14:43:05]   Loaded 1 filterscripts.
+
+[14:43:05] *** Streamer Plugin: Include file version (0x295) does not match plugin version (0x294) (script might need to be recompiled with the correct include file).
+[14:43:05] [Pawn.CMD] DoAmxLoad: Mismatch between the plugin (332) and include (314) versions
+[14:43:05]    Error: Function not registered: 'FreezeSyncData'
+[14:43:05]    Error: Function not registered: 'SetFakeFacingAngle'
+[14:43:05]    Error: Function not registered: 'SendLastSyncData'
+[14:43:05]    Error: Function not registered: 'ClearAnimationsForPlayer'
+[14:43:05]    Error: Function not registered: 'SetKnifeSync'
+[14:43:05]    Error: Function not registered: 'SetFakeHealth'
+[14:43:05]    Error: Function not registered: 'SetFakeArmour'
+[14:43:05]    Error: Function not registered: 'PlayerTextDrawSetPosition'
+[14:43:05]    Error: Function not registered: 'SpawnPlayerForWorld'
+[14:43:05]    Error: Function not registered: 'DCC_GetMessageContent'
+[14:43:05]    Error: Function not registered: 'DCC_GetMessageAuthor'
+[14:43:05]    Error: Function not registered: 'DCC_GetMessageChannel'
+[14:43:05]    Error: Function not registered: 'DCC_IsUserBot'
+[14:43:05]    Error: Function not registered: 'mysql_tquery'
+[14:43:05]    Error: Function not registered: 'cache_get_data'
+[14:43:05]    Error: Function not registered: 'cache_get_field_content'
+[14:43:05]    Error: Function not registered: 'cache_get_field_content_int'
+[14:43:05]    Error: Function not registered: 'cache_get_field_content_float'
+[14:43:05]    Error: Function not registered: 'mysql_format'
+[14:43:05]    Error: Function not registered: 'cache_insert_id'
+[14:43:05]    Error: Function not registered: 'mysql_escape_string'
+[14:43:05]    Error: Function not registered: 'mysql_unprocessed_queries'
+[14:43:05]    Error: Function not registered: 'cache_get_row_count'
+[14:43:05]    Error: Function not registered: 'cache_get_row_int'
+[14:43:05]    Error: Function not registered: 'cache_get_row'
+[14:43:05]    Error: Function not registered: 'DCC_SetBotActivity'
+[14:43:05]    Error: Function not registered: 'DCC_SetBotPresenceStatus'
+[14:43:05]    Error: Function not registered: 'mysql_connect'
+[14:43:05]    Error: Function not registered: 'mysql_errno'
+[14:43:05]    Error: Function not registered: 'mysql_close'
+[14:43:05]    Error: Function not registered: 'DCC_FindGuildById'
+[14:43:05]    Error: Function not registered: 'DCC_FindRoleById'
+[14:43:05]    Error: Function not registered: 'DCC_FindUserByName'
+[14:43:05]    Error: Function not registered: 'DCC_RemoveGuildMemberRole'
+[14:43:05]    Error: Function not registered: 'DCC_AddGuildMemberRole'
+[14:43:05]    Error: Function not registered: 'DCC_SetGuildMemberNickname'
+[14:43:05]    Error: Function not registered: 'mysql_query'
+[14:43:05]    Error: Function not registered: 'cache_delete'
+[14:43:05]    Error: Function not registered: 'WP_Hash'
+[14:43:05]    Error: Function not registered: 'DCC_FindChannelById'
+[14:43:05]    Error: Function not registered: 'DCC_SendChannelMessage'
+[14:43:05]    Error: Function not registered: 'DCC_GetChannelName'
+[14:43:05]    Error: Function not registered: 'DCC_HasGuildMemberRole'
+[14:43:05]    Error: Function not registered: 'DCC_CreateEmbed'
+[14:43:05]    Error: Function not registered: 'DCC_SetEmbedColor'
+[14:43:05]    Error: Function not registered: 'DCC_SendChannelEmbedMessage'
+[14:43:05]    Error: Function not registered: 'DCC_SetEmbedFooter'
+[14:43:05]    Error: Function not registered: 'DCC_SetEmbedTitle'
+[14:43:05]    Error: Function not registered: 'DCC_SetEmbedDescription'
+[14:43:05]    Error: Function not registered: 'DCC_GetUserId'
+[14:43:05]    Error: Function not registered: 'DCC_GetUserName'
+[14:43:05]    Error: Function not registered: 'DCC_GetUserDiscriminator'
+[14:43:05] [debug] Run time error 19: "File or function is not found"
+[14:43:05] [debug]  FreezeSyncData
+[14:43:05] [debug]  SetFakeFacingAngle
+[14:43:05] [debug]  SendLastSyncData
+[14:43:05] [debug]  ClearAnimationsForPlayer
+[14:43:05] [debug]  SetKnifeSync
+[14:43:05] [debug]  SetFakeHealth
+[14:43:05] [debug]  SetFakeArmour
+[14:43:05] [debug]  PlayerTextDrawSetPosition
+[14:43:05] [debug]  SpawnPlayerForWorld
+[14:43:05] [debug]  DCC_GetMessageContent
+[14:43:05] [debug]  DCC_GetMessageAuthor
+[14:43:05] [debug]  DCC_GetMessageChannel
+[14:43:05] [debug]  DCC_IsUserBot
+[14:43:05] [debug]  mysql_tquery
+[14:43:05] [debug]  cache_get_data
+[14:43:05] [debug]  cache_get_field_content
+[14:43:05] [debug]  cache_get_field_content_int
+[14:43:05] [debug]  cache_get_field_content_float
+[14:43:05] [debug]  mysql_format
+[14:43:05] [debug]  cache_insert_id
+[14:43:05] [debug]  mysql_escape_string
+[14:43:05] [debug]  mysql_unprocessed_queries
+[14:43:05] [debug]  cache_get_row_count
+[14:43:05] [debug]  cache_get_row_int
+[14:43:05] [debug]  cache_get_row
+[14:43:05] [debug]  DCC_SetBotActivity
+[14:43:05] [debug]  DCC_SetBotPresenceStatus
+[14:43:05] [debug]  mysql_connect
+[14:43:05] [debug]  mysql_errno
+[14:43:05] [debug]  mysql_close
+[14:43:05] [debug]  DCC_FindGuildById
+[14:43:05] [debug]  DCC_FindRoleById
+[14:43:05] [debug]  DCC_FindUserByName
+[14:43:05] [debug]  DCC_RemoveGuildMemberRole
+[14:43:05] [debug]  DCC_AddGuildMemberRole
+[14:43:05] [debug]  DCC_SetGuildMemberNickname
+[14:43:05] [debug]  mysql_query
+[14:43:05] [debug]  cache_delete
+[14:43:05] [debug]  WP_Hash
+[14:43:05] [debug]  DCC_FindChannelById
+[14:43:05] [debug]  DCC_SendChannelMessage
+[14:43:05] [debug]  DCC_GetChannelName
+[14:43:05] [debug]  DCC_HasGuildMemberRole
+[14:43:05] [debug]  DCC_CreateEmbed
+[14:43:05] [debug]  DCC_SetEmbedColor
+[14:43:05] [debug]  DCC_SendChannelEmbedMessage
+[14:43:05] [debug]  DCC_SetEmbedFooter
+[14:43:05] [debug]  DCC_SetEmbedTitle
+[14:43:05] [debug]  DCC_SetEmbedDescription
+[14:43:05] [debug]  DCC_GetUserId
+[14:43:05] [debug]  DCC_GetUserName
+[14:43:05] [debug]  DCC_GetUserDiscriminator
+[14:43:05] [debug] Run time error 19: "File or function is not found"
+[14:43:05] [debug]  FreezeSyncData
+[14:43:05] [debug]  SetFakeFacingAngle
+[14:43:05] [debug]  SendLastSyncData
+[14:43:05] [debug]  ClearAnimationsForPlayer
+[14:43:05] [debug]  SetKnifeSync
+[14:43:05] [debug]  SetFakeHealth
+[14:43:05] [debug]  SetFakeArmour
+[14:43:05] [debug]  PlayerTextDrawSetPosition
+[14:43:05] [debug]  SpawnPlayerForWorld
+[14:43:05] [debug]  DCC_GetMessageContent
+[14:43:05] [debug]  DCC_GetMessageAuthor
+[14:43:05] [debug]  DCC_GetMessageChannel
+[14:43:05] [debug]  DCC_IsUserBot
+[14:43:05] [debug]  mysql_tquery
+[14:43:05] [debug]  cache_get_data
+[14:43:05] [debug]  cache_get_field_content
+[14:43:05] [debug]  cache_get_field_content_int
+[14:43:05] [debug]  cache_get_field_content_float
+[14:43:05] [debug]  mysql_format
+[14:43:05] [debug]  cache_insert_id
+[14:43:05] [debug]  mysql_escape_string
+[14:43:05] [debug]  mysql_unprocessed_queries
+[14:43:05] [debug]  cache_get_row_count
+[14:43:05] [debug]  cache_get_row_int
+[14:43:05] [debug]  cache_get_row
+[14:43:05] [debug]  DCC_SetBotActivity
+[14:43:05] [debug]  DCC_SetBotPresenceStatus
+[14:43:05] [debug]  mysql_connect
+[14:43:05] [debug]  mysql_errno
+[14:43:05] [debug]  mysql_close
+[14:43:05] [debug]  DCC_FindGuildById
+[14:43:05] [debug]  DCC_FindRoleById
+[14:43:05] [debug]  DCC_FindUserByName
+[14:43:05] [debug]  DCC_RemoveGuildMemberRole
+[14:43:05] [debug]  DCC_AddGuildMemberRole
+[14:43:05] [debug]  DCC_SetGuildMemberNickname
+[14:43:05] [debug]  mysql_query
+[14:43:05] [debug]  cache_delete
+[14:43:05] [debug]  WP_Hash
+[14:43:05] [debug]  DCC_FindChannelById
+[14:43:05] [debug]  DCC_SendChannelMessage
+[14:43:05] [debug]  DCC_GetChannelName
+[14:43:05] [debug]  DCC_HasGuildMemberRole
+[14:43:05] [debug]  DCC_CreateEmbed
+[14:43:05] [debug]  DCC_SetEmbedColor
+[14:43:05] [debug]  DCC_SendChannelEmbedMessage
+[14:43:05] [debug]  DCC_SetEmbedFooter
+[14:43:05] [debug]  DCC_SetEmbedTitle
+[14:43:05] [debug]  DCC_SetEmbedDescription
+[14:43:05] [debug]  DCC_GetUserId
+[14:43:05] [debug]  DCC_GetUserName
+[14:43:05] [debug]  DCC_GetUserDiscriminator
+[14:43:05] Script[gamemodes/haven.amx]: Run time error 19: "File or function is not found"
+[14:43:05] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[14:49:42] password = ""  (string)
+[14:49:42] 
+[14:49:42] Server Plugins
+[14:49:42] --------------
+[14:49:42]  Loading plugin: sampvoice
+[14:49:42] [sv:dbg:network:init] : module initializing...
+[14:49:42] [dbg:raknet:init] : module initializing...
+[14:49:42] [dbg:raknet:init] : module initialized
+[14:49:42] [sv:dbg:network:init] : module initialized
+[14:49:42] [sv:dbg:main:Load] : creating 8 work threads...
+[14:49:42]  -------------------------------------------    
+[14:49:42]    ___                __   __    _              
+[14:49:42]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[14:49:42]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[14:49:42]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[14:49:42]                   |_|                           
+[14:49:42]  -------------------------------------------    
+[14:49:42]            SampVoice by MOR loaded              
+[14:49:42]  -------------------------------------------    
+[14:49:42]   Loaded.
+[14:49:42]  Loading plugin: crashdetect
+[14:49:42]   Failed.
+[14:49:42]  Loading plugin: discord-connector
+[14:49:42]   Failed.
+[14:49:42]  Loading plugin: irc
+[14:49:42]   Failed.
+[14:49:42]  Loading plugin: mysql
+[14:49:42]   Failed.
+[14:49:42]  Loading plugin: sscanf
+[14:49:42]   Failed.
+[14:49:42]  Loading plugin: streamer
+[14:49:42]   Failed.
+[14:49:42]  Loading plugin: CTime
+[14:49:42]   Failed.
+[14:49:42]  Loading plugin: pawncmd
+[14:49:42]   Failed.
+[14:49:42]  Loading plugin: gvar
+[14:49:42]   Failed.
+[14:49:42]  Loading plugin: pawn-memory
+[14:49:42]   Failed.
+[14:49:42]  Loading plugin: timerfix
+[14:49:42]   Failed.
+[14:49:42]  Loading plugin: nativechecker
+[14:49:42]   Failed.
+[14:49:42]  Loaded 1 plugins.
+
+[14:49:43] 
+[14:49:43] Filterscripts
+[14:49:43] ---------------
+[14:49:43]   Loading filterscript 'Lex.amx'...
+[14:49:43]   Unable to load filterscript 'Lex.amx'.
+[14:49:43]   Loading filterscript 'android-check.amx'...
+[14:49:43] [sv:dbg:main:AmxLoad] : net game pointer (value:02EF9D78) received
+[14:49:43] [sv:dbg:network:bind] : voice server running on port 55713
+[14:49:43] Android check has been successfully loaded.
+[14:49:43]   Loading filterscript 'yom_buttons.amx'...
+[14:49:43]   Unable to load filterscript 'yom_buttons.amx'.
+[14:49:43]   Loaded 1 filterscripts.
+
+[14:49:43] Script[gamemodes/haven.amx]: Run time error 19: "File or function is not found"
+[14:49:43] Number of vehicle models: 0
+[14:50:14] [connection] 127.0.0.1:65382 requests connection cookie.
+[14:50:15] [connection] incoming connection: 127.0.0.1:65382 id: 0
+[14:50:15] [join] Dwayne_Johnson has joined the server (0:127.0.0.1)
+[14:50:41] [part] Dwayne_Johnson has left the server (0:1)
+[15:05:48]  -------------------------------------------
+[15:05:48]            SampVoice unloading...           
+[15:05:48]  -------------------------------------------
+[15:05:48] [dbg:raknet:free] : module releasing...
+[15:05:48] [dbg:raknet:free] : module released
+[15:05:48] [sv:dbg:network:free] : module releasing...
+[15:05:48] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[15:07:22] password = ""  (string)
+[15:07:22] 
+[15:07:22] Server Plugins
+[15:07:22] --------------
+[15:07:22]  Loading plugin: jit
+[15:07:22]   JIT plugin 2.4
+[15:07:22]   Loaded.
+[15:07:22]  Loading plugin: mysql
+[15:07:22]   Failed.
+[15:07:22]  Loading plugin: sscanf
+[15:07:22] 
+
+[15:07:22]  ===============================
+
+[15:07:22]       sscanf plugin loaded.     
+
+[15:07:22]          Version:  2.8.3        
+
+[15:07:22]   (c) 2018 Alex "Y_Less" Cole  
+
+[15:07:22]  ===============================
+
+[15:07:22]   Loaded.
+[15:07:22]  Loading plugin: gvar
+[15:07:22] 
+
+*** GVar Plugin v1.3 by Incognito loaded ***
+
+[15:07:22]   Loaded.
+[15:07:22]  Loading plugin: pawncmd
+[15:07:22] [Pawn.CMD] plugin v3.3.3 by urShadow loaded
+[15:07:22]   Loaded.
+[15:07:22]  Loading plugin: streamer
+[15:07:22] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[15:07:22]   Loaded.
+[15:07:22]  Loading plugin: Whirlpoolonfoot_rate
+[15:07:22]   Failed.
+[15:07:22]  Loading plugin: 40
+[15:07:22]   Failed.
+[15:07:22]  Loaded 5 plugins.
+
+[15:07:22] 
+[15:07:22] Filterscripts
+[15:07:22] ---------------
+[15:07:22]   Loading filterscript 'Lex.amx'...
+[15:07:22]   Unable to load filterscript 'Lex.amx'.
+[15:07:22]   Loading filterscript 'android-check.amx'...
+[15:07:22] Android check has been successfully loaded.
+[15:07:22]   Loading filterscript 'yom_buttons.amx'...
+[15:07:22]   Unable to load filterscript 'yom_buttons.amx'.
+[15:07:22]   Loaded 1 filterscripts.
+
+[15:07:22] [Pawn.CMD] DoAmxLoad: Mismatch between the plugin (333) and include (314) versions
+[15:07:22] *** Streamer Plugin: Include file version (0x295) does not match plugin version (0x294) (script might need to be recompiled with the correct include file).
+[15:07:23] Script[gamemodes/haven.amx]: Run time error 19: "File or function is not found"
+[15:07:23] Number of vehicle models: 0
+[15:07:58] [connection] 127.0.0.1:61982 requests connection cookie.
+[15:07:59] [connection] incoming connection: 127.0.0.1:61982 id: 0
+[15:07:59] [join] Dwayne_Johnson has joined the server (0:127.0.0.1)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:05] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[15:08:05] [part] Dwayne_Johnson has left the server (0:1)
