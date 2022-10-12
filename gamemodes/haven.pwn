@@ -22181,24 +22181,6 @@ public OnQueryFinished(threadid, extraid)
 				}
 		    }
 		}
-		case THREAD_GARBAGE_LOAD:
-		{
-			for (new i = 0; i < rows; i ++) if (i < MAX_GARBAGE_BINS)
-			{
-				GarbageData[i][garbageExists] = 1;
-	    		GarbageData[i][garbageID] = cache_get_field_content_int(i, "garbageID");
-				GarbageData[i][garbageModel] = cache_get_field_content_int(i, "garbageModel");
-				GarbageData[i][garbageCapacity] = cache_get_field_content_int(i, "garbageCapacity");
-				GarbageData[i][garbagePos][0] = cache_get_field_content_float(i, "garbageX");
-				GarbageData[i][garbagePos][1] = cache_get_field_content_float(i, "garbageY");
-				GarbageData[i][garbagePos][2] = cache_get_field_content_float(i, "garbageZ");
-				GarbageData[i][garbagePos][3] = cache_get_field_content_float(i, "garbageA");
-				GarbageData[i][garbageInterior] = cache_get_field_content_int(i, "garbageInterior");
-				GarbageData[i][garbageWorld] = cache_get_field_content_int(i, "garbageWorld");
-				Garbage_Refresh(i);
-			}
-			printf("[FileLoadded] %i garbage has been loaded", (rows < MAX_GARBAGE_BINS) ? (rows) : (MAX_GARBAGE_BINS));
-		}
 		case THREAD_LIST_ADMINS:
 		{
 		    new username[MAX_PLAYER_NAME], lastlogin[24];
@@ -22780,6 +22762,23 @@ public OnQueryFinished(threadid, extraid)
 			}
 
 			printf("[Script] %i turfs loaded.", rows);
+		}
+		case THREAD_GARBAGE_LOAD:
+		{
+		    for(new i = 0; i < rows && i < MAX_GARBAGE_BINS; i ++)
+		    {		
+				GarbageData[i][garbageExists] = true;
+				GarbageData[i][garbageID] = cache_get_field_content_int(i, "garbageID");
+				GarbageData[i][garbageModel] = cache_get_field_content_int(i, "garbageModel");
+				GarbageData[i][garbageCapacity] = cache_get_field_content_int(i, "garbageCapacity");
+				GarbageData[i][garbagePos][0] = cache_get_field_content_float(i, "garbageX");
+				GarbageData[i][garbagePos][1] = cache_get_field_content_float(i, "garbageY");
+				GarbageData[i][garbagePos][2] = cache_get_field_content_float(i, "garbageZ");
+				GarbageData[i][garbagePos][3] = cache_get_field_content_float(i, "garbageA");
+				GarbageData[i][garbageInterior] = cache_get_field_content_int(i, "garbageInterior");
+				GarbageData[i][garbageWorld] = cache_get_field_content_int(i, "garbageWorld");					
+			}
+			printf("[Script] %i garbage loaded", (rows < MAX_GARBAGE_BINS) ? (rows) : (MAX_GARBAGE_BINS));
 		}
 		case THREAD_LOAD_CLOTHING:
 		{
@@ -23456,6 +23455,7 @@ public OnGameModeInit()
 	mysql_tquery(connectionID, "SELECT * FROM `object`", "Object_Load", "");
 	mysql_tquery(connectionID, "SELECT * FROM `crates`", "OnLoadCrateBoxes", "");
 	mysql_tquery(connectionID, "SELECT * FROM `vendors`", "Vendor_Load", "");
+	mysql_tquery(connectionID, "SELECT * FROM `garbage`", "Garbage_Load", "");
 	UploadAntiCheatSettings();
 	
 	for(new x=0; x<MAX_VEHICLES; x++)
@@ -90008,6 +90008,33 @@ public UpdateTrashcans()
 	}
 	
 	return true;
+}
+
+forward Garbage_Load();
+public Garbage_Load()
+{
+    static
+	    rows,
+	    fields;
+
+	cache_get_data(rows, fields, connectionID);
+
+	for (new i = 0; i < rows; i ++) if (i < MAX_GARBAGE_BINS)
+	{
+	    GarbageData[i][garbageExists] = true;
+	    GarbageData[i][garbageID] = cache_get_field_content_int(i, "garbageID");
+	    GarbageData[i][garbageModel] = cache_get_field_content_int(i, "garbageModel");
+	    GarbageData[i][garbageCapacity] = cache_get_field_content_int(i, "garbageCapacity");
+	    GarbageData[i][garbagePos][0] = cache_get_field_content_float(i, "garbageX");
+        GarbageData[i][garbagePos][1] = cache_get_field_content_float(i, "garbageY");
+        GarbageData[i][garbagePos][2] = cache_get_field_content_float(i, "garbageZ");
+        GarbageData[i][garbagePos][3] = cache_get_field_content_float(i, "garbageA");
+        GarbageData[i][garbageInterior] = cache_get_field_content_int(i, "garbageInterior");
+		GarbageData[i][garbageWorld] = cache_get_field_content_int(i, "garbageWorld");
+
+		Garbage_Refresh(i);
+	}
+	return 1;
 }
 
 CMD:play(playerid, params[])
