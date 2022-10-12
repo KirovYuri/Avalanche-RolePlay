@@ -22777,6 +22777,7 @@ public OnQueryFinished(threadid, extraid)
 				GarbageData[i][garbagePos][3] = cache_get_field_content_float(i, "garbageA");
 				GarbageData[i][garbageInterior] = cache_get_field_content_int(i, "garbageInterior");
 				GarbageData[i][garbageWorld] = cache_get_field_content_int(i, "garbageWorld");					
+				Garbage_Refresh(i);
 			}
 			printf("[Script] %i garbage loaded", (rows < MAX_GARBAGE_BINS) ? (rows) : (MAX_GARBAGE_BINS));
 		}
@@ -23455,7 +23456,7 @@ public OnGameModeInit()
 	mysql_tquery(connectionID, "SELECT * FROM `object`", "Object_Load", "");
 	mysql_tquery(connectionID, "SELECT * FROM `crates`", "OnLoadCrateBoxes", "");
 	mysql_tquery(connectionID, "SELECT * FROM `vendors`", "Vendor_Load", "");
-	mysql_tquery(connectionID, "SELECT * FROM `garbage`", "Garbage_Load", "");
+	mysql_tquery(connectionID, "SELECT * FROM `garbage`", "Garbage_Load", "ii", THREAD_GARBAGE_LOAD, 0);
 	UploadAntiCheatSettings();
 	
 	for(new x=0; x<MAX_VEHICLES; x++)
@@ -90004,6 +90005,7 @@ public UpdateTrashcans()
                 GarbageData[i][garbageCapacity] = 20;
 			}
 			Garbage_Refresh(i);
+			Garbage_Save(i);
 		}
 	}
 	
@@ -90031,7 +90033,6 @@ public Garbage_Load()
         GarbageData[i][garbagePos][3] = cache_get_field_content_float(i, "garbageA");
         GarbageData[i][garbageInterior] = cache_get_field_content_int(i, "garbageInterior");
 		GarbageData[i][garbageWorld] = cache_get_field_content_int(i, "garbageWorld");
-
 		Garbage_Refresh(i);
 	}
 	return 1;
