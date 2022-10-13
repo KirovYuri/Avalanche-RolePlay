@@ -89924,9 +89924,7 @@ stock Garbage_Create(playerid, type)
 		GarbageData[i][garbageWorld] = GetPlayerVirtualWorld(playerid);
 		
 		Garbage_Refresh(i);
-
-		mysql_format(connectionID, queryBuffer, "INSERT INTO `garbage` (`garbageCapacity`) VALUES(%d)", type);
-		mysql_tquery(connectionID, queryBuffer, "OnGarbageCreated", "d", i);
+		mysql_tquery(connectionID, queryBuffer, "INSERT INTO `garbage` (`garbageCapacity`) VALUES(0)", "OnGarbageCreated", "d", i);
 		return i;
 	}
 	return -1;
