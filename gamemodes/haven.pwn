@@ -89922,10 +89922,9 @@ stock Garbage_Create(playerid, type)
 		}
 		GarbageData[i][garbageInterior] = GetPlayerInterior(playerid);
 		GarbageData[i][garbageWorld] = GetPlayerVirtualWorld(playerid);
-		SetTimer("UpdateTrashcans",1000,true);
-		mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "INSERT INTO `garbage` (`OnGarbageCreated`) VALUES(%d)", type);
-		mysql_tquery(connectionID, queryBuffer, "OnGarbageCreated", "d", i);
-		return i;
+		
+		Garbage_Refresh(i);
+		mysql_tquery(connectionID, queryBuffer, "INSERT INTO `garbage` (`garbageCapacity`) VALUES(0)", "OnGarbageCreated", "d", i);
 	}
 	return -1;
 }
@@ -89933,8 +89932,9 @@ stock Garbage_Create(playerid, type)
 forward OnGarbageCreated(garbageid);
 public OnGarbageCreated(garbageid)
 {
+	if (garbageid == -1 || !GarbageData[garbageid][garbageExists])
+	    return 0;
 	GarbageData[garbageid][garbageID] = cache_insert_id(connectionID);
-	Garbage_Refresh(garbageid);
 	Garbage_Save(garbageid);
 	return 1;
 }
