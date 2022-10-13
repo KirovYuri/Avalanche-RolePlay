@@ -23456,7 +23456,7 @@ public OnGameModeInit()
 	mysql_tquery(connectionID, "SELECT * FROM `object`", "Object_Load", "");
 	mysql_tquery(connectionID, "SELECT * FROM `crates`", "OnLoadCrateBoxes", "");
 	mysql_tquery(connectionID, "SELECT * FROM `vendors`", "Vendor_Load", "");
-	mysql_tquery(connectionID, "SELECT * FROM `garbage`", "Garbage_Load", "ii", THREAD_GARBAGE_LOAD, 0);
+	mysql_tquery(connectionID, "SELECT * FROM `garbage`", "OnQueryFinished", "ii", THREAD_GARBAGE_LOAD, 0);
 	UploadAntiCheatSettings();
 	
 	for(new x=0; x<MAX_VEHICLES; x++)
