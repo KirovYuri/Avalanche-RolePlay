@@ -89905,7 +89905,7 @@ stock Garbage_Create(playerid, type)
 	        case 2: GarbageData[i][garbageModel] = 1300;
 	    }
 	    GarbageData[i][garbageExists] = true;
-	    GarbageData[i][garbageCapacity] = type;
+	    GarbageData[i][garbageCapacity] = 0;
 
 	    GetPlayerPos(playerid, GarbageData[i][garbagePos][0], GarbageData[i][garbagePos][1], GarbageData[i][garbagePos][2]);
 	    GetPlayerFacingAngle(playerid, GarbageData[i][garbagePos][3]);
