@@ -89905,7 +89905,7 @@ stock Garbage_Create(playerid, type)
 	        case 2: GarbageData[i][garbageModel] = 1300;
 	    }
 	    GarbageData[i][garbageExists] = true;
-	    GarbageData[i][garbageCapacity] = 0;
+	    GarbageData[i][garbageCapacity] = type;
 
 	    GetPlayerPos(playerid, GarbageData[i][garbagePos][0], GarbageData[i][garbagePos][1], GarbageData[i][garbagePos][2]);
 	    GetPlayerFacingAngle(playerid, GarbageData[i][garbagePos][3]);
@@ -89924,7 +89924,10 @@ stock Garbage_Create(playerid, type)
 		GarbageData[i][garbageWorld] = GetPlayerVirtualWorld(playerid);
 		
 		Garbage_Refresh(i);
-		mysql_tquery(connectionID, queryBuffer, "INSERT INTO `garbage` (`garbageCapacity`) VALUES(0)", "OnGarbageCreated", "d", i);
+
+		mysql_format(connectionID, queryBuffer, "INSERT INTO `garbage` (`garbageCapacity`) VALUES(%d)", type);
+		mysql_tquery(connectionID, queryBuffer, "OnGarbageCreated", "d", i);
+		return i;
 	}
 	return -1;
 }
@@ -89932,19 +89935,15 @@ stock Garbage_Create(playerid, type)
 forward OnGarbageCreated(garbageid);
 public OnGarbageCreated(garbageid)
 {
-	if (garbageid == -1 || !GarbageData[garbageid][garbageExists])
-	    return 0;
 	GarbageData[garbageid][garbageID] = cache_insert_id(connectionID);
 	Garbage_Save(garbageid);
+	Garbage_Refresh(garbageid);
 	return 1;
 }
 
 stock Garbage_Save(garbageid)
 {
-	new
-	    query[300];
-
-	format(query, sizeof(query), "UPDATE `garbage` SET `garbageModel` = '%d', `garbageCapacity` = '%d', `garbageX` = '%.4f', `garbageY` = '%.4f', `garbageZ` = '%.4f', `garbageA` = '%.4f', `garbageInterior` = '%d', `garbageWorld` = '%d' WHERE `garbageID` = '%d'",
+	mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE `garbage` SET `garbageModel` = '%d', `garbageCapacity` = '%d', `garbageX` = '%.4f', `garbageY` = '%.4f', `garbageZ` = '%.4f', `garbageA` = '%.4f', `garbageInterior` = '%d', `garbageWorld` = '%d' WHERE `garbageID` = '%d'",
         GarbageData[garbageid][garbageModel],
         GarbageData[garbageid][garbageCapacity],
         GarbageData[garbageid][garbagePos][0],
