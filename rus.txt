@@ -1,6 +1,3 @@
-c:\Users\client\Desktop\GAMEMODES\AvalancheGaming[HavenGM\gamemodes\haven.pwn(89928) : îøèáêà 035: íåñîâïàäåíèå òèïîâ àðãóìåíòîâ (àðãóìåíò 3)
-c:\Users\client\Desktop\GAMEMODES\AvalancheGaming[HavenGM\gamemodes\haven.pwn(89991) : íåïðàâèëüíàÿ òàáóëÿöèÿ
+c:\Users\client\Desktop\GAMEMODES\AvalancheGaming[HavenGM\gamemodes\haven.pwn(89989) : íåïðàâèëüíàÿ òàáóëÿöèÿ
 Pawn compiler 3.2.3664	 	 	Copyright (c) 1997-2016, ITB CompuPhase
 
-
-Îøèáîê:1.
