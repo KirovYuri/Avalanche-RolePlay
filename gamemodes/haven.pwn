@@ -25590,6 +25590,7 @@ public OnGameModeInit()
 	SetTimer("InjuredTimer", 5000, true);
 	SetTimer("LotteryUpdate", 500000, true);
 	SetTimerEx("RandomFire", 7200000, true, "i", 1);
+	SetTimer("UpdateTrashcans",100,true);
 
     // FerrisWheel
 	FerrisWheelObjects[10]=CreateObject(18877,389.7734,-2028.4688,22,0,0,90,300);
@@ -89993,16 +89994,14 @@ public UpdateTrashcans()
             GarbageData[i][garbageCapacity] += rrX;
 		    new string[128];
 		    format(string, sizeof(string), "[Garbage %d]\n{FFFFFF}Trash Capacity: %d/20", i, GarbageData[i][garbageCapacity]);
-			GarbageData[i][garbageText3D] = CreateDynamic3DTextLabel(string, COLOR_DARKBLUE, GarbageData[i][garbagePos][0], GarbageData[i][garbagePos][1], GarbageData[i][garbagePos][2], 15.0, INVALID_PLAYER_ID, INVALID_VEHICLE_ID, 0, GarbageData[i][garbageWorld], GarbageData[i][garbageInterior]);
+			Update3DTextLabelText(GarbageData[i][garbageText3D], COLOR_RED , string);
 			
 			if(GarbageData[i][garbageCapacity] >= 21) {
                 GarbageData[i][garbageCapacity] = 20;
 			}
 			Garbage_Refresh(i);
-			Garbage_Save(i);
 		}
 	}
-	
 	return true;
 }
 
