@@ -945,6 +945,7 @@ enum garbageData {
 	garbageObject
 };
 
+new GarbageData[MAX_GARBAGE_BINS][garbageData];
 
 enum speedData {
 	speedID,
@@ -2983,7 +2984,6 @@ new ReportInfo[MAX_REPORTS][rEnum];
 new HouseInfo[MAX_HOUSES][hEnum];
 new GarageInfo[MAX_GARAGES][gEnum];
 new BusinessInfo[MAX_BUSINESSES][bEnum];
-new GarbageData[MAX_GARBAGE_BINS][garbageData];
 new EntranceInfo[MAX_ENTRANCES][eEnum];
 new ClothingInfo[MAX_PLAYERS][MAX_PLAYER_CLOTHING][cEnum];
 new VehicleInfo[MAX_VEHICLES][vEnum];
@@ -25590,8 +25590,6 @@ public OnGameModeInit()
 	SetTimer("InjuredTimer", 5000, true);
 	SetTimer("LotteryUpdate", 500000, true);
 	SetTimerEx("RandomFire", 7200000, true, "i", 1);
-	SetTimer("UpdateTrashcans",1000,true);
-	SetTimer("ChangeTrashPrice",300000,true);
 
     // FerrisWheel
 	FerrisWheelObjects[10]=CreateObject(18877,389.7734,-2028.4688,22,0,0,90,300);
@@ -89924,9 +89922,9 @@ stock Garbage_Create(playerid, type)
 		}
 		GarbageData[i][garbageInterior] = GetPlayerInterior(playerid);
 		GarbageData[i][garbageWorld] = GetPlayerVirtualWorld(playerid);
-
-		Garbage_Refresh(i);
-		mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "INSERT INTO `garbage` (`garbageCapacity`) VALUES(0)", "OnGarbageCreated", "d", i);
+		SetTimer("UpdateTrashcans",1000,true);
+		mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "INSERT INTO `garbage` (`OnGarbageCreated`) VALUES(%d)", type);
+		mysql_tquery(connectionID, queryBuffer, "OnVendorCreated", "d", i);
 		return i;
 	}
 	return -1;
@@ -89935,12 +89933,9 @@ stock Garbage_Create(playerid, type)
 forward OnGarbageCreated(garbageid);
 public OnGarbageCreated(garbageid)
 {
-	if (garbageid == -1 || !GarbageData[garbageid][garbageExists])
-	    return 0;
-
 	GarbageData[garbageid][garbageID] = cache_insert_id(connectionID);
+	Garbage_Refresh(garbageid);
 	Garbage_Save(garbageid);
-
 	return 1;
 }
 
@@ -89960,7 +89955,7 @@ stock Garbage_Save(garbageid)
         GarbageData[garbageid][garbageWorld],
         GarbageData[garbageid][garbageID]
 	);
-	return mysql_tquery(connectionID, query);
+	return mysql_tquery(connectionID, queryBuffer);
 }
 
 stock Garbage_Delete(garbageid)
