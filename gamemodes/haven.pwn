@@ -1945,6 +1945,7 @@ enum pEnum
 	pEXP,
 	pMinutes,
 	pHours,
+	pCarryTrash,
 	pAdmin,
 	pAdrian,
 	pAdrianTimer,
@@ -2763,6 +2764,7 @@ enum vEnum
 	vTimer,
 	vRegistered,
 	vDLock,
+	vehTrash,
 	vDLocked,
 	vCorp
 };
@@ -2945,8 +2947,8 @@ new enabledReports = 1;
 new sweeperVehicles[4];
 new farmVehicles[7];
 new pizzaVehicles[6];
+new garbagevehicle[3];
 new forkliftVehicles[6];
-new towtruck[3];
 new courierVehicles[37];
 new VIPVehicles[30];
 new taxiVehicles[4];
@@ -7463,7 +7465,7 @@ GetPlayerPosEx(playerid, &Float:x, &Float:y, &Float:z)
 GetVehicleCranePrice(vehicleid, bool:extras = true)
 {
 	new amount;
-    if((pizzaVehicles[0] <= vehicleid <= pizzaVehicles[5]) || (courierVehicles[0] <= vehicleid <= courierVehicles[36]) || (taxiVehicles[0] <= vehicleid <= taxiVehicles[3]) || (testVehicles[0] <= vehicleid <= testVehicles[4]) || GetCarBusiness(vehicleid))
+    if(garbagevehicle[0] <= vehicleid <= garbagevehicle[2] || (pizzaVehicles[0] <= vehicleid <= pizzaVehicles[5]) || (courierVehicles[0] <= vehicleid <= courierVehicles[36]) || (taxiVehicles[0] <= vehicleid <= taxiVehicles[3]) || (testVehicles[0] <= vehicleid <= testVehicles[4]) || GetCarBusiness(vehicleid))
     {
         return 0;
 	}
@@ -12558,6 +12560,7 @@ ResetVehicle(vehicleid)
 	VehicleInfo[vehicleid][vObjects][1] = INVALID_OBJECT_ID;
 	VehicleInfo[vehicleid][vTimer] = -1;
 	VehicleInfo[vehicleid][vRegistered] = 0;
+	VehicleInfo[vehicleid][vehTrash] = 0;
 
 	for(new i = 0; i < 14; i ++)
 	{
@@ -20309,6 +20312,7 @@ public OnPlayerSpawnVehicle(playerid, parked)
 	        VehicleInfo[vehicleid][vWeapons][0] = cache_get_field_content_int(0, "weapon_1");
 	        VehicleInfo[vehicleid][vWeapons][1] = cache_get_field_content_int(0, "weapon_2");
 	        VehicleInfo[vehicleid][vWeapons][2] = cache_get_field_content_int(0, "weapon_3");
+			VehicleInfo[vehicleid][vehTrash] = cache_get_field_content_int(0, "vehicletrash"); 
             VehicleInfo[vehicleid][vHPAmmo] = cache_get_field_content_int(0, "hpammo");
             VehicleInfo[vehicleid][vPoisonAmmo] = cache_get_field_content_int(0, "poisonammo");
             VehicleInfo[vehicleid][vFMJAmmo] = cache_get_field_content_int(0, "fmjammo");
@@ -20589,6 +20593,7 @@ public OnAdminOfflineCheck(playerid, username[])
 		PlayerInfo[MAX_PLAYERS][pThiefSkill] = cache_get_field_content_int(0, "thiefskill");
 		PlayerInfo[MAX_PLAYERS][pThiefCooldown] = cache_get_field_content_int(0, "thiefcooldown");
 		PlayerInfo[MAX_PLAYERS][pCocaineCooldown] = cache_get_field_content_int(0, "cocainecooldown");
+	    PlayerInfo[MAX_PLAYERS][pCarryTrash] = cache_get_field_content_int(0, "carrytrash");
 	    PlayerInfo[MAX_PLAYERS][pLoad] = cache_get_field_content_int(0, "loads");
 		PlayerInfo[MAX_PLAYERS][pLoadExpire] = cache_get_field_content_int(0, "loadexpire");
 		PlayerInfo[MAX_PLAYERS][pPhone] = cache_get_field_content_int(0, "phone");
@@ -21626,6 +21631,7 @@ public OnQueryFinished(threadid, extraid)
 				PlayerInfo[extraid][pThiefSkill] = cache_get_field_content_int(0, "thiefskill");
 				PlayerInfo[extraid][pThiefCooldown] = cache_get_field_content_int(0, "thiefcooldown");
         		PlayerInfo[extraid][pCocaineCooldown] = cache_get_field_content_int(0, "cocainecooldown");
+	   		 	PlayerInfo[extraid][pCarryTrash] = cache_get_field_content_int(0, "carrytrash");
                 PlayerInfo[extraid][pLoad] = cache_get_field_content_int(0, "loads");
                 PlayerInfo[extraid][pLoadExpire] = cache_get_field_content_int(0, "loadexpire");
 				PlayerInfo[extraid][pPhone] = cache_get_field_content_int(0, "phone");
@@ -25379,6 +25385,10 @@ public OnGameModeInit()
 	pizzaVehicles[4] = AddStaticVehicleEx(448, 2097.8396, -1799.2592, 12.9978, 90.0000, 3, 6, 300); // bike 5
 	pizzaVehicles[5] = AddStaticVehicleEx(448, 2097.8396, -1801.0101, 12.9978, 90.0000, 3, 6, 300); // bike 6
 
+	garbagevehicle[0] = AddStaticVehicle(408,2189.6274,-1983.0913,14.0977,82.3771,0,0); // v1
+	garbagevehicle[1] = AddStaticVehicle(408,2188.6338,-1987.3062,14.0867,80.9790,0,0); // v2
+	garbagevehicle[2] = AddStaticVehicle(408,2189.2195,-1994.7833,14.0882,74.2583,0,0); // v3
+
 	forkliftVehicles[0] = AddStaticVehicleEx(530, 2778.5310, -2425.0867, 13.3935, 0.0000, 6, 6, 600); // forklift 1
 	forkliftVehicles[1] = AddStaticVehicleEx(530, 2778.6404, -2410.1257, 13.4024, 180.0000, 6, 6, 600); // forklift 2
 	forkliftVehicles[2] = AddStaticVehicleEx(530, 2787.8252, -2425.3438, 13.3990, 0.0000, 6, 6, 600); // forklift 3
@@ -25386,9 +25396,6 @@ public OnGameModeInit()
 	forkliftVehicles[4] = AddStaticVehicleEx(530, 2795.1589, -2425.3408, 13.3954, 0.0000, 6, 6, 600); // forklift 5
 	forkliftVehicles[5] = AddStaticVehicleEx(530, 2795.1826, -2409.9617, 13.3972, 180.0000, 6, 6, 600); // forklift 6
 
-	towtruck[0] = AddStaticVehicleEx(525,1552.7358,-2211.3174,13.2572,0.0000,0,3,100); // 1
-	towtruck[1] = AddStaticVehicleEx(525,1549.4292,-2211.2332,13.2572,0.0000,0,3,100); // 2
-	towtruck[2] = AddStaticVehicleEx(525,1546.2065,-2211.1052,13.2572,0.0000,0,3,100); // 3
 
 	// VIP GARAGE
     VIPVehicles[0] = AddStaticVehicleEx(560, 2565.9351, 2279.9241, 10.4202, 268.9255, -1, -1, 100);
@@ -26469,6 +26476,7 @@ public OnPlayerConnect(playerid)
 	PlayerInfo[playerid][pCrack] = 0;
 	PlayerInfo[playerid][pMeth] = 0;
 	PlayerInfo[playerid][pPainkillers] = 0;
+	PlayerInfo[playerid][pCarryTrash] = 0;
 	PlayerInfo[playerid][pSeeds] = 0;
 	PlayerInfo[playerid][pEphedrine] = 0;
 	PlayerInfo[playerid][pMuriaticAcid] = 0;
@@ -28605,11 +28613,11 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 	        SCM(playerid, COLOR_SYNTAX, "You cannot operate this vehicle as you are not a Pizzaman.");
 	        ClearAnimations(playerid);
 	    }
-		if((towtruck[0] <= vehicleid <= towtruck[2]) && (FactionInfo[PlayerInfo[playerid][pFaction]][fType] != FACTION_MECHANIC))
-	    {
-	        SCM(playerid, COLOR_SYNTAX, "You cannot operate this vehicle as you are not a Mechianic.");
-	        ClearAnimations(playerid);
-	    }
+		if(garbagevehicle[0] <= vehicleid <= garbagevehicle[2] && !PlayerHasJob(playerid, JOB_GARBAGE))
+		{
+	        SCM(playerid, COLOR_SYNTAX, "You cannot operate this vehicle as you are not a Garbageman.");
+	        ClearAnimations(playerid);			
+		}
 	    if((taxiVehicles[0] <= vehicleid <= taxiVehicles[3]) && !PlayerHasJob(playerid, JOB_TAXIDRIVER))
 	    {
 	        SCM(playerid, COLOR_SYNTAX, "You cannot operate this vehicle as you are not a Taxi Driver.");
@@ -32782,6 +32790,25 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				}				
 			}		
 		}
+	}
+	else if(newkeys & KEY_NO && GetPlayerState(playerid) == PLAYER_STATE_ONFOOT)
+	{
+        if(PlayerInfo[playerid][pCarryTrash])
+		{
+			for (new i = 1; i != MAX_VEHICLES; i ++) if (GetVehicleModel(i) == 408 && IsPlayerNearBoot(playerid, i))
+			{
+			    if (VehicleInfo[i][vehTrash] >= 10)
+			        return SCM(playerid, COLOR_RED, "This vehicle cannot hold anymore trash (limit: 10).");
+
+				VehicleInfo[i][vehTrash]++;
+
+				RemovePlayerAttachedObject(playerid, 4);
+				SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s has loaded a trash bag into the Trashmaster.", GetRPName(playerid));
+
+				PlayerInfo[playerid][pCarryTrash] = 0;
+				break;
+			}
+		}		
 	}	
 	if(PoolStarted && PlayingPool[playerid])
 	{
@@ -33433,11 +33460,6 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 	        SCM(playerid, COLOR_SYNTAX, "You cannot operate this vehicle as you are not a Pizzaman.");
 	        RemovePlayerFromVehicle(playerid);
 	        return 1;
-	    }
-		if((towtruck[0] <= vehicleid <= towtruck[2]) && (FactionInfo[PlayerInfo[playerid][pFaction]][fType] != FACTION_MECHANIC))
-	    {
-	        SCM(playerid, COLOR_SYNTAX, "You cannot operate this vehicle as you are not a Mechanic.");
-	        RemovePlayerFromVehicle(playerid);
 	    }
 	    if((courierVehicles[0] <= vehicleid <= courierVehicles[36]) && !PlayerHasJob(playerid, JOB_COURIER))
 	    {
@@ -58264,7 +58286,7 @@ CMD:respawncars(playerid, params[])
 		{
 	    	if(!IsVehicleOccupied(i) && !adminVehicle{i})
 		    {
-		        if((towtruck[0] <= i <= towtruck[2]) || (pizzaVehicles[0] <= i <= pizzaVehicles[5]) || (forkliftVehicles[0] <= i <= forkliftVehicles[5]) || (courierVehicles[0] <= i <= courierVehicles[36]) || (VIPVehicles[0] <= i <= VIPVehicles[29]) || (taxiVehicles[0] <= i <= taxiVehicles[3]) || (VehicleInfo[i][vJob] != JOB_NONE))
+		        if((garbagevehicle[0] <= i <= garbagevehicle[2]) || (pizzaVehicles[0] <= i <= pizzaVehicles[5]) || (forkliftVehicles[0] <= i <= forkliftVehicles[5]) || (courierVehicles[0] <= i <= courierVehicles[36]) || (VIPVehicles[0] <= i <= VIPVehicles[29]) || (taxiVehicles[0] <= i <= taxiVehicles[3]) || (VehicleInfo[i][vJob] != JOB_NONE))
 		        {
 	        		SetVehicleToRespawn(i);
 				}
@@ -89522,6 +89544,18 @@ public OnGarbageCreated(garbageid)
 	return 1;
 }
 
+stock IsPlayerNearBoot(playerid, vehicleid)
+{
+	static
+		Float:fX,
+		Float:fY,
+		Float:fZ;
+
+	GetVehicleBoot(vehicleid, fX, fY, fZ);
+
+	return (GetPlayerVirtualWorld(playerid) == GetVehicleVirtualWorld(vehicleid)) && IsPlayerInRangeOfPoint(playerid, 3.5, fX, fY, fZ);
+}
+
 stock Garbage_Save(garbageid)
 {
 	mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE `garbage` SET `garbageModel` = '%d', `garbageCapacity` = '%d', `garbageX` = '%.4f', `garbageY` = '%.4f', `garbageZ` = '%.4f', `garbageA` = '%.4f', `garbageInterior` = '%d', `garbageWorld` = '%d' WHERE `garbageID` = '%d'",
@@ -89577,11 +89611,12 @@ public UpdateTrashcans()
 				new string[128];
 				format(string, sizeof(string), "[Garbage %d]\n{FFFFFF}Trash Capacity: %d/20", i, GarbageData[i][garbageCapacity]);
 				Update3DTextLabelText(GarbageData[i][garbageText3D], COLOR_WHITE , string);
-					
+
 				if(GarbageData[i][garbageCapacity] >= 21) {
 					GarbageData[i][garbageCapacity] = 20;
 				}
 				Garbage_Refresh(i);
+				Garbage_Save(i);
 			}
 		}
 	}
@@ -89614,7 +89649,7 @@ public Garbage_Load()
 	return 1;
 }
 
-/*
+
 CMD:takebag(playerid, params[])
 {
 	new
@@ -89637,13 +89672,14 @@ CMD:takebag(playerid, params[])
    	Garbage_Save(id);
 
 	PlayerInfo[playerid][pCarryTrash] = 1;
-	SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s takes a trash bag from the garbage bin.", ReturnName(playerid, 0), string);
+
+	SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s takes a trash bag from the garbage bin.", GetRPName(playerid));
 
 	format(string, sizeof(string), "[Garbage %d]\n{FFFFFF}Trash Capacity: %d/20", id, GarbageData[id][garbageCapacity]);
   	UpdateDynamic3DTextLabelText(GarbageData[id][garbageText3D], COLOR_DARKBLUE, string);
 
   	SetPlayerAttachedObject(playerid, 4, 1264, 6, 0.000000, 0.000000, 0.000000, 0.000000, 270.000000, 90.000000, 0.500000, 0.500000, 0.500000);
-	ShowPlayerFooter(playerid, "Press ~y~'N'~w~ to load the garbage bag.");
+	GameTextForPlayer(playerid, "Press ~y~'N'~w~ to load the garbage bag.", 5000, 6);
 
 	return 1;
 }
@@ -89652,7 +89688,8 @@ CMD:dumpgarbage(playerid, params[])
 {
 	new
 		vehicleid = GetPlayerVehicleID(playerid),
-		id = Job_NearestPoint(playerid, 5.0);
+		id = IsPlayerInRangeOfPoint(playerid, 3.0, jobLocations[JOB_GARBAGE][jobX], jobLocations[JOB_GARBAGE][jobY], jobLocations[JOB_GARBAGE][jobZ]),
+		string[128];
 
 	if (PlayerInfo[playerid][pJob] != JOB_GARBAGE)
 	    return SendClientMessage(playerid, COLOR_WHITE, "You don't have the appropriate job.");
@@ -89660,20 +89697,23 @@ CMD:dumpgarbage(playerid, params[])
 	if (GetVehicleModel(vehicleid) != 408)
 	    return SendClientMessage(playerid, COLOR_WHITE, "You must be driving a garbage truck.");
 
-	if (id == -1 || JobData[id][jobType] != JOB_GARBAGE)
+	if (id == -1)
 	    return SendClientMessage(playerid, COLOR_WHITE, "You are not in range of any trash dump.");
 
-	if (CoreVehicles[vehicleid][vehTrash] < 1)
+	if (VehicleInfo[vehicleid][vehTrash] < 1)
 	    return SendClientMessage(playerid, COLOR_WHITE, "There is no trash loaded in this vehicle.");
 
-	GiveMoney(playerid, (CoreVehicles[vehicleid][vehTrash] * 25));
-	ShowPlayerFooter(playerid, "You have ~g~delivered~w~ the garbage!");
+	GivePlayerCash(playerid, (VehicleInfo[vehicleid][vehTrash] * 25));
 
-	SendServerMessage(playerid, "You have earned $%d for dumping %d bags of trash.", (CoreVehicles[vehicleid][vehTrash] * 15), CoreVehicles[vehicleid][vehTrash]);
-	CoreVehicles[vehicleid][vehTrash] = 0;
+	GameTextForPlayer(playerid, "You have ~g~delivered~w~ the garbage!", 5000, 6);
+
+	format(string, sizeof(string), "You have earned $%d for dumping %d bags of trash.", (VehicleInfo[vehicleid][vehTrash] * 15), VehicleInfo[vehicleid][vehTrash]);
+	SCM(playerid, COLOR_PURPLE, string);
+	VehicleInfo[vehicleid][vehTrash] = 0;
 
 	return 1;
-}*/
+}
+
 
 Garbage_Nearest(playerid)
 {
@@ -89684,6 +89724,8 @@ Garbage_Nearest(playerid)
 	}
 	return -1;
 }
+
+
 
 CMD:play(playerid, params[])
 {
