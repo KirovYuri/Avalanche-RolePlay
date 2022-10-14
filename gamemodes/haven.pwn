@@ -1971,7 +1971,6 @@ enum pEnum
 	pJailType,
 	pJailTime,
 	pMineTime,
-	pMineRock,
 	pGasPump,
 	pGasStation,
 	pEditPump,	
@@ -54864,7 +54863,7 @@ CMD:kiosk(playerid)
     strcat(string, "- "WHITE"Check "SVRCLR"/rules"WHITE" for a basic list of server rules.\n");
     strcat(string, "- "WHITE"Check "SVRCLR"/help"WHITE" to see available commands.\n\n");
     strcat(string, "Be sure to check out our website and forums at "SVRCLR""SERVER_URL""WHITE".\n");
-    strcat(string, "You can also join us on Discord at "SVRCLR"discord.io/az-rp"WHITE"\n\n");
+    strcat(string, "You can also join us on Discord at "SVRCLR"discord.io/[server]"WHITE"\n\n");
     strcat(string, ""WHITE"Have fun!");
     ShowPlayerDialog(playerid, DIALOG_KIOSK, DIALOG_STYLE_MSGBOX, "Welcome to "SVRCLR""SERVER_NAME"", string, "Close", "");
     return 1;
@@ -63212,6 +63211,7 @@ CMD:setstaff(playerid, params[])
 		    SM(targetid, COLOR_AQUA, "%s has removed your "SVRCLR"ban appealer{CCFFFF} status.", GetRPName(playerid));
 		}
 	}
+	
 	else if(!strcmp(option, "teacher", true))
 	{
 	    PlayerInfo[targetid][pTeacher] = status;
@@ -84748,24 +84748,6 @@ CMD:hmole(playerid, params[])
  	return 1;
 }
 
-CMD:info(playerid) callcmd::information(playerid);
-CMD:information(playerid)
-{
-    new string[2048];
-	strcat(string, ""SVRCLR"================================\n");
-	strcat(string, ""WHITE"Welcome To "SVRCLR""SERVER_NAME"!\n");
-	strcat(string, ""SVRCLR"================================\n\n\n");
-	strcat(string, ""YELLOW"[SERVER INFORMATION]\n");
-	strcat(string, ""WHITE"Server Owner: "BLUE"Hydrax/Kovalchin\n");
-	strcat(string, ""WHITE"Server Developer: "BLUE"Pepsi\n");
-	strcat(string, ""WHITE"Co-Owner: "BLUE"None\n");
-	strcat(string, ""WHITE"Server Ip: "SVRCLR""SERVER_IP"\n");
-	strcat(string, ""WHITE"Website: "SVRCLR"Soon!\n");
-	strcat(string, ""WHITE"Forum: "SVRCLR"Soon!\n");
-	strcat(string, ""WHITE"Discord: "SVRCLR""SERVER_URL"\n\n");
-	ShowPlayerDialog(playerid, DIALOG_NONE, DIALOG_STYLE_MSGBOX, ""SVRCLR"sc:rp "YELLOW"Server Information", string, "Close","");
-	return 1;
-}
 
 CMD:takecall(playerid, params[])
 {
@@ -89638,20 +89620,23 @@ stock Float:frandomEx(Float:min, Float:max) return min + (max - min) * random(32
 
 public UpdateTrashcans()
 {
-	for (new i = 0; i != MAX_GARBAGE_BINS; i ++) if (!GarbageData[i][garbageExists])
+	for (new i = 0; i != MAX_GARBAGE_BINS; i ++)
 	{
-	new rrX = randomEx(1,10);
-        if(GarbageData[i][garbageCapacity] <= 15)
+		if (GarbageData[i][garbageExists])
 		{
-            GarbageData[i][garbageCapacity] += rrX;
-		    new string[128];
-		    format(string, sizeof(string), "[Garbage %d]\n{FFFFFF}Trash Capacity: %d/20", i, GarbageData[i][garbageCapacity]);
-			Update3DTextLabelText(GarbageData[i][garbageText3D], COLOR_WHITE , string);
-			
-			if(GarbageData[i][garbageCapacity] >= 21) {
-                GarbageData[i][garbageCapacity] = 20;
+			new rrX = randomEx(1,10);
+			if(GarbageData[i][garbageCapacity] <= 15)
+			{
+				GarbageData[i][garbageCapacity] += rrX;
+				new string[128];
+				format(string, sizeof(string), "[Garbage %d]\n{FFFFFF}Trash Capacity: %d/20", i, GarbageData[i][garbageCapacity]);
+				Update3DTextLabelText(GarbageData[i][garbageText3D], COLOR_WHITE , string);
+					
+				if(GarbageData[i][garbageCapacity] >= 21) {
+					GarbageData[i][garbageCapacity] = 20;
+				}
+				Garbage_Refresh(i);
 			}
-			Garbage_Refresh(i);
 		}
 	}
 	return true;
