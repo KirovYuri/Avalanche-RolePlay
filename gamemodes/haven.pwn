@@ -17963,6 +17963,7 @@ public SecondTimer()
 					SetVehicleHealth(vehicleid, 251.0);
 				}
 			}
+			UpdateHungerThirstHUDForPlayer(i, floatround(PlayerInfo[i][pThirst]), floatround(PlayerInfo[i][pHunger]));
 	    	if(GetPlayerState(i) == PLAYER_STATE_DRIVER)
 			{ // UpdateSpeedo
 				new vehicleid = GetPlayerVehicleID(i);
@@ -18027,15 +18028,6 @@ public SecondTimer()
 					PlayerInfo[i][pCaptureTime] = 0;
 				}
 			}
-	       	/*if(Maskara[i] && !PlayerInfo[i][pAdminDuty])
-	    	{
-	        	format(string, sizeof(string), "Stranger_%d", MaskaraID[i]);
-				SetPlayerName(i, string);
-	    	}
-	    	if(!Maskara[i] && !PlayerInfo[i][pAdminDuty])
-	    	{
-				SetPlayerName(i, PlayerInfo[i][pUsername]);
-	    	}*/
 			if(PlayerInfo[i][pLoopAnim] && !PlayerInfo[i][pToggleTextdraws])
 			{
 				TextDrawShowForPlayer(i, AnimationTD);
@@ -18089,12 +18081,7 @@ public SecondTimer()
 					GivePlayerHealth(i, -2.00);
 				}
 			}
-			format(string, sizeof(string), "%d%", PlayerInfo[i][pHunger]);
-			PlayerTextDrawSetString(i, HungerTD[i][6], string);
-
-			format(string, sizeof(string), "%d%", PlayerInfo[i][pThirst]);
-			PlayerTextDrawSetString(i, HungerTD[i][7], string);
-	
+			
 			if (PlayerInfo[i][pSpeedTime] > 0)
 			{
 			    PlayerInfo[i][pSpeedTime]--;
@@ -27728,22 +27715,7 @@ public OnPlayerConnect(playerid)
     PlayerTextDrawUseBox(playerid, HungerTD[playerid][1], 1);
     PlayerTextDrawSetProportional(playerid, HungerTD[playerid][1], 1);
     PlayerTextDrawSetSelectable(playerid, HungerTD[playerid][1], 0);
-    
-    HungerTD[playerid][2] = CreatePlayerTextDraw(playerid, 78.000000, 307.000000, "ld_pool:ball");
-    PlayerTextDrawFont(playerid, HungerTD[playerid][2], 4);
-    PlayerTextDrawLetterSize(playerid, HungerTD[playerid][2], 0.600000, 2.000000);
-    PlayerTextDrawTextSize(playerid, HungerTD[playerid][2], 20.500000, 20.500000);
-    PlayerTextDrawSetOutline(playerid, HungerTD[playerid][2], 1);
-    PlayerTextDrawSetShadow(playerid, HungerTD[playerid][2], 0);
-    PlayerTextDrawAlignment(playerid, HungerTD[playerid][2], 1);
-    PlayerTextDrawColor(playerid, HungerTD[playerid][2], 255);
-    PlayerTextDrawBackgroundColor(playerid, HungerTD[playerid][2], 255);
-    PlayerTextDrawBoxColor(playerid, HungerTD[playerid][2], 50);
-    PlayerTextDrawUseBox(playerid, HungerTD[playerid][2], 1);
-    PlayerTextDrawSetProportional(playerid, HungerTD[playerid][2], 1);
-    PlayerTextDrawSetSelectable(playerid, HungerTD[playerid][2], 0);
-    
-    
+     
     HungerTD[playerid][3] = CreatePlayerTextDraw(playerid, 55.000000, 310.000000, "HUD:radar_burgershot");
     PlayerTextDrawFont(playerid, HungerTD[playerid][3], 4);
     PlayerTextDrawLetterSize(playerid, HungerTD[playerid][3], 0.600000, 2.000000);
@@ -27772,19 +27744,6 @@ public OnPlayerConnect(playerid)
     PlayerTextDrawSetProportional(playerid, HungerTD[playerid][4], 1);
     PlayerTextDrawSetSelectable(playerid, HungerTD[playerid][4], 0);
     
-    HungerTD[playerid][5] = CreatePlayerTextDraw(playerid, 109.000000, 310.000000, "V");
-    PlayerTextDrawFont(playerid, HungerTD[playerid][5], 2);
-    PlayerTextDrawLetterSize(playerid, HungerTD[playerid][5], 0.366665, 1.549998);
-    PlayerTextDrawTextSize(playerid, HungerTD[playerid][5], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, HungerTD[playerid][5], 0);
-    PlayerTextDrawSetShadow(playerid, HungerTD[playerid][5], 0);
-    PlayerTextDrawAlignment(playerid, HungerTD[playerid][5], 1);
-    PlayerTextDrawColor(playerid, HungerTD[playerid][5], -16776961);
-    PlayerTextDrawBackgroundColor(playerid, HungerTD[playerid][5], 255);
-    PlayerTextDrawBoxColor(playerid, HungerTD[playerid][5], 50);
-    PlayerTextDrawUseBox(playerid, HungerTD[playerid][5], 0);
-    PlayerTextDrawSetProportional(playerid, HungerTD[playerid][5], 1);
-    PlayerTextDrawSetSelectable(playerid, HungerTD[playerid][5], 0);
     
     HungerTD[playerid][6] = CreatePlayerTextDraw(playerid, 64.000000, 297.000000, "100%");
     PlayerTextDrawFont(playerid, HungerTD[playerid][6], 3);
@@ -27814,20 +27773,6 @@ public OnPlayerConnect(playerid)
     PlayerTextDrawSetProportional(playerid, HungerTD[playerid][7], 1);
     PlayerTextDrawSetSelectable(playerid, HungerTD[playerid][7], 0);
     
-    HungerTD[playerid][8] = CreatePlayerTextDraw(playerid, 116.000000, 297.000000, "100%");
-    PlayerTextDrawFont(playerid, HungerTD[playerid][8], 3);
-    PlayerTextDrawLetterSize(playerid, HungerTD[playerid][8], 0.220832, 0.899999);
-    PlayerTextDrawTextSize(playerid, HungerTD[playerid][8], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, HungerTD[playerid][8], 1);
-    PlayerTextDrawSetShadow(playerid, HungerTD[playerid][8], 0);
-    PlayerTextDrawAlignment(playerid, HungerTD[playerid][8], 2);
-    PlayerTextDrawColor(playerid, HungerTD[playerid][8], -1);
-    PlayerTextDrawBackgroundColor(playerid, HungerTD[playerid][8], 255);
-    PlayerTextDrawBoxColor(playerid, HungerTD[playerid][8], 50);
-    PlayerTextDrawUseBox(playerid, HungerTD[playerid][8], 0);
-    PlayerTextDrawSetProportional(playerid, HungerTD[playerid][8], 1);
-    PlayerTextDrawSetSelectable(playerid, HungerTD[playerid][8], 0);
-
 
 	PlayerTextDrawDestroy(playerid, _vhudTextFuel[playerid]);
 	_vhudTextFuel[playerid] = CreatePlayerTextDraw(playerid, 495.0, 133.0, "~b~Fuel: N/A");
@@ -89351,6 +89296,31 @@ LevelCheck(playerid)
 	}
     SaveServerInfo();
 	return 1;
+}
+
+stock UpdateHungerThirstHUDForPlayer(p, thirst, hunger)
+{
+	new szColor[4], str[128];
+
+	switch(thirst)
+	{
+		case 0..10: szColor = "~r~";
+		case 11..50: szColor = "~y~";
+		case 51..100: szColor = "~g~";
+	}
+
+	switch(hunger)
+	{
+		case 0..10: szColor = "~r~";
+		case 11..50: szColor = "~y~";
+		case 51..100: szColor = "~g~";
+	}
+
+	format(str, sizeof(str), "%s%i%", szColor, PlayerInfo[p][pThirst]);
+	PlayerTextDrawSetString(p, HungerTD[p][7], str);
+
+	format(str, sizeof(str), "%s%i%", szColor, PlayerInfo[p][pHunger]);
+	PlayerTextDrawSetString(p, HungerTD[p][6], str);
 }
 
 stock UpdateVehicleHUDForPlayer(p, fuel, speed)
