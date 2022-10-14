@@ -1749,7 +1749,6 @@ enum
 	JOB_PIZZAMAN,
 	JOB_COURIER,
 	JOB_FISHERMAN,
-	JOB_BODYGUARD,
 	JOB_MINER,
 	JOB_TAXIDRIVER,
 	JOB_DRUGDEALER,
@@ -1759,7 +1758,8 @@ enum
 	JOB_THIEF,
 	JOB_SWEEPER,
 	JOB_FARMER,
-    JOB_FORKLIFTER
+    JOB_FORKLIFTER,
+	JOB_GARBAGE
 };
 
 enum
@@ -3936,7 +3936,6 @@ new const jobLocations[][jobEnum] =
 	{"Pizzaman", 		2104.7771, -1805.1772, 13.5547},
 	{"Trucker",     	2212.6287,-2664.5117,13.5469},
 	{"Fisherman",   	393.2632,  -2070.5837, 7.8359},
-	{"Bodyguard",   	2227.4705, -1715.9694, 13.5302},
 	{"Miner",           448.9433, -853.2693, 29.8050},
 	{"Taxi Driver",     1748.1373, -1863.0981, 13.5755},
 	{"Drug Dealer",     2165.3611, -1673.0824, 15.0778},
@@ -3946,7 +3945,8 @@ new const jobLocations[][jobEnum] =
 	{"Thief",           1577.1469, -1475.1631, 14.2195},
 	{"Street Sweeper",  2238.607666, 2233.156982, 10.805954},
 	{"Farmer",          -382.8376, -1426.4506, 26.2830},
-	{"Forklifter",      2772.6768, -2423.9595, 13.6374}
+	{"Forklifter",      2772.6768, -2423.9595, 13.6374},
+	{"Garbageman",		2195.7111, -1971.56677, 13.7841}
 };
 
 enum MechEnum {
@@ -5899,12 +5899,6 @@ LocateMethod(playerid, params[])
 	    SetPlayerCheckpoint(playerid, jobLocations[JOB_FISHERMAN][jobX], jobLocations[JOB_FISHERMAN][jobY], jobLocations[JOB_FISHERMAN][jobZ], 3.0);
 	    SCM(playerid, COLOR_WHITE, "** Checkpoint marked at the location of the Fisherman job.");
 	}
-	else if(!strcmp(params, "bodyguard", true))
-	{
-	    PlayerInfo[playerid][pCP] = CHECKPOINT_MISC;
-	    SetPlayerCheckpoint(playerid, jobLocations[JOB_BODYGUARD][jobX], jobLocations[JOB_BODYGUARD][jobY], jobLocations[JOB_BODYGUARD][jobZ], 3.0);
-	    SCM(playerid, COLOR_WHITE, "** Checkpoint marked at the location of the Bodyguard job.");
-	}
 	else if(!strcmp(params, "miner", true))
 	{
 	    PlayerInfo[playerid][pCP] = CHECKPOINT_MISC;
@@ -5929,12 +5923,19 @@ LocateMethod(playerid, params[])
 	    SetPlayerCheckpoint(playerid, jobLocations[JOB_LAWYER][jobX], jobLocations[JOB_LAWYER][jobY], jobLocations[JOB_LAWYER][jobZ], 3.0);
 	    SCM(playerid, COLOR_WHITE, "** Checkpoint marked at the location of the Lawyer job.");
 	}
+	else if(!strcmp(params, "garbage", true))
+	{
+		PlayerInfo[playerid][pCP] = CHECKPOINT_MISC;
+		SetPlayerCheckpoint(playerid, jobLocations[JOB_GARBAGE][jobX], jobLocations[JOB_GARBAGE][jobY], jobLocations[JOB_GARBAGE][jobZ], 3.0);
+	    SCM(playerid, COLOR_WHITE, "** Checkpoint marked at the location of the Garbage job.");
+	}	
 	else if(!strcmp(params, "detective", true))
 	{
 	    PlayerInfo[playerid][pCP] = CHECKPOINT_MISC;
 	    SetPlayerCheckpoint(playerid, 1543.128051,-1666.266235,13.555849, 3.0);
 	    SCM(playerid, COLOR_WHITE, "** Checkpoint marked at the location of the Detective job.");
 	}
+	
 	/*else if(!strcmp(params, "hackerjob", true))
 	{
 	    PlayerInfo[playerid][pCP] = CHECKPOINT_MISC;
@@ -25509,7 +25510,7 @@ public OnGameModeInit()
 	SetTimer("InjuredTimer", 5000, true);
 	SetTimer("LotteryUpdate", 500000, true);
 	SetTimerEx("RandomFire", 7200000, true, "i", 1);
-	SetTimer("UpdateTrashcans",100,true);
+	SetTimer("UpdateTrashcans",60000,true);
 
     // FerrisWheel
 	FerrisWheelObjects[10]=CreateObject(18877,389.7734,-2028.4688,22,0,0,90,300);
@@ -49755,7 +49756,6 @@ CMD:jobhelp(playerid)
 		case JOB_PIZZAMAN: SCM(playerid, COLOR_WHITE, "** Job: /getpizza, /cancelcp.");
 		case JOB_COURIER: SCM(playerid, COLOR_WHITE, "** Job: /loadtruck, /deliver, /cancelcp.");
 		case JOB_FISHERMAN: SCM(playerid, COLOR_WHITE, "** Job: /fish, /myfish, /sellfish.");
-		case JOB_BODYGUARD: SCM(playerid, COLOR_WHITE, "** Job: /sellvest, /frisk.");
 		case JOB_MINER: SCM(playerid, COLOR_WHITE, "** Job: /mine, /cancelcp.");
 		case JOB_TAXIDRIVER: SCM(playerid, COLOR_WHITE, "** Job: /setfare, /takecall.");
         case JOB_DRUGDEALER: SCM(playerid, COLOR_WHITE, "** Job: /planthelp, /getcrate.");
@@ -49766,6 +49766,7 @@ CMD:jobhelp(playerid)
         case JOB_SWEEPER: SCM(playerid, COLOR_WHITE, "** Job: /startsweeping, /stopsweeping.");
         case JOB_FARMER: SCM(playerid, COLOR_WHITE, "** Job: /gather.");
 		case JOB_FORKLIFTER: SCM(playerid, COLOR_WHITE, "** Job: Hop in to forklift to begin");
+		case JOB_GARBAGE: SCM(playerid, COLOR_WHITE, "** Job: /takebag, /dumpgarbage.");
    	}
 
  	if(PlayerInfo[playerid][pSecondJob] != JOB_NONE)
@@ -49775,7 +49776,6 @@ CMD:jobhelp(playerid)
 			case JOB_PIZZAMAN: SCM(playerid, COLOR_WHITE, "** Secondary Job: /getpizza.");
 			case JOB_COURIER: SCM(playerid, COLOR_WHITE, "** Secondary Job: /load, /deliver.");
 			case JOB_FISHERMAN: SCM(playerid, COLOR_WHITE, "** Secondary Job: /fish, /myfish, /sellfish.");
-			case JOB_BODYGUARD: SCM(playerid, COLOR_WHITE, "** Secondary Job: /sellvest, /frisk.");
 			case JOB_MINER: SCM(playerid, COLOR_WHITE, "** Secondary Job: /mine.");
 			case JOB_TAXIDRIVER: SCM(playerid, COLOR_WHITE, "** Secondary Job: /setfare.");
 	        case JOB_DRUGDEALER: SCM(playerid, COLOR_WHITE, "** Secondary Job: /getdrug, /planthelp, /getcrate.");
@@ -49785,6 +49785,7 @@ CMD:jobhelp(playerid)
 	        case JOB_SWEEPER: SCM(playerid, COLOR_WHITE, "** Secondary Job: /startsweeping, /stopsweeping.");
 	        case JOB_FARMER: SCM(playerid, COLOR_WHITE, "** Secondary Job: /gather.");
 			case JOB_FORKLIFTER: SCM(playerid, COLOR_WHITE, "*** Secondary Job *** Hop in to forklift to begin");
+			case JOB_GARBAGE: SCM(playerid, COLOR_WHITE, "** Job: /takebag, /dumpgarbage.");
 	 	}
 	}
 
@@ -66674,7 +66675,7 @@ CMD:dropitem(playerid, params[])
 CMD:skill(playerid, params[]) return callcmd::skills(playerid, params);
 CMD:skills(playerid, params[])
 {
-	new string[1024], jobstring1[64], jobstring2[64], jobstring3[64],
+	new string[1024], jobstring1[64], jobstring2[64],
 	jobstring6[64], jobstring7[64], jobstring8[64], jobstring9[64];
 	if(GetJobLevel(playerid, JOB_COURIER) < 5)
 	{
@@ -66708,23 +66709,6 @@ CMD:skills(playerid, params[])
 	else
 	{
 		format(jobstring2, sizeof(jobstring2), "You have reached the maximum skill level for this job.");
-	}
-
-	if(GetJobLevel(playerid, JOB_BODYGUARD) < 5)
-	{
-		if(PlayerInfo[playerid][pGuardSkill] < 25) {
-			format(jobstring3, sizeof(jobstring3), "Sell %i more vests to level up.", 25 - PlayerInfo[playerid][pGuardSkill]);
-		} else if(PlayerInfo[playerid][pGuardSkill] < 50) {
-			format(jobstring3, sizeof(jobstring3), "Sell %i more vests to level up.", 50 - PlayerInfo[playerid][pGuardSkill]);
-		} else if(PlayerInfo[playerid][pGuardSkill] < 100) {
-			format(jobstring3, sizeof(jobstring3), "Sell %i more vests to level up.", 100 - PlayerInfo[playerid][pGuardSkill]);
-		} else if(PlayerInfo[playerid][pGuardSkill] < 200) {
-			format(jobstring3, sizeof(jobstring3), "Sell %i more vests to level up.", 200 - PlayerInfo[playerid][pGuardSkill]);
-		}
-	}
-	else
-	{
-		format(jobstring3, sizeof(jobstring3),"You have reached the maximum skill level for this job.");
 	}
 
 	/*if(GetJobLevel(playerid, JOB_ARMSDEALER) < 5)
@@ -66818,14 +66802,12 @@ CMD:skills(playerid, params[])
 									"Job Detective\t{ffff00}Level: %d\t%s\n" \
 									"Job Fisherman\t{ffff00}Level: %d\t%s\n" \
 									"Job Drug Dealer\t{ffff00}Level: %d\t%s\n" \
-									"Job Bodyguard\t{ffff00}Level: %d\t%s\n" \
 									"Job Thief\t{ffff00}Level: %d\t%s\n",							
 									GetJobLevel(playerid, JOB_COURIER), jobstring1,
 									GetJobLevel(playerid, JOB_LAWYER), jobstring7,
 									GetJobLevel(playerid, JOB_DETECTIVE), jobstring8,
 									GetJobLevel(playerid, JOB_FISHERMAN), jobstring2,
 									GetJobLevel(playerid, JOB_DRUGDEALER), jobstring6,
-									GetJobLevel(playerid, JOB_BODYGUARD), jobstring3,
 	                                GetJobLevel(playerid, JOB_THIEF), jobstring9);
 	ShowPlayerDialog(playerid, 0, DIALOG_STYLE_TABLIST, ""SVRCLR"Job Skills", string, "Close", "");
 	return 1;
@@ -66933,43 +66915,7 @@ CMD:myfish(playerid, params[])
 	return 1;
 }
 
-CMD:sellvest(playerid, params[])
-{
-	new targetid, amount;
 
-	if(!PlayerHasJob(playerid, JOB_BODYGUARD))
-	{
-	    return SCM(playerid, COLOR_SYNTAX, "You can't use this command as you're not a Bodyguard.");
-	}
-	if(sscanf(params, "ui", targetid, amount))
-	{
-	    return SCM(playerid, COLOR_SYNTAX, "Usage: /sellvest [playerid] [amount]");
-	}
-	if(!IsPlayerConnected(targetid) || !IsPlayerInRangeOfPlayer(playerid, targetid, 5.0))
-	{
-	    return SCM(playerid, COLOR_SYNTAX, "The player specified is disconnected or out of range.");
-	}
-	if(targetid == playerid)
-	{
-	    return SCM(playerid, COLOR_SYNTAX, "You can't sell to yourself.");
-	}
-	if(amount < 100 || amount > 500)
-	{
-	    return SCM(playerid, COLOR_SYNTAX, "The amount specified must range between $100 and $500.");
-	}
-	if(gettime() - PlayerInfo[playerid][pLastSell] < 10)
-	{
-	    return SM(playerid, COLOR_SYNTAX, "You can only use this command every 10 seconds. Please wait %i more seconds.", 10 - (gettime() - PlayerInfo[playerid][pLastSell]));
-	}
-
-	PlayerInfo[playerid][pLastSell] = gettime();
-	PlayerInfo[targetid][pVestOffer] = playerid;
-	PlayerInfo[targetid][pVestPrice] = amount;
-
-	SM(targetid, COLOR_AQUA, "** %s offered you a vest with 50 points of armor for $%i (/accept vest).", GetRPName(playerid), amount);
-	SM(playerid, COLOR_AQUA, "** You offered %s a vest with 50 points of armor for $%i.", GetRPName(targetid), amount);
-	return 1;
-}
 
 CMD:getmats(playerid, params[])
 {
@@ -89666,6 +89612,77 @@ public Garbage_Load()
 		Garbage_Refresh(i);
 	}
 	return 1;
+}
+
+/*
+CMD:takebag(playerid, params[])
+{
+	new
+		id = Garbage_Nearest(playerid),
+		string[64];
+
+	if (PlayerInfo[playerid][pJob] != JOB_GARBAGE)
+	    return SendClientMessage(playerid, COLOR_WHITE, "You don't have the appropriate job.");
+
+	if (id == -1)
+	    return SendClientMessage(playerid, COLOR_WHITE, "You are not in range of any garbage bin.");
+
+	if (GarbageData[id][garbageCapacity] < 1)
+	    return SendClientMessage(playerid, COLOR_WHITE, "This garbage bin is empty.");
+
+	if (PlayerInfo[playerid][pCarryTrash])
+	    return SendClientMessage(playerid, COLOR_WHITE, "You are already carrying a garbage bag.");
+
+    GarbageData[id][garbageCapacity]--;
+   	Garbage_Save(id);
+
+	PlayerInfo[playerid][pCarryTrash] = 1;
+	SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s takes a trash bag from the garbage bin.", ReturnName(playerid, 0), string);
+
+	format(string, sizeof(string), "[Garbage %d]\n{FFFFFF}Trash Capacity: %d/20", id, GarbageData[id][garbageCapacity]);
+  	UpdateDynamic3DTextLabelText(GarbageData[id][garbageText3D], COLOR_DARKBLUE, string);
+
+  	SetPlayerAttachedObject(playerid, 4, 1264, 6, 0.000000, 0.000000, 0.000000, 0.000000, 270.000000, 90.000000, 0.500000, 0.500000, 0.500000);
+	ShowPlayerFooter(playerid, "Press ~y~'N'~w~ to load the garbage bag.");
+
+	return 1;
+}
+
+CMD:dumpgarbage(playerid, params[])
+{
+	new
+		vehicleid = GetPlayerVehicleID(playerid),
+		id = Job_NearestPoint(playerid, 5.0);
+
+	if (PlayerInfo[playerid][pJob] != JOB_GARBAGE)
+	    return SendClientMessage(playerid, COLOR_WHITE, "You don't have the appropriate job.");
+
+	if (GetVehicleModel(vehicleid) != 408)
+	    return SendClientMessage(playerid, COLOR_WHITE, "You must be driving a garbage truck.");
+
+	if (id == -1 || JobData[id][jobType] != JOB_GARBAGE)
+	    return SendClientMessage(playerid, COLOR_WHITE, "You are not in range of any trash dump.");
+
+	if (CoreVehicles[vehicleid][vehTrash] < 1)
+	    return SendClientMessage(playerid, COLOR_WHITE, "There is no trash loaded in this vehicle.");
+
+	GiveMoney(playerid, (CoreVehicles[vehicleid][vehTrash] * 25));
+	ShowPlayerFooter(playerid, "You have ~g~delivered~w~ the garbage!");
+
+	SendServerMessage(playerid, "You have earned $%d for dumping %d bags of trash.", (CoreVehicles[vehicleid][vehTrash] * 15), CoreVehicles[vehicleid][vehTrash]);
+	CoreVehicles[vehicleid][vehTrash] = 0;
+
+	return 1;
+}*/
+
+Garbage_Nearest(playerid)
+{
+    for (new i = 0; i != MAX_GARBAGE_BINS; i ++) if (GarbageData[i][garbageExists] && IsPlayerInRangeOfPoint(playerid, 3.0, GarbageData[i][garbagePos][0], GarbageData[i][garbagePos][1], GarbageData[i][garbagePos][2]))
+	{
+		if (GetPlayerInterior(playerid) == GarbageData[i][garbageInterior] && GetPlayerVirtualWorld(playerid) == GarbageData[i][garbageWorld])
+			return i;
+	}
+	return -1;
 }
 
 CMD:play(playerid, params[])
