@@ -697,11 +697,8 @@ new InsideTut[MAX_PLAYERS];
 new InsideShamal[MAX_PLAYERS];
 
 // Login Textdraws
-
-new Text:RegisterScreen[25];
 new Text:ObjectsLoadingTD[4];
 new Text:BannedTD[5];
-new Text:MaggieTD;
 
 // Textdraws
 new PlayerText:SHOWID[MAX_PLAYERS][16];
@@ -2367,7 +2364,6 @@ enum pEnum
 	pHungerTimer,
 	pThirst,
 	pThirstTimer,
-	pCovid,
 	pCovidTimer,
 
 	Text3D:aMeID,
@@ -2928,7 +2924,6 @@ new queryBuffer[1024];
 #endif
 
 new PlayerText:HungerTD[MAX_PLAYERS][9];
-new PlayerText:StatsTD[MAX_PLAYERS];
 
 new Text:AnimationTD;
 new Text:TimeTD;
@@ -9562,7 +9557,7 @@ public SavePlayerVariables(playerid)
 			PlayerInfo[playerid][bpWeapons][4], PlayerInfo[playerid][bpWeapons][5], PlayerInfo[playerid][bpWeapons][6], PlayerInfo[playerid][bpWeapons][7], PlayerInfo[playerid][bpWeapons][8], PlayerInfo[playerid][bpWeapons][9], PlayerInfo[playerid][bpWeapons][10], PlayerInfo[playerid][bpWeapons][11], PlayerInfo[playerid][bpWeapons][12], PlayerInfo[playerid][bpWeapons][13], PlayerInfo[playerid][bpWeapons][14], PlayerInfo[playerid][pID]);
 		mysql_tquery(connectionID, queryBuffer);
 
-		mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE users SET hunger = %i, hungertimer = %i, thirst = %i, thirsttimer = %i, covid = %i, covidtimer = %i, Lottery = %i, LotteryB = %i, comserv = %i where uid = %d", PlayerInfo[playerid][pHunger], PlayerInfo[playerid][pHungerTimer], PlayerInfo[playerid][pThirst], PlayerInfo[playerid][pThirstTimer], PlayerInfo[playerid][pCovid], PlayerInfo[playerid][pCovidTimer], PlayerInfo[playerid][pLottery],PlayerInfo[playerid][pLotteryB],PlayerInfo[playerid][pComserv],PlayerInfo[playerid][pID]);
+		mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE users SET hunger = %i, hungertimer = %i, thirst = %i, thirsttimer = %i, Lottery = %i, LotteryB = %i, comserv = %i where uid = %d", PlayerInfo[playerid][pHunger], PlayerInfo[playerid][pHungerTimer], PlayerInfo[playerid][pThirst], PlayerInfo[playerid][pThirstTimer], PlayerInfo[playerid][pLottery],PlayerInfo[playerid][pLotteryB],PlayerInfo[playerid][pComserv],PlayerInfo[playerid][pID]);
 		mysql_tquery(connectionID, queryBuffer);
 
         mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE users SET repairkit = %i WHERE uid = %i", PlayerInfo[playerid][pRepairkit], PlayerInfo[playerid][pID]);
@@ -18094,57 +18089,12 @@ public SecondTimer()
 					GivePlayerHealth(i, -2.00);
 				}
 			}
-			if(FaceMask[i])
-			{
-				if(++PlayerInfo[i][pCovidTimer] >= 120 && PlayerInfo[i][pCovid] < 50) // 2 minutes
-				{
-					PlayerInfo[i][pCovidTimer] = 0;
-					PlayerInfo[i][pCovid] += 1;
-
-					if(PlayerInfo[i][pCovid] == 45)
-					{
-						SendMessage(i, COLOR_GREY, "You have a fever, you need to go to the pharmacy and buy an item to cure.");
-					}
-					if(PlayerInfo[i][pCovid] >= 50) // 10 minutes
-					{
-						//Dyuze(i, "COVID ALERT", "YOU ARE INFECTED.");
-						SendMessage(i, COLOR_GREY, "Covid system is already disabled by our developer.");
-						//SetPlayerHealth(i, 0);
-					}
-				}
-			}
-			else
-			{
-			    if(++PlayerInfo[i][pCovidTimer] >= 120 && PlayerInfo[i][pCovid] < 50) // 2 minutes
-				{
-					PlayerInfo[i][pCovidTimer] = 0;
-					PlayerInfo[i][pCovid] += 1;
-
-					if(PlayerInfo[i][pCovid] == 45)
-					{
-						SendMessage(i, COLOR_GREY, "You have a fever, you need to go to the pharmacy and buy an item to cure.");
-					}
-					if(PlayerInfo[i][pCovid] >= 50) // 2 minutes and 30 seconds.
-					{
-						//Dyuze(i, "COVID ALERT", "YOU ARE INFECTED.");
-						SendMessage(i, COLOR_GREY, "Covid system is already disabled by our developer.");
-						//SetPlayerHealth(i, 0);
-					}
-				}
-			}
 			format(string, sizeof(string), "%d%", PlayerInfo[i][pHunger]);
 			PlayerTextDrawSetString(i, HungerTD[i][6], string);
 
 			format(string, sizeof(string), "%d%", PlayerInfo[i][pThirst]);
 			PlayerTextDrawSetString(i, HungerTD[i][7], string);
 	
-			format(string, sizeof(string), "%d%", PlayerInfo[i][pCovid]);
-			PlayerTextDrawSetString(i, HungerTD[i][8], string);
-
-            format(string, sizeof(string), "CITIZENID: ~y~%d", i);
-            PlayerTextDrawSetString(i, StatsTD[i], string);
-            PlayerTextDrawShow(i, StatsTD[i]);
-
 			if (PlayerInfo[i][pSpeedTime] > 0)
 			{
 			    PlayerInfo[i][pSpeedTime]--;
@@ -18286,16 +18236,6 @@ public SecondTimer()
 			if(PlayerInfo[i][pDraggedBy] != INVALID_PLAYER_ID)
 			{
 	    		TeleportToPlayer(i, PlayerInfo[i][pDraggedBy]);
-			}
-			if(PlayerInfo[i][pFaceMask] > 0 && gettime() > PlayerInfo[i][pFMTime])
-			{
-			    PlayerInfo[i][pFaceMask] = 0;
-			    PlayerInfo[i][pFMTime] = 0;
-
-			    mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE users SET facemask = 0, fmtime = 0, WHERE uid = %i", PlayerInfo[i][pID]);
-			    mysql_tquery(connectionID, queryBuffer);
-
-			    SCM(i, COLOR_LIGHTRED, "Your facemask has expired, make sure to buy one again or else you'll suffer the consequences.");
 			}
 			if(PlayerInfo[i][pVIPPackage] > 0 && gettime() > PlayerInfo[i][pVIPTime])
 			{
@@ -18531,7 +18471,6 @@ public SecondTimer()
 					PlayerInfo[i][pDirtyCash] = 0;
 					PlayerInfo[i][pBleeding] = 0;
 					PlayerInfo[i][pBrokenLeg] = 0;	
-					PlayerInfo[i][pCovid] = 0; // Covid
 					PlayerInfo[i][pCovidTimer] = 0;
 
 					PlayerInfo[i][pHospital] = 0;
@@ -20721,8 +20660,6 @@ public OnAdminOfflineCheck(playerid, username[])
 		PlayerInfo[MAX_PLAYERS][pRepairkit] = cache_get_field_content_int(0, "repairkit");
 		PlayerInfo[MAX_PLAYERS][pFirstAid] = cache_get_field_content_int(0, "firstaid");
 		PlayerInfo[MAX_PLAYERS][pNationalID] = cache_get_field_content_int(0, "nationalid");
-		PlayerInfo[MAX_PLAYERS][pFaceMask] = cache_get_field_content_int(0, "facemask");
-		PlayerInfo[MAX_PLAYERS][pFMTime] = cache_get_field_content_int(0, "fmtime");
 		PlayerInfo[MAX_PLAYERS][pVIPPackage] = cache_get_field_content_int(0, "vippackage");
 		PlayerInfo[MAX_PLAYERS][pVIPTime] = cache_get_field_content_int(0, "viptime");
 		PlayerInfo[MAX_PLAYERS][pVIPCooldown] = cache_get_field_content_int(0, "vipcooldown");
@@ -20784,7 +20721,6 @@ public OnAdminOfflineCheck(playerid, username[])
 		PlayerInfo[MAX_PLAYERS][pHungerTimer] = cache_get_field_content_int(0, "hungertimer");
 		PlayerInfo[MAX_PLAYERS][pThirst] = cache_get_field_content_int(0, "thirst");
 		PlayerInfo[MAX_PLAYERS][pThirstTimer] = cache_get_field_content_int(0, "thirsttimer");
-		PlayerInfo[MAX_PLAYERS][pCovid] = cache_get_field_content_int(0, "covid");
 		PlayerInfo[MAX_PLAYERS][pCovidTimer] = cache_get_field_content_int(0, "covidtimer");
 		PlayerInfo[MAX_PLAYERS][pLottery] = cache_get_field_content_int(0, "Lottery");
 		PlayerInfo[MAX_PLAYERS][pLotteryB] = cache_get_field_content_int(0, "LotteryB");
@@ -21762,8 +21698,6 @@ public OnQueryFinished(threadid, extraid)
 				PlayerInfo[extraid][pRepairkit] = cache_get_field_content_int(0, "repairkit");
 				PlayerInfo[extraid][pFirstAid] = cache_get_field_content_int(0, "firstaid");
 		        PlayerInfo[extraid][pNationalID] = cache_get_field_content_int(0, "nationalid");
-				PlayerInfo[extraid][pFaceMask] = cache_get_field_content_int(0, "facemask");
-				PlayerInfo[extraid][pFMTime] = cache_get_field_content_int(0, "fmtime");
 				PlayerInfo[extraid][pVIPPackage] = cache_get_field_content_int(0, "vippackage");
 				PlayerInfo[extraid][pVIPTime] = cache_get_field_content_int(0, "viptime");
 				PlayerInfo[extraid][pVIPCooldown] = cache_get_field_content_int(0, "vipcooldown");
@@ -21876,7 +21810,6 @@ public OnQueryFinished(threadid, extraid)
 				PlayerInfo[extraid][pHungerTimer] = cache_get_field_content_int(0, "hungertimer");
 				PlayerInfo[extraid][pThirst] = cache_get_field_content_int(0, "thirst");
 				PlayerInfo[extraid][pThirstTimer] = cache_get_field_content_int(0, "thirsttimer");
-				PlayerInfo[extraid][pCovid] = cache_get_field_content_int(0, "covid");
 				PlayerInfo[extraid][pCovidTimer] = cache_get_field_content_int(0, "covidtimer");
 				PlayerInfo[extraid][pLottery] = cache_get_field_content_int(0, "Lottery");
 				PlayerInfo[extraid][pLotteryB] = cache_get_field_content_int(0, "LotteryB");
@@ -26596,8 +26529,6 @@ public OnPlayerConnect(playerid)
 	PlayerInfo[playerid][pCourse] = 0;
 	PlayerInfo[playerid][pCitizen] = 0;
 	PlayerInfo[playerid][pNationalID] = 0;
-	PlayerInfo[playerid][pFaceMask] = 0;
-	PlayerInfo[playerid][pFMTime] = 0;
 	PlayerInfo[playerid][pVIPPackage] = 0;
 	PlayerInfo[playerid][pVIPTime] = 14;
 	PlayerInfo[playerid][pVIPCooldown] = 0;
@@ -26829,7 +26760,6 @@ public OnPlayerConnect(playerid)
 	PlayerInfo[playerid][pHungerTimer] = 0;
 	PlayerInfo[playerid][pThirst] = 100;
 	PlayerInfo[playerid][pThirstTimer] = 0;
-	PlayerInfo[playerid][pCovid] = 0;
 	PlayerInfo[playerid][pCovidTimer] = 0;
 	PlayerInfo[playerid][pLottery] = 0;
 	PlayerInfo[playerid][pLotteryB] = 0;
@@ -27650,20 +27580,6 @@ public OnPlayerConnect(playerid)
 	PlayerTextDrawSetPreviewRot(playerid, SHOWID[playerid][15], -10.000000, 0.000000, -20.000000, 1.000000);
 	PlayerTextDrawSetPreviewVehCol(playerid, SHOWID[playerid][15], 1, 1);
 
-    // Global TextDraw
-    MaggieTD = TextDrawCreate(88.000000, 424.000000, "Star Roleplay~n~~r~Android/Pc");
-    TextDrawFont(MaggieTD, 1);
-    TextDrawLetterSize(MaggieTD, 0.216666, 1.100000);
-    TextDrawTextSize(MaggieTD, 12.000000, 640.000000);
-    TextDrawSetOutline(MaggieTD, 1);
-    TextDrawSetShadow(MaggieTD, 1);
-    TextDrawAlignment(MaggieTD, 2);
-    TextDrawColor(MaggieTD, -1);
-    TextDrawBackgroundColor(MaggieTD, 255);
-    TextDrawBoxColor(MaggieTD, 101);
-    TextDrawUseBox(MaggieTD, 0);
-    TextDrawSetProportional(MaggieTD, 1);
-    TextDrawSetSelectable(MaggieTD, 0);
 
     // Ban Textdraw
 	BannedTD[0] = TextDrawCreate(1.529386, 1.583316, "box");
@@ -27827,19 +27743,6 @@ public OnPlayerConnect(playerid)
     PlayerTextDrawSetProportional(playerid, HungerTD[playerid][2], 1);
     PlayerTextDrawSetSelectable(playerid, HungerTD[playerid][2], 0);
     
-    StatsTD[playerid] = CreatePlayerTextDraw(playerid, 54.000000, 329.000000, "CITIZENID: ~y~0");
-    PlayerTextDrawFont(playerid, StatsTD[playerid], 2);
-    PlayerTextDrawLetterSize(playerid, StatsTD[playerid], 0.270832, 1.199998);
-    PlayerTextDrawTextSize(playerid, StatsTD[playerid], 400.000000, 17.000000);
-    PlayerTextDrawSetOutline(playerid, StatsTD[playerid], 1);
-    PlayerTextDrawSetShadow(playerid, StatsTD[playerid], 0);
-    PlayerTextDrawAlignment(playerid, StatsTD[playerid], 1);
-    PlayerTextDrawColor(playerid, StatsTD[playerid], -1);
-    PlayerTextDrawBackgroundColor(playerid, StatsTD[playerid], 255);
-    PlayerTextDrawBoxColor(playerid, StatsTD[playerid], 50);
-    PlayerTextDrawUseBox(playerid, StatsTD[playerid], 0);
-    PlayerTextDrawSetProportional(playerid, StatsTD[playerid], 1);
-    PlayerTextDrawSetSelectable(playerid, StatsTD[playerid], 0);
     
     HungerTD[playerid][3] = CreatePlayerTextDraw(playerid, 55.000000, 310.000000, "HUD:radar_burgershot");
     PlayerTextDrawFont(playerid, HungerTD[playerid][3], 4);
@@ -28264,7 +28167,6 @@ public OnPlayerSpawn(playerid)
 			Float:y,
 			Float:z;
     TextDrawShowForPlayer(playerid, Textdraw2);
-    TextDrawShowForPlayer(playerid, MaggieTD);
 	TextDrawShowForPlayer(playerid, TimeTD1);
 	TextDrawShowForPlayer(playerid, DateTD);
 
@@ -40213,12 +40115,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			}
 			else
 			{
-			    for(new i = 0; i < 15; i++)
-			    {
-                    SelectTextDraw(playerid,0x33AA33AA);
-		        	TextDrawShowForPlayer(playerid, RegisterScreen[i]);
-			        KickPlayer(playerid);
-                }
+				KickPlayer(playerid);
 			}
 		}
 		case DIALOG_CONFIRMPASS:
@@ -41697,24 +41594,6 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	                        {
 	                            return SendClientMessage(playerid, COLOR_GREY, "You don't have enough money. You can't buy this.");
 	                        }
-
- 							PlayerInfo[playerid][pCovid] -= 25;
-							PlayerInfo[playerid][pCovidTimer] = 0;
-			        		if (PlayerInfo[playerid][pCovid] < 0)
-							{
-								PlayerInfo[playerid][pCovid] = 0;
-							}
-
-	                        GivePlayerCash(playerid, -price);
-	                        GivePlayerHealth(playerid, 10.0);
-
-							BusinessInfo[businessid][bCash] += price;
-	                        BusinessInfo[businessid][bProducts]--;
-
-	                        mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE businesses SET cash = %i, products = %i WHERE id = %i", BusinessInfo[businessid][bCash], BusinessInfo[businessid][bProducts], BusinessInfo[businessid][bID]);
-	                        mysql_tquery(connectionID, queryBuffer);
-
-	                        SendProximityMessage(playerid, 20.0, SERVER_COLOR, "**{C2A2DA} %s paid $%i to the cashier and recieved an alcohol.", GetRPName(playerid), price);
 						}
 						case 1:
 				        {
@@ -41724,24 +41603,6 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	                        {
 	                            return SendClientMessage(playerid, COLOR_GREY, "You don't have enough money. You can't buy this.");
 	                        }
-
-							PlayerInfo[playerid][pCovid] -= 30;
-							PlayerInfo[playerid][pCovidTimer] = 0;
-			        		if (PlayerInfo[playerid][pCovid] < 0)
-							{
-								PlayerInfo[playerid][pCovid] = 0;
-							}
-
-	                        GivePlayerCash(playerid, -price);
-	                        GivePlayerHealth(playerid, 15.0);
-
-							BusinessInfo[businessid][bCash] += price;
-	                        BusinessInfo[businessid][bProducts]--;
-
-	                        mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE businesses SET cash = %i, products = %i WHERE id = %i", BusinessInfo[businessid][bCash], BusinessInfo[businessid][bProducts], BusinessInfo[businessid][bID]);
-	                        mysql_tquery(connectionID, queryBuffer);
-
-	                        SendProximityMessage(playerid, 20.0, SERVER_COLOR, "**{C2A2DA} %s paid $%i to the cashier and received biogesic.", GetRPName(playerid), price);
 						}
 						case 2:
 				        {
@@ -41751,24 +41612,6 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	                        {
 	                            return SendClientMessage(playerid, COLOR_GREY, "You don't have enough money. You can't buy this.");
 	                        }
-
-        					PlayerInfo[playerid][pCovid] -= 35;
-							PlayerInfo[playerid][pCovidTimer] = 0;
-			        		if (PlayerInfo[playerid][pCovid] < 0)
-							{
-								PlayerInfo[playerid][pCovid] = 0;
-							}
-
-	                        GivePlayerCash(playerid, -price);
-	                        GivePlayerHealth(playerid, 20.0);
-
-							BusinessInfo[businessid][bCash] += price;
-	                        BusinessInfo[businessid][bProducts]--;
-
-	                        mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE businesses SET cash = %i, products = %i WHERE id = %i", BusinessInfo[businessid][bCash], BusinessInfo[businessid][bProducts], BusinessInfo[businessid][bID]);
-	                        mysql_tquery(connectionID, queryBuffer);
-
-	                        SendProximityMessage(playerid, 20.0, SERVER_COLOR, "**{C2A2DA} %s paid $%i to the cashier and received paracetamol.", GetRPName(playerid), price);
 						}
 						case 3:
 				        {
@@ -41778,31 +41621,6 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	                        {
 	                            return SendClientMessage(playerid, COLOR_GREY, "You don't have enough money. You can't buy this.");
 	                        }
-	                        
-	                        if(PlayerInfo[playerid][pFaceMask] == 0)
-	                        {
-
-								PlayerInfo[playerid][pCovidTimer] = 0;
-								PlayerInfo[playerid][pFaceMask] = 1;
-								PlayerInfo[playerid][pFMTime] = gettime() + (1 * 86400);
-
-		                        GivePlayerCash(playerid, -price);
-
-								BusinessInfo[businessid][bCash] += price;
-		                        BusinessInfo[businessid][bProducts]--;
-
-		                        mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE businesses SET cash = %i, products = %i WHERE id = %i", BusinessInfo[businessid][bCash], BusinessInfo[businessid][bProducts], BusinessInfo[businessid][bID]);
-		                        mysql_tquery(connectionID, queryBuffer);
-		                        
-								mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE users SET facemask = %i, fmtime = %i WHERE uid = %i", PlayerInfo[playerid][pFaceMask], PlayerInfo[playerid][pFMTime], PlayerInfo[playerid][pID]);
-                                mysql_tquery(connectionID, queryBuffer);
-                                
-	                        	SendProximityMessage(playerid, 20.0, SERVER_COLOR, "**{C2A2DA} %s paid $%i to the cashier and received facemask with 1 day expiry.", GetRPName(playerid), price);
-							}
-							else
-							{
-								SCM(playerid, COLOR_GREY1, "You can't purchase this item as you still have a facemask.");
-							}
 						}
 						case 4:
 				        {
@@ -41812,31 +41630,6 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	                        {
 	                            return SendClientMessage(playerid, COLOR_GREY, "You don't have enough money. You can't buy this.");
 	                        }
-
-							if(PlayerInfo[playerid][pFaceMask] == 0)
-	                        {
-
-								PlayerInfo[playerid][pCovidTimer] = 0;
-								PlayerInfo[playerid][pFaceMask] = 1;
-								PlayerInfo[playerid][pFMTime] = gettime() + (7 * 86400);
-
-		                        GivePlayerCash(playerid, -price);
-
-								BusinessInfo[businessid][bCash] += price;
-		                        BusinessInfo[businessid][bProducts]--;
-
-		                        mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE businesses SET cash = %i, products = %i WHERE id = %i", BusinessInfo[businessid][bCash], BusinessInfo[businessid][bProducts], BusinessInfo[businessid][bID]);
-		                        mysql_tquery(connectionID, queryBuffer);
-
-								mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE users SET facemask = %i, fmtime = %i WHERE uid = %i", PlayerInfo[playerid][pFaceMask], PlayerInfo[playerid][pFMTime], PlayerInfo[playerid][pID]);
-                                mysql_tquery(connectionID, queryBuffer);
-
-	                        	SendProximityMessage(playerid, 20.0, SERVER_COLOR, "**{C2A2DA} %s paid $%i to the cashier and received facemask with 1 week expiry.", GetRPName(playerid), price);
-							}
-							else
-							{
-								SCM(playerid, COLOR_GREY1, "You can't purchase this item as you still have a facemask.");
-							}
 						}
 						case 5:
 				        {
@@ -41846,30 +41639,6 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	                        {
 	                            return SendClientMessage(playerid, COLOR_GREY, "You don't have enough money. You can't buy this.");
 	                        }
-
-							if(PlayerInfo[playerid][pFaceMask] == 0)
-	                        {
-
-								PlayerInfo[playerid][pCovidTimer] = 0;
-								PlayerInfo[playerid][pFaceMask] = 1;
-								PlayerInfo[playerid][pFMTime] = gettime() + (30 * 86400);
-
-		                        GivePlayerCash(playerid, -price);
-
-								BusinessInfo[businessid][bCash] += price;
-		                        BusinessInfo[businessid][bProducts]--;
-
-		                        mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE businesses SET cash = %i, products = %i WHERE id = %i", BusinessInfo[businessid][bCash], BusinessInfo[businessid][bProducts], BusinessInfo[businessid][bID]);
-		                        mysql_tquery(connectionID, queryBuffer);
-
-								mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE users SET facemask = %i, fmtime = %i WHERE uid = %i", PlayerInfo[playerid][pFaceMask], PlayerInfo[playerid][pFMTime], PlayerInfo[playerid][pID]);
-                                mysql_tquery(connectionID, queryBuffer);
-	                        	SendProximityMessage(playerid, 20.0, SERVER_COLOR, "**{C2A2DA} %s paid $%i to the cashier and received facemask with 30 days expiry.", GetRPName(playerid), price);
-							}
-							else
-							{
-								SCM(playerid, COLOR_GREY1, "You can't purchase this item as you still have a facemask.");
-							}
 						}
 						case 6:
 						{
@@ -56197,7 +55966,6 @@ CMD:revive(playerid, params[])
 	PlayerInfo[targetid][pHungerTimer] = 0;
     PlayerInfo[targetid][pThirst] = 100;
 	PlayerInfo[targetid][pThirstTimer] = 0;
-	PlayerInfo[targetid][pCovid] = 0;
 	PlayerInfo[targetid][pCovidTimer] = 0;
 	PlayerInfo[targetid][pBrokenLeg] = 0;
 	PlayerInfo[targetid][pBleeding] = 0;
@@ -59973,29 +59741,6 @@ CMD:setstat(playerid, params[])
 	    SendMessage(playerid, COLOR_WHITE, "** You have set %s's hunger to %i.", GetRPName(targetid), value);
 
 		mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE users SET hunger = %i, hungertimer = %i WHERE uid = %i", PlayerInfo[playerid][pHunger], PlayerInfo[playerid][pHungerTimer], PlayerInfo[playerid][pID]);
-		mysql_tquery(connectionID, queryBuffer);
-
-	}
-	else if(!strcmp(option, "covid", true))
-	{
-	    if(sscanf(param, "i", value))
-	    {
-	        return SendClientMessage(playerid, COLOR_WHITE, "Usage: /setstat [playerid] [covid] [value]");
-		}
-		if(value <= 0)
-		{
-			value = 2;
-			PlayerInfo[playerid][pCovidTimer] = 1799;
-		}
-		else if(value > 100)
-		{
-				value = 100;
-		}
-		PlayerInfo[targetid][pCovid] = value;
-
-	    SendMessage(playerid, COLOR_WHITE, "** You have set %s's Covid Level to %i.", GetRPName(targetid), value);
-
-		mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE users SET covid = %i, covidtimer = %i WHERE uid = %i", PlayerInfo[playerid][pCovid], PlayerInfo[playerid][pCovidTimer], PlayerInfo[playerid][pID]);
 		mysql_tquery(connectionID, queryBuffer);
 
 	}
@@ -74715,40 +74460,6 @@ CMD:vipinvite(playerid, params[])
 	return 1;
 }
 
-CMD:fminfo(playerid, params[])
-{
-	new time = PlayerInfo[playerid][pFMTime] - gettime(), string[32];
-
-	if(!PlayerInfo[playerid][pFaceMask])
-	{
-		return SCM(playerid, COLOR_SYNTAX, "You can't use this command as you don't have a facemask.");
-	}
-
-	SCM(playerid, COLOR_LIGHTORANGE, "Facemask Information:");
-
-	if(1 <= time <= 3599)
-	{
-		format(string, sizeof(string), "{AA3333}%i minutes", time / 60);
-	}
-	else if(3600 <= time <= 86399)
-	{
-	    format(string, sizeof(string), ""SVRCLR"%i hours", time / 3600);
-	}
-	else
-	{
-	    if(time / 86400 <= 7)
-		{
-	        format(string, sizeof(string), "{FFD700}%i days", time / 86400);
-	    }
-		else
-		{
-		    format(string, sizeof(string), "{33CC33}%i days", time / 86400);
-		}
-	}
-
-	SM(playerid, COLOR_WHITE, "Expires In: %s", string);
-	return 1;
-}
 
 CMD:vipinfo(playerid, params[])
 {
@@ -89994,7 +89705,7 @@ public UpdateTrashcans()
             GarbageData[i][garbageCapacity] += rrX;
 		    new string[128];
 		    format(string, sizeof(string), "[Garbage %d]\n{FFFFFF}Trash Capacity: %d/20", i, GarbageData[i][garbageCapacity]);
-			Update3DTextLabelText(GarbageData[i][garbageText3D], COLOR_RED , string);
+			Update3DTextLabelText(GarbageData[i][garbageText3D], COLOR_WHITE , string);
 			
 			if(GarbageData[i][garbageCapacity] >= 21) {
                 GarbageData[i][garbageCapacity] = 20;
