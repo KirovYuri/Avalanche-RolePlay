@@ -89672,7 +89672,8 @@ CMD:takebag(playerid, params[])
 	if (PlayerInfo[playerid][pCarryTrash])
 	    return SendClientMessage(playerid, COLOR_WHITE, "You are already carrying a garbage bag.");
 
-    GarbageData[id][garbageCapacity]--;
+    GarbageData[id][garbageCapacity] =-2;
+	Garbage_Refresh(id);
    	Garbage_Save(id);
 
 	PlayerInfo[playerid][pCarryTrash] = 2;
