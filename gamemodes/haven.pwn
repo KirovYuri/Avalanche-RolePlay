@@ -25385,9 +25385,9 @@ public OnGameModeInit()
 	pizzaVehicles[4] = AddStaticVehicleEx(448, 2097.8396, -1799.2592, 12.9978, 90.0000, 3, 6, 300); // bike 5
 	pizzaVehicles[5] = AddStaticVehicleEx(448, 2097.8396, -1801.0101, 12.9978, 90.0000, 3, 6, 300); // bike 6
 
-	garbagevehicle[0] = AddStaticVehicle(408,2189.6274,-1983.0913,14.0977,82.3771,0,0); // v1
-	garbagevehicle[1] = AddStaticVehicle(408,2188.6338,-1987.3062,14.0867,80.9790,0,0); // v2
-	garbagevehicle[2] = AddStaticVehicle(408,2189.2195,-1994.7833,14.0882,74.2583,0,0); // v3
+	garbagevehicle[0] = AddStaticVehicleEx(408,2189.6274,-1983.0913,14.0977,82.3771,0,0, 15000); // v1
+	garbagevehicle[1] = AddStaticVehicleEx(408,2188.6338,-1987.3062,14.0867,80.9790,0,0, 15000); // v2
+	garbagevehicle[2] = AddStaticVehicleEx(408,2189.2195,-1994.7833,14.0882,74.2583,0,0, 15000); // v3
 
 	forkliftVehicles[0] = AddStaticVehicleEx(530, 2778.5310, -2425.0867, 13.3935, 0.0000, 6, 6, 600); // forklift 1
 	forkliftVehicles[1] = AddStaticVehicleEx(530, 2778.6404, -2410.1257, 13.4024, 180.0000, 6, 6, 600); // forklift 2
@@ -25517,7 +25517,7 @@ public OnGameModeInit()
 	SetTimer("InjuredTimer", 5000, true);
 	SetTimer("LotteryUpdate", 500000, true);
 	SetTimerEx("RandomFire", 7200000, true, "i", 1);
-	SetTimer("UpdateTrashcans",60000,true);
+	SetTimer("UpdateTrashcans",300000,true);
 
     // FerrisWheel
 	FerrisWheelObjects[10]=CreateObject(18877,389.7734,-2028.4688,22,0,0,90,300);
@@ -32798,7 +32798,12 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			for (new i = 1; i != MAX_VEHICLES; i ++) if (GetVehicleModel(i) == 408 && IsPlayerNearBoot(playerid, i))
 			{
 			    if (VehicleInfo[i][vehTrash] >= 10)
-			        return SCM(playerid, COLOR_RED, "This vehicle cannot hold anymore trash (limit: 10).");
+				{
+					SCM(playerid, COLOR_RED, "This vehicle cannot hold anymore trash (limit: 10).");
+					RemovePlayerAttachedObject(playerid, 4);
+					PlayerInfo[playerid][pCarryTrash] = 0;
+					return 1;
+				}
 
 				VehicleInfo[i][vehTrash]++;
 
@@ -89615,7 +89620,6 @@ public UpdateTrashcans()
 				if(GarbageData[i][garbageCapacity] >= 21) {
 					GarbageData[i][garbageCapacity] = 20;
 				}
-				Garbage_Refresh(i);
 				Garbage_Save(i);
 			}
 		}
@@ -89671,7 +89675,7 @@ CMD:takebag(playerid, params[])
     GarbageData[id][garbageCapacity]--;
    	Garbage_Save(id);
 
-	PlayerInfo[playerid][pCarryTrash] = 1;
+	PlayerInfo[playerid][pCarryTrash] = 2;
 
 	SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s takes a trash bag from the garbage bin.", GetRPName(playerid));
 
@@ -89688,7 +89692,6 @@ CMD:dumpgarbage(playerid, params[])
 {
 	new
 		vehicleid = GetPlayerVehicleID(playerid),
-		id = IsPlayerInRangeOfPoint(playerid, 3.0, jobLocations[JOB_GARBAGE][jobX], jobLocations[JOB_GARBAGE][jobY], jobLocations[JOB_GARBAGE][jobZ]),
 		string[128];
 
 	if (PlayerInfo[playerid][pJob] != JOB_GARBAGE)
@@ -89697,7 +89700,7 @@ CMD:dumpgarbage(playerid, params[])
 	if (GetVehicleModel(vehicleid) != 408)
 	    return SendClientMessage(playerid, COLOR_WHITE, "You must be driving a garbage truck.");
 
-	if (id == -1)
+	if (IsPlayerInRangeOfPoint(playerid, 3.0, jobLocations[JOB_GARBAGE][jobX], jobLocations[JOB_GARBAGE][jobY], jobLocations[JOB_GARBAGE][jobZ]))
 	    return SendClientMessage(playerid, COLOR_WHITE, "You are not in range of any trash dump.");
 
 	if (VehicleInfo[vehicleid][vehTrash] < 1)
