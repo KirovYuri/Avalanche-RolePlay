@@ -15,7 +15,7 @@
 // --- Server Occasion map --- //
 //#define Christmasmap
 
-#include <a_http> // youtube links
+
 #include <a_mysql> // Mysql
 #include <foreach>
 #include <sscanf2>
@@ -21508,22 +21508,21 @@ public OnQueryFinished(threadid, extraid)
 	    case THREAD_LOOKUP_ACCOUNT:
 	    {
 	        if(rows)
-	        {
-                for(new i = 0; i < 25; i++)
-			    {
-						ShowDialogToPlayer(extraid, DIALOG_LOGIN);
+	        	{
+					ShowDialogToPlayer(extraid, DIALOG_LOGIN);
 			    }
+		}
+		else
+		{
+			if(strfind(GetPlayerNameEx(extraid), "_") == -1)
+			{
+			    ShowPlayerDialog(extraid, DIALOG_FREENAMECHANGE, DIALOG_STYLE_INPUT, "Non-Roleplay Name", "An administrator has came to the conclusion that your name is non-RP.\nTherefore you have been given this free namechange in order to correct it.\n\nEnter a name in the Firstname_Lastname format in the box below:", "Submit", "");
 			}
 			else
 			{
-				if(strfind(GetPlayerNameEx(extraid), "_") == -1)
-			    {
-			        ShowPlayerDialog(extraid, DIALOG_FREENAMECHANGE, DIALOG_STYLE_INPUT, "Non-Roleplay Name", "An administrator has came to the conclusion that your name is non-RP.\nTherefore you have been given this free namechange in order to correct it.\n\nEnter a name in the Firstname_Lastname format in the box below:", "Submit", "");
-				}
-			    else
-			    {
-					ShowDialogToPlayer(extraid, DIALOG_REGISTER);
-				}
+				ShowDialogToPlayer(extraid, DIALOG_REGISTER);
+			}
+			
 			}
 	    }
 	    case THREAD_ACCOUNT_REGISTER:

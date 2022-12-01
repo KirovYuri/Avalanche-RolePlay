@@ -524,3 +524,2346 @@ v0.3.7-R2, (C)2005-2015 SA-MP Team
 [15:08:03] [sampgdk:error] Too many callback arguments (at most 32 allowed)
 [15:08:05] [sampgdk:error] Too many callback arguments (at most 32 allowed)
 [15:08:05] [part] Dwayne_Johnson has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[10:28:33] password = ""  (string)
+[10:28:33] 
+[10:28:33] Server Plugins
+[10:28:33] --------------
+[10:28:33]  Loading plugin: jit
+[10:28:33]   JIT plugin 2.4
+[10:28:33]   Loaded.
+[10:28:33]  Loading plugin: sscanf
+[10:28:33] 
+
+[10:28:33]  ===============================
+
+[10:28:33]       sscanf plugin loaded.     
+
+[10:28:33]          Version:  2.8.3        
+
+[10:28:33]   (c) 2018 Alex "Y_Less" Cole  
+
+[10:28:33]  ===============================
+
+[10:28:33]   Loaded.
+[10:28:33]  Loading plugin: gvar
+[10:28:33] 
+
+*** GVar Plugin v1.3 by Incognito loaded ***
+
+[10:28:33]   Loaded.
+[10:28:33]  Loading plugin: pawncmd
+[10:28:33] [Pawn.CMD] plugin v3.3.3 by urShadow loaded
+[10:28:33]   Loaded.
+[10:28:33]  Loading plugin: streamer
+[10:28:33] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[10:28:33]   Loaded.
+[10:28:33]  Loading plugin: Whirlpoolonfoot_rate
+[10:28:33]   Failed.
+[10:28:33]  Loading plugin: 40
+[10:28:33]   Failed.
+[10:28:33]  Loaded 5 plugins.
+
+[10:28:33] 
+[10:28:33] Filterscripts
+[10:28:33] ---------------
+[10:28:33]   Loading filterscript 'Lex.amx'...
+[10:28:33]   Unable to load filterscript 'Lex.amx'.
+[10:28:33]   Loading filterscript 'android-check.amx'...
+[10:28:33] Android check has been successfully loaded.
+[10:28:33]   Loading filterscript 'yom_buttons.amx'...
+[10:28:33]   Unable to load filterscript 'yom_buttons.amx'.
+[10:28:33]   Loaded 1 filterscripts.
+
+[10:28:33] [Pawn.CMD] DoAmxLoad: Mismatch between the plugin (333) and include (314) versions
+[10:28:33] *** Streamer Plugin: Include file version (0x295) does not match plugin version (0x294) (script might need to be recompiled with the correct include file).
+[10:28:34] Script[gamemodes/haven.amx]: Run time error 19: "File or function is not found"
+[10:28:34] Number of vehicle models: 0
+[10:29:02] [connection] 127.0.0.1:64982 requests connection cookie.
+[10:29:03] [connection] incoming connection: 127.0.0.1:64982 id: 0
+[10:29:03] [join] Dwayne_Johnson has joined the server (0:127.0.0.1)
+[10:29:14] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:14] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:14] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:14] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:14] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:14] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:14] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:14] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:14] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:14] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:14] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:14] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:14] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:15] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:16] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:17] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:18] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:18] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:18] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:18] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:18] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:18] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:18] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:18] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:18] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:19] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:19] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:20] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:20] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:21] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:21] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:22] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:22] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:23] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:25] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:26] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:27] [sampgdk:error] Too many callback arguments (at most 32 allowed)
+[10:29:27] [part] Dwayne_Johnson has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:19:41] password = ""  (string)
+[11:19:41] 
+[11:19:41] Server Plugins
+[11:19:41] --------------
+[11:19:41]  Loading plugin: crashdetect
+[11:19:41]   CrashDetect v4.18.1 is OK.
+[11:19:41]   Loaded.
+[11:19:41]  Loading plugin: whirlpool
+[11:19:41]  
+[11:19:41]  ==================
+[11:19:41]  
+[11:19:41]   Whirlpool loaded
+[11:19:41]  
+[11:19:41]  ==================
+[11:19:41]  
+[11:19:41]   Loaded.
+[11:19:41]  Loading plugin: pawncmd
+[11:19:41] [Pawn.CMD] plugin v3.3.3 by urShadow loaded
+[11:19:41]   Loaded.
+[11:19:41]  Loading plugin: SKY
+[11:19:41]   Failed.
+[11:19:41]  Loading plugin: sscanf
+[11:19:41] 
+
+[11:19:41]  ===============================
+
+[11:19:41]       sscanf plugin loaded.     
+
+[11:19:41]          Version:  2.8.3        
+
+[11:19:41]   (c) 2018 Alex "Y_Less" Cole  
+
+[11:19:41]  ===============================
+
+[11:19:41]   Loaded.
+[11:19:41]  Loading plugin: streamer
+[11:19:41] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[11:19:41]   Loaded.
+[11:19:41]  Loading plugin: mysql_static
+[11:19:41]   Failed.
+[11:19:41]  Loading plugin: nativechecker
+[11:19:41]   Failed.
+[11:19:41]  Loading plugin: sampvoice
+[11:19:41]   Failed.
+[11:19:41]  Loading plugin: discord-connector
+[11:19:41]   Failed.
+[11:19:41]  Loaded 5 plugins.
+
+[11:19:41] 
+[11:19:41] Filterscripts
+[11:19:41] ---------------
+[11:19:41]   Loading filterscript 'Lex.amx'...
+[11:19:41]   Unable to load filterscript 'Lex.amx'.
+[11:19:41]   Loading filterscript 'android-check.amx'...
+[11:19:41] AMX (53121856) loaded
+[11:19:41] Android check has been successfully loaded.
+[11:19:41]   Loading filterscript 'yom_buttons.amx'...
+[11:19:41]   Unable to load filterscript 'yom_buttons.amx'.
+[11:19:41]   Loaded 1 filterscripts.
+
+[11:19:42] AMX (52964520) loaded
+[11:19:42] [Pawn.CMD] DoAmxLoad: Mismatch between the plugin (333) and include (314) versions
+[11:19:42] *** Streamer Plugin: Include file version (0x295) does not match plugin version (0x294) (script might need to be recompiled with the correct include file).
+[11:19:42] [debug] Run time error 19: "File or function is not found"
+[11:19:42] [debug]  FreezeSyncData
+[11:19:42] [debug]  SetFakeFacingAngle
+[11:19:42] [debug]  SendLastSyncData
+[11:19:42] [debug]  ClearAnimationsForPlayer
+[11:19:42] [debug]  SetKnifeSync
+[11:19:42] [debug]  SetFakeHealth
+[11:19:42] [debug]  SetFakeArmour
+[11:19:42] [debug]  PlayerTextDrawSetPosition
+[11:19:42] [debug]  SpawnPlayerForWorld
+[11:19:42] [debug]  DCC_GetMessageContent
+[11:19:42] [debug]  DCC_GetMessageAuthor
+[11:19:42] [debug]  DCC_GetMessageChannel
+[11:19:42] [debug]  DCC_IsUserBot
+[11:19:42] [debug]  mysql_tquery
+[11:19:42] [debug]  cache_get_data
+[11:19:42] [debug]  cache_get_field_content
+[11:19:42] [debug]  cache_get_field_content_int
+[11:19:42] [debug]  cache_get_field_content_float
+[11:19:42] [debug]  mysql_format
+[11:19:42] [debug]  cache_insert_id
+[11:19:42] [debug]  mysql_escape_string
+[11:19:42] [debug]  mysql_unprocessed_queries
+[11:19:42] [debug]  cache_get_row_count
+[11:19:42] [debug]  cache_get_row_int
+[11:19:42] [debug]  cache_get_row
+[11:19:42] [debug]  DCC_SetBotActivity
+[11:19:42] [debug]  DCC_SetBotPresenceStatus
+[11:19:42] [debug]  SvMutePlayerEnable
+[11:19:42] [debug]  SvCreateGStream
+[11:19:42] [debug]  mysql_connect
+[11:19:42] [debug]  mysql_errno
+[11:19:42] [debug]  SvDeleteStream
+[11:19:42] [debug]  mysql_close
+[11:19:42] [debug]  SvAttachSpeakerToStream
+[11:19:42] [debug]  SvDetachSpeakerFromStream
+[11:19:42] [debug]  SvGetVersion
+[11:19:42] [debug]  SvHasMicro
+[11:19:42] [debug]  SvCreateDLStreamAtPlayer
+[11:19:42] [debug]  SvAttachListenerToStream
+[11:19:42] [debug]  DCC_FindGuildById
+[11:19:42] [debug]  DCC_FindRoleById
+[11:19:42] [debug]  DCC_FindUserByName
+[11:19:42] [debug]  DCC_RemoveGuildMemberRole
+[11:19:42] [debug]  DCC_AddGuildMemberRole
+[11:19:42] [debug]  DCC_SetGuildMemberNickname
+[11:19:42] [debug]  SvAddKey
+[11:19:42] [debug]  SvRemoveKey
+[11:19:42] [debug]  SvDetachListenerFromStream
+[11:19:42] [debug]  mysql_query
+[11:19:42] [debug]  cache_delete
+[11:19:42] [debug]  SvMutePlayerDisable
+[11:19:42] [debug]  DCC_FindChannelById
+[11:19:42] [debug]  DCC_SendChannelMessage
+[11:19:42] [debug]  DCC_GetChannelName
+[11:19:42] [debug]  DCC_HasGuildMemberRole
+[11:19:42] [debug]  DCC_CreateEmbed
+[11:19:42] [debug]  DCC_SetEmbedColor
+[11:19:42] [debug]  DCC_SendChannelEmbedMessage
+[11:19:42] [debug]  DCC_SetEmbedFooter
+[11:19:42] [debug]  DCC_SetEmbedTitle
+[11:19:42] [debug]  DCC_SetEmbedDescription
+[11:19:42] [debug]  DCC_GetUserId
+[11:19:42] [debug]  DCC_GetUserName
+[11:19:42] [debug]  DCC_GetUserDiscriminator
+[11:19:42] [debug] Run time error 19: "File or function is not found"
+[11:19:42] [debug]  FreezeSyncData
+[11:19:42] [debug]  SetFakeFacingAngle
+[11:19:42] [debug]  SendLastSyncData
+[11:19:42] [debug]  ClearAnimationsForPlayer
+[11:19:42] [debug]  SetKnifeSync
+[11:19:42] [debug]  SetFakeHealth
+[11:19:42] [debug]  SetFakeArmour
+[11:19:42] [debug]  PlayerTextDrawSetPosition
+[11:19:42] [debug]  SpawnPlayerForWorld
+[11:19:42] [debug]  DCC_GetMessageContent
+[11:19:42] [debug]  DCC_GetMessageAuthor
+[11:19:42] [debug]  DCC_GetMessageChannel
+[11:19:42] [debug]  DCC_IsUserBot
+[11:19:42] [debug]  mysql_tquery
+[11:19:42] [debug]  cache_get_data
+[11:19:42] [debug]  cache_get_field_content
+[11:19:42] [debug]  cache_get_field_content_int
+[11:19:42] [debug]  cache_get_field_content_float
+[11:19:42] [debug]  mysql_format
+[11:19:42] [debug]  cache_insert_id
+[11:19:42] [debug]  mysql_escape_string
+[11:19:42] [debug]  mysql_unprocessed_queries
+[11:19:42] [debug]  cache_get_row_count
+[11:19:42] [debug]  cache_get_row_int
+[11:19:42] [debug]  cache_get_row
+[11:19:42] [debug]  DCC_SetBotActivity
+[11:19:42] [debug]  DCC_SetBotPresenceStatus
+[11:19:42] [debug]  SvMutePlayerEnable
+[11:19:42] [debug]  SvCreateGStream
+[11:19:42] [debug]  mysql_connect
+[11:19:42] [debug]  mysql_errno
+[11:19:42] [debug]  SvDeleteStream
+[11:19:42] [debug]  mysql_close
+[11:19:42] [debug]  SvAttachSpeakerToStream
+[11:19:42] [debug]  SvDetachSpeakerFromStream
+[11:19:42] [debug]  SvGetVersion
+[11:19:42] [debug]  SvHasMicro
+[11:19:42] [debug]  SvCreateDLStreamAtPlayer
+[11:19:42] [debug]  SvAttachListenerToStream
+[11:19:42] [debug]  DCC_FindGuildById
+[11:19:42] [debug]  DCC_FindRoleById
+[11:19:42] [debug]  DCC_FindUserByName
+[11:19:42] [debug]  DCC_RemoveGuildMemberRole
+[11:19:42] [debug]  DCC_AddGuildMemberRole
+[11:19:42] [debug]  DCC_SetGuildMemberNickname
+[11:19:42] [debug]  SvAddKey
+[11:19:42] [debug]  SvRemoveKey
+[11:19:42] [debug]  SvDetachListenerFromStream
+[11:19:42] [debug]  mysql_query
+[11:19:42] [debug]  cache_delete
+[11:19:42] [debug]  SvMutePlayerDisable
+[11:19:42] [debug]  DCC_FindChannelById
+[11:19:42] [debug]  DCC_SendChannelMessage
+[11:19:42] [debug]  DCC_GetChannelName
+[11:19:42] [debug]  DCC_HasGuildMemberRole
+[11:19:42] [debug]  DCC_CreateEmbed
+[11:19:42] [debug]  DCC_SetEmbedColor
+[11:19:42] [debug]  DCC_SendChannelEmbedMessage
+[11:19:42] [debug]  DCC_SetEmbedFooter
+[11:19:42] [debug]  DCC_SetEmbedTitle
+[11:19:42] [debug]  DCC_SetEmbedDescription
+[11:19:42] [debug]  DCC_GetUserId
+[11:19:42] [debug]  DCC_GetUserName
+[11:19:42] [debug]  DCC_GetUserDiscriminator
+[11:19:42] Script[gamemodes/haven.amx]: Run time error 19: "File or function is not found"
+[11:19:42] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:19:59] password = ""  (string)
+[11:19:59] 
+[11:19:59] Server Plugins
+[11:19:59] --------------
+[11:19:59]  Loading plugin: crashdetect
+[11:19:59]   CrashDetect v4.18.1 is OK.
+[11:19:59]   Loaded.
+[11:19:59]  Loading plugin: whirlpool
+[11:19:59]  
+[11:19:59]  ==================
+[11:19:59]  
+[11:19:59]   Whirlpool loaded
+[11:19:59]  
+[11:19:59]  ==================
+[11:19:59]  
+[11:19:59]   Loaded.
+[11:19:59]  Loading plugin: pawncmd
+[11:19:59] [Pawn.CMD] plugin v3.3.3 by urShadow loaded
+[11:19:59]   Loaded.
+[11:19:59]  Loading plugin: SKY
+[11:19:59]   Failed.
+[11:19:59]  Loading plugin: sscanf
+[11:19:59] 
+
+[11:19:59]  ===============================
+
+[11:19:59]       sscanf plugin loaded.     
+
+[11:19:59]          Version:  2.8.3        
+
+[11:19:59]   (c) 2018 Alex "Y_Less" Cole  
+
+[11:19:59]  ===============================
+
+[11:19:59]   Loaded.
+[11:19:59]  Loading plugin: streamer
+[11:19:59] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[11:19:59]   Loaded.
+[11:19:59]  Loading plugin: mysql_static
+[11:19:59]   Failed.
+[11:19:59]  Loading plugin: nativechecker
+[11:19:59]   Failed.
+[11:19:59]  Loading plugin: sampvoice
+[11:19:59]   Failed.
+[11:19:59]  Loading plugin: discord-connector
+[11:19:59]   Failed.
+[11:19:59]  Loaded 5 plugins.
+
+[11:19:59] 
+[11:19:59] Filterscripts
+[11:19:59] ---------------
+[11:19:59]   Loading filterscript 'Lex.amx'...
+[11:19:59]   Unable to load filterscript 'Lex.amx'.
+[11:19:59]   Loading filterscript 'android-check.amx'...
+[11:19:59] AMX (52138816) loaded
+[11:19:59] Android check has been successfully loaded.
+[11:19:59]   Loading filterscript 'yom_buttons.amx'...
+[11:19:59]   Unable to load filterscript 'yom_buttons.amx'.
+[11:19:59]   Loaded 1 filterscripts.
+
+[11:19:59] AMX (51981480) loaded
+[11:19:59] [Pawn.CMD] DoAmxLoad: Mismatch between the plugin (333) and include (314) versions
+[11:19:59] *** Streamer Plugin: Include file version (0x295) does not match plugin version (0x294) (script might need to be recompiled with the correct include file).
+[11:19:59] [debug] Run time error 19: "File or function is not found"
+[11:19:59] [debug]  FreezeSyncData
+[11:19:59] [debug]  SetFakeFacingAngle
+[11:19:59] [debug]  SendLastSyncData
+[11:19:59] [debug]  ClearAnimationsForPlayer
+[11:19:59] [debug]  SetKnifeSync
+[11:19:59] [debug]  SetFakeHealth
+[11:19:59] [debug]  SetFakeArmour
+[11:19:59] [debug]  PlayerTextDrawSetPosition
+[11:19:59] [debug]  SpawnPlayerForWorld
+[11:19:59] [debug]  DCC_GetMessageContent
+[11:19:59] [debug]  DCC_GetMessageAuthor
+[11:19:59] [debug]  DCC_GetMessageChannel
+[11:19:59] [debug]  DCC_IsUserBot
+[11:19:59] [debug]  mysql_tquery
+[11:19:59] [debug]  cache_get_data
+[11:19:59] [debug]  cache_get_field_content
+[11:19:59] [debug]  cache_get_field_content_int
+[11:19:59] [debug]  cache_get_field_content_float
+[11:19:59] [debug]  mysql_format
+[11:19:59] [debug]  cache_insert_id
+[11:19:59] [debug]  mysql_escape_string
+[11:19:59] [debug]  mysql_unprocessed_queries
+[11:19:59] [debug]  cache_get_row_count
+[11:19:59] [debug]  cache_get_row_int
+[11:19:59] [debug]  cache_get_row
+[11:19:59] [debug]  DCC_SetBotActivity
+[11:19:59] [debug]  DCC_SetBotPresenceStatus
+[11:19:59] [debug]  SvMutePlayerEnable
+[11:19:59] [debug]  SvCreateGStream
+[11:19:59] [debug]  mysql_connect
+[11:19:59] [debug]  mysql_errno
+[11:19:59] [debug]  SvDeleteStream
+[11:19:59] [debug]  mysql_close
+[11:19:59] [debug]  SvAttachSpeakerToStream
+[11:19:59] [debug]  SvDetachSpeakerFromStream
+[11:19:59] [debug]  SvGetVersion
+[11:19:59] [debug]  SvHasMicro
+[11:19:59] [debug]  SvCreateDLStreamAtPlayer
+[11:19:59] [debug]  SvAttachListenerToStream
+[11:19:59] [debug]  DCC_FindGuildById
+[11:19:59] [debug]  DCC_FindRoleById
+[11:19:59] [debug]  DCC_FindUserByName
+[11:19:59] [debug]  DCC_RemoveGuildMemberRole
+[11:19:59] [debug]  DCC_AddGuildMemberRole
+[11:19:59] [debug]  DCC_SetGuildMemberNickname
+[11:19:59] [debug]  SvAddKey
+[11:19:59] [debug]  SvRemoveKey
+[11:19:59] [debug]  SvDetachListenerFromStream
+[11:19:59] [debug]  mysql_query
+[11:19:59] [debug]  cache_delete
+[11:19:59] [debug]  SvMutePlayerDisable
+[11:19:59] [debug]  DCC_FindChannelById
+[11:19:59] [debug]  DCC_SendChannelMessage
+[11:19:59] [debug]  DCC_GetChannelName
+[11:19:59] [debug]  DCC_HasGuildMemberRole
+[11:19:59] [debug]  DCC_CreateEmbed
+[11:19:59] [debug]  DCC_SetEmbedColor
+[11:19:59] [debug]  DCC_SendChannelEmbedMessage
+[11:19:59] [debug]  DCC_SetEmbedFooter
+[11:19:59] [debug]  DCC_SetEmbedTitle
+[11:19:59] [debug]  DCC_SetEmbedDescription
+[11:19:59] [debug]  DCC_GetUserId
+[11:19:59] [debug]  DCC_GetUserName
+[11:19:59] [debug]  DCC_GetUserDiscriminator
+[11:19:59] [debug] Run time error 19: "File or function is not found"
+[11:19:59] [debug]  FreezeSyncData
+[11:19:59] [debug]  SetFakeFacingAngle
+[11:19:59] [debug]  SendLastSyncData
+[11:19:59] [debug]  ClearAnimationsForPlayer
+[11:19:59] [debug]  SetKnifeSync
+[11:19:59] [debug]  SetFakeHealth
+[11:19:59] [debug]  SetFakeArmour
+[11:19:59] [debug]  PlayerTextDrawSetPosition
+[11:19:59] [debug]  SpawnPlayerForWorld
+[11:19:59] [debug]  DCC_GetMessageContent
+[11:19:59] [debug]  DCC_GetMessageAuthor
+[11:19:59] [debug]  DCC_GetMessageChannel
+[11:19:59] [debug]  DCC_IsUserBot
+[11:19:59] [debug]  mysql_tquery
+[11:19:59] [debug]  cache_get_data
+[11:19:59] [debug]  cache_get_field_content
+[11:19:59] [debug]  cache_get_field_content_int
+[11:19:59] [debug]  cache_get_field_content_float
+[11:19:59] [debug]  mysql_format
+[11:19:59] [debug]  cache_insert_id
+[11:19:59] [debug]  mysql_escape_string
+[11:19:59] [debug]  mysql_unprocessed_queries
+[11:19:59] [debug]  cache_get_row_count
+[11:19:59] [debug]  cache_get_row_int
+[11:19:59] [debug]  cache_get_row
+[11:19:59] [debug]  DCC_SetBotActivity
+[11:19:59] [debug]  DCC_SetBotPresenceStatus
+[11:19:59] [debug]  SvMutePlayerEnable
+[11:19:59] [debug]  SvCreateGStream
+[11:19:59] [debug]  mysql_connect
+[11:19:59] [debug]  mysql_errno
+[11:19:59] [debug]  SvDeleteStream
+[11:19:59] [debug]  mysql_close
+[11:19:59] [debug]  SvAttachSpeakerToStream
+[11:19:59] [debug]  SvDetachSpeakerFromStream
+[11:19:59] [debug]  SvGetVersion
+[11:19:59] [debug]  SvHasMicro
+[11:19:59] [debug]  SvCreateDLStreamAtPlayer
+[11:19:59] [debug]  SvAttachListenerToStream
+[11:19:59] [debug]  DCC_FindGuildById
+[11:19:59] [debug]  DCC_FindRoleById
+[11:19:59] [debug]  DCC_FindUserByName
+[11:19:59] [debug]  DCC_RemoveGuildMemberRole
+[11:19:59] [debug]  DCC_AddGuildMemberRole
+[11:19:59] [debug]  DCC_SetGuildMemberNickname
+[11:19:59] [debug]  SvAddKey
+[11:19:59] [debug]  SvRemoveKey
+[11:19:59] [debug]  SvDetachListenerFromStream
+[11:19:59] [debug]  mysql_query
+[11:19:59] [debug]  cache_delete
+[11:19:59] [debug]  SvMutePlayerDisable
+[11:19:59] [debug]  DCC_FindChannelById
+[11:19:59] [debug]  DCC_SendChannelMessage
+[11:19:59] [debug]  DCC_GetChannelName
+[11:19:59] [debug]  DCC_HasGuildMemberRole
+[11:19:59] [debug]  DCC_CreateEmbed
+[11:19:59] [debug]  DCC_SetEmbedColor
+[11:19:59] [debug]  DCC_SendChannelEmbedMessage
+[11:19:59] [debug]  DCC_SetEmbedFooter
+[11:19:59] [debug]  DCC_SetEmbedTitle
+[11:19:59] [debug]  DCC_SetEmbedDescription
+[11:19:59] [debug]  DCC_GetUserId
+[11:19:59] [debug]  DCC_GetUserName
+[11:19:59] [debug]  DCC_GetUserDiscriminator
+[11:19:59] Script[gamemodes/haven.amx]: Run time error 19: "File or function is not found"
+[11:19:59] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:21:13] password = ""  (string)
+[11:21:13] 
+[11:21:13] Server Plugins
+[11:21:13] --------------
+[11:21:13]  Loading plugin: crashdetect
+[11:21:13]   CrashDetect v4.18.1 is OK.
+[11:21:13]   Loaded.
+[11:21:13]  Loading plugin: whirlpool
+[11:21:13]  
+[11:21:13]  ==================
+[11:21:13]  
+[11:21:13]   Whirlpool loaded
+[11:21:13]  
+[11:21:13]  ==================
+[11:21:13]  
+[11:21:13]   Loaded.
+[11:21:13]  Loading plugin: pawncmd
+[11:21:13] [Pawn.CMD] plugin v3.3.3 by urShadow loaded
+[11:21:13]   Loaded.
+[11:21:13]  Loading plugin: SKY
+[11:21:13]   Failed.
+[11:21:13]  Loading plugin: sscanf
+[11:21:13] 
+
+[11:21:13]  ===============================
+
+[11:21:13]       sscanf plugin loaded.     
+
+[11:21:13]          Version:  2.8.3        
+
+[11:21:13]   (c) 2018 Alex "Y_Less" Cole  
+
+[11:21:13]  ===============================
+
+[11:21:13]   Loaded.
+[11:21:13]  Loading plugin: streamer
+[11:21:13] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[11:21:13]   Loaded.
+[11:21:13]  Loading plugin: mysql_static
+[11:21:13]   Failed.
+[11:21:13]  Loading plugin: nativechecker
+[11:21:13]   Failed.
+[11:21:13]  Loading plugin: sampvoice
+[11:21:13]   Failed.
+[11:21:13]  Loading plugin: discord-connector
+[11:21:13]   Failed.
+[11:21:13]  Loaded 5 plugins.
+
+[11:21:13] 
+[11:21:13] Filterscripts
+[11:21:13] ---------------
+[11:21:13]   Loading filterscript 'Lex.amx'...
+[11:21:13]   Unable to load filterscript 'Lex.amx'.
+[11:21:13]   Loading filterscript 'android-check.amx'...
+[11:21:13] AMX (52990784) loaded
+[11:21:13] Android check has been successfully loaded.
+[11:21:13]   Loading filterscript 'yom_buttons.amx'...
+[11:21:13]   Unable to load filterscript 'yom_buttons.amx'.
+[11:21:13]   Loaded 1 filterscripts.
+
+[11:21:13] AMX (52833448) loaded
+[11:21:13] [Pawn.CMD] DoAmxLoad: Mismatch between the plugin (333) and include (314) versions
+[11:21:13] *** Streamer Plugin: Include file version (0x295) does not match plugin version (0x294) (script might need to be recompiled with the correct include file).
+[11:21:13] [debug] Run time error 19: "File or function is not found"
+[11:21:13] [debug]  FreezeSyncData
+[11:21:13] [debug]  SetFakeFacingAngle
+[11:21:13] [debug]  SendLastSyncData
+[11:21:13] [debug]  ClearAnimationsForPlayer
+[11:21:13] [debug]  SetKnifeSync
+[11:21:13] [debug]  SetFakeHealth
+[11:21:13] [debug]  SetFakeArmour
+[11:21:13] [debug]  PlayerTextDrawSetPosition
+[11:21:13] [debug]  SpawnPlayerForWorld
+[11:21:13] [debug]  DCC_GetMessageContent
+[11:21:13] [debug]  DCC_GetMessageAuthor
+[11:21:13] [debug]  DCC_GetMessageChannel
+[11:21:13] [debug]  DCC_IsUserBot
+[11:21:13] [debug]  mysql_tquery
+[11:21:13] [debug]  cache_get_data
+[11:21:13] [debug]  cache_get_field_content
+[11:21:13] [debug]  cache_get_field_content_int
+[11:21:13] [debug]  cache_get_field_content_float
+[11:21:13] [debug]  mysql_format
+[11:21:13] [debug]  cache_insert_id
+[11:21:13] [debug]  mysql_escape_string
+[11:21:13] [debug]  mysql_unprocessed_queries
+[11:21:13] [debug]  cache_get_row_count
+[11:21:13] [debug]  cache_get_row_int
+[11:21:13] [debug]  cache_get_row
+[11:21:13] [debug]  DCC_SetBotActivity
+[11:21:13] [debug]  DCC_SetBotPresenceStatus
+[11:21:13] [debug]  SvMutePlayerEnable
+[11:21:13] [debug]  SvCreateGStream
+[11:21:13] [debug]  mysql_connect
+[11:21:13] [debug]  mysql_errno
+[11:21:13] [debug]  SvDeleteStream
+[11:21:13] [debug]  mysql_close
+[11:21:13] [debug]  SvAttachSpeakerToStream
+[11:21:13] [debug]  SvDetachSpeakerFromStream
+[11:21:13] [debug]  SvGetVersion
+[11:21:13] [debug]  SvHasMicro
+[11:21:13] [debug]  SvCreateDLStreamAtPlayer
+[11:21:13] [debug]  SvAttachListenerToStream
+[11:21:13] [debug]  DCC_FindGuildById
+[11:21:13] [debug]  DCC_FindRoleById
+[11:21:13] [debug]  DCC_FindUserByName
+[11:21:13] [debug]  DCC_RemoveGuildMemberRole
+[11:21:13] [debug]  DCC_AddGuildMemberRole
+[11:21:13] [debug]  DCC_SetGuildMemberNickname
+[11:21:13] [debug]  SvAddKey
+[11:21:13] [debug]  SvRemoveKey
+[11:21:13] [debug]  SvDetachListenerFromStream
+[11:21:13] [debug]  mysql_query
+[11:21:13] [debug]  cache_delete
+[11:21:13] [debug]  SvMutePlayerDisable
+[11:21:13] [debug]  DCC_FindChannelById
+[11:21:13] [debug]  DCC_SendChannelMessage
+[11:21:13] [debug]  DCC_GetChannelName
+[11:21:13] [debug]  DCC_HasGuildMemberRole
+[11:21:13] [debug]  DCC_CreateEmbed
+[11:21:13] [debug]  DCC_SetEmbedColor
+[11:21:13] [debug]  DCC_SendChannelEmbedMessage
+[11:21:13] [debug]  DCC_SetEmbedFooter
+[11:21:13] [debug]  DCC_SetEmbedTitle
+[11:21:13] [debug]  DCC_SetEmbedDescription
+[11:21:13] [debug]  DCC_GetUserId
+[11:21:13] [debug]  DCC_GetUserName
+[11:21:13] [debug]  DCC_GetUserDiscriminator
+[11:21:13] [debug] Run time error 19: "File or function is not found"
+[11:21:13] [debug]  FreezeSyncData
+[11:21:13] [debug]  SetFakeFacingAngle
+[11:21:13] [debug]  SendLastSyncData
+[11:21:13] [debug]  ClearAnimationsForPlayer
+[11:21:13] [debug]  SetKnifeSync
+[11:21:13] [debug]  SetFakeHealth
+[11:21:13] [debug]  SetFakeArmour
+[11:21:13] [debug]  PlayerTextDrawSetPosition
+[11:21:13] [debug]  SpawnPlayerForWorld
+[11:21:13] [debug]  DCC_GetMessageContent
+[11:21:13] [debug]  DCC_GetMessageAuthor
+[11:21:13] [debug]  DCC_GetMessageChannel
+[11:21:13] [debug]  DCC_IsUserBot
+[11:21:13] [debug]  mysql_tquery
+[11:21:13] [debug]  cache_get_data
+[11:21:13] [debug]  cache_get_field_content
+[11:21:13] [debug]  cache_get_field_content_int
+[11:21:13] [debug]  cache_get_field_content_float
+[11:21:13] [debug]  mysql_format
+[11:21:13] [debug]  cache_insert_id
+[11:21:13] [debug]  mysql_escape_string
+[11:21:13] [debug]  mysql_unprocessed_queries
+[11:21:13] [debug]  cache_get_row_count
+[11:21:13] [debug]  cache_get_row_int
+[11:21:13] [debug]  cache_get_row
+[11:21:13] [debug]  DCC_SetBotActivity
+[11:21:13] [debug]  DCC_SetBotPresenceStatus
+[11:21:13] [debug]  SvMutePlayerEnable
+[11:21:13] [debug]  SvCreateGStream
+[11:21:13] [debug]  mysql_connect
+[11:21:13] [debug]  mysql_errno
+[11:21:13] [debug]  SvDeleteStream
+[11:21:13] [debug]  mysql_close
+[11:21:13] [debug]  SvAttachSpeakerToStream
+[11:21:13] [debug]  SvDetachSpeakerFromStream
+[11:21:13] [debug]  SvGetVersion
+[11:21:13] [debug]  SvHasMicro
+[11:21:13] [debug]  SvCreateDLStreamAtPlayer
+[11:21:13] [debug]  SvAttachListenerToStream
+[11:21:13] [debug]  DCC_FindGuildById
+[11:21:13] [debug]  DCC_FindRoleById
+[11:21:13] [debug]  DCC_FindUserByName
+[11:21:13] [debug]  DCC_RemoveGuildMemberRole
+[11:21:13] [debug]  DCC_AddGuildMemberRole
+[11:21:13] [debug]  DCC_SetGuildMemberNickname
+[11:21:13] [debug]  SvAddKey
+[11:21:13] [debug]  SvRemoveKey
+[11:21:13] [debug]  SvDetachListenerFromStream
+[11:21:13] [debug]  mysql_query
+[11:21:13] [debug]  cache_delete
+[11:21:13] [debug]  SvMutePlayerDisable
+[11:21:13] [debug]  DCC_FindChannelById
+[11:21:13] [debug]  DCC_SendChannelMessage
+[11:21:13] [debug]  DCC_GetChannelName
+[11:21:13] [debug]  DCC_HasGuildMemberRole
+[11:21:13] [debug]  DCC_CreateEmbed
+[11:21:13] [debug]  DCC_SetEmbedColor
+[11:21:13] [debug]  DCC_SendChannelEmbedMessage
+[11:21:13] [debug]  DCC_SetEmbedFooter
+[11:21:13] [debug]  DCC_SetEmbedTitle
+[11:21:13] [debug]  DCC_SetEmbedDescription
+[11:21:13] [debug]  DCC_GetUserId
+[11:21:13] [debug]  DCC_GetUserName
+[11:21:13] [debug]  DCC_GetUserDiscriminator
+[11:21:13] Script[gamemodes/haven.amx]: Run time error 19: "File or function is not found"
+[11:21:13] Number of vehicle models: 0
+[11:21:46] [connection] 127.0.0.1:56113 requests connection cookie.
+[11:21:47] [connection] incoming connection: 127.0.0.1:56113 id: 0
+[11:21:47] [debug] Run time error 19: "File or function is not found"
+[11:21:47] [debug]  FreezeSyncData
+[11:21:47] [debug]  SetFakeFacingAngle
+[11:21:47] [debug]  SendLastSyncData
+[11:21:47] [debug]  ClearAnimationsForPlayer
+[11:21:47] [debug]  SetKnifeSync
+[11:21:47] [debug]  SetFakeHealth
+[11:21:47] [debug]  SetFakeArmour
+[11:21:47] [debug]  PlayerTextDrawSetPosition
+[11:21:47] [debug]  SpawnPlayerForWorld
+[11:21:47] [debug]  DCC_GetMessageContent
+[11:21:47] [debug]  DCC_GetMessageAuthor
+[11:21:47] [debug]  DCC_GetMessageChannel
+[11:21:47] [debug]  DCC_IsUserBot
+[11:21:47] [debug]  mysql_tquery
+[11:21:47] [debug]  cache_get_data
+[11:21:47] [debug]  cache_get_field_content
+[11:21:47] [debug]  cache_get_field_content_int
+[11:21:47] [debug]  cache_get_field_content_float
+[11:21:47] [debug]  mysql_format
+[11:21:47] [debug]  cache_insert_id
+[11:21:47] [debug]  mysql_escape_string
+[11:21:47] [debug]  mysql_unprocessed_queries
+[11:21:47] [debug]  cache_get_row_count
+[11:21:47] [debug]  cache_get_row_int
+[11:21:47] [debug]  cache_get_row
+[11:21:47] [debug]  DCC_SetBotActivity
+[11:21:47] [debug]  DCC_SetBotPresenceStatus
+[11:21:47] [debug]  SvMutePlayerEnable
+[11:21:47] [debug]  SvCreateGStream
+[11:21:47] [debug]  mysql_connect
+[11:21:47] [debug]  mysql_errno
+[11:21:47] [debug]  SvDeleteStream
+[11:21:47] [debug]  mysql_close
+[11:21:47] [debug]  SvAttachSpeakerToStream
+[11:21:47] [debug]  SvDetachSpeakerFromStream
+[11:21:47] [debug]  SvGetVersion
+[11:21:47] [debug]  SvHasMicro
+[11:21:47] [debug]  SvCreateDLStreamAtPlayer
+[11:21:47] [debug]  SvAttachListenerToStream
+[11:21:47] [debug]  DCC_FindGuildById
+[11:21:47] [debug]  DCC_FindRoleById
+[11:21:47] [debug]  DCC_FindUserByName
+[11:21:47] [debug]  DCC_RemoveGuildMemberRole
+[11:21:47] [debug]  DCC_AddGuildMemberRole
+[11:21:47] [debug]  DCC_SetGuildMemberNickname
+[11:21:47] [debug]  SvAddKey
+[11:21:47] [debug]  SvRemoveKey
+[11:21:47] [debug]  SvDetachListenerFromStream
+[11:21:47] [debug]  mysql_query
+[11:21:47] [debug]  cache_delete
+[11:21:47] [debug]  SvMutePlayerDisable
+[11:21:47] [debug]  DCC_FindChannelById
+[11:21:47] [debug]  DCC_SendChannelMessage
+[11:21:47] [debug]  DCC_GetChannelName
+[11:21:47] [debug]  DCC_HasGuildMemberRole
+[11:21:47] [debug]  DCC_CreateEmbed
+[11:21:47] [debug]  DCC_SetEmbedColor
+[11:21:47] [debug]  DCC_SendChannelEmbedMessage
+[11:21:47] [debug]  DCC_SetEmbedFooter
+[11:21:47] [debug]  DCC_SetEmbedTitle
+[11:21:47] [debug]  DCC_SetEmbedDescription
+[11:21:47] [debug]  DCC_GetUserId
+[11:21:47] [debug]  DCC_GetUserName
+[11:21:47] [debug]  DCC_GetUserDiscriminator
+[11:21:47] [join] Dwayne_Johnson has joined the server (0:127.0.0.1)
+[11:21:47] [debug] Run time error 19: "File or function is not found"
+[11:21:47] [debug]  FreezeSyncData
+[11:21:47] [debug]  SetFakeFacingAngle
+[11:21:47] [debug]  SendLastSyncData
+[11:21:47] [debug]  ClearAnimationsForPlayer
+[11:21:47] [debug]  SetKnifeSync
+[11:21:47] [debug]  SetFakeHealth
+[11:21:47] [debug]  SetFakeArmour
+[11:21:47] [debug]  PlayerTextDrawSetPosition
+[11:21:47] [debug]  SpawnPlayerForWorld
+[11:21:47] [debug]  DCC_GetMessageContent
+[11:21:47] [debug]  DCC_GetMessageAuthor
+[11:21:47] [debug]  DCC_GetMessageChannel
+[11:21:47] [debug]  DCC_IsUserBot
+[11:21:47] [debug]  mysql_tquery
+[11:21:47] [debug]  cache_get_data
+[11:21:47] [debug]  cache_get_field_content
+[11:21:47] [debug]  cache_get_field_content_int
+[11:21:47] [debug]  cache_get_field_content_float
+[11:21:47] [debug]  mysql_format
+[11:21:47] [debug]  cache_insert_id
+[11:21:47] [debug]  mysql_escape_string
+[11:21:47] [debug]  mysql_unprocessed_queries
+[11:21:47] [debug]  cache_get_row_count
+[11:21:47] [debug]  cache_get_row_int
+[11:21:47] [debug]  cache_get_row
+[11:21:47] [debug]  DCC_SetBotActivity
+[11:21:47] [debug]  DCC_SetBotPresenceStatus
+[11:21:47] [debug]  SvMutePlayerEnable
+[11:21:47] [debug]  SvCreateGStream
+[11:21:47] [debug]  mysql_connect
+[11:21:47] [debug]  mysql_errno
+[11:21:47] [debug]  SvDeleteStream
+[11:21:47] [debug]  mysql_close
+[11:21:47] [debug]  SvAttachSpeakerToStream
+[11:21:47] [debug]  SvDetachSpeakerFromStream
+[11:21:47] [debug]  SvGetVersion
+[11:21:47] [debug]  SvHasMicro
+[11:21:47] [debug]  SvCreateDLStreamAtPlayer
+[11:21:47] [debug]  SvAttachListenerToStream
+[11:21:47] [debug]  DCC_FindGuildById
+[11:21:47] [debug]  DCC_FindRoleById
+[11:21:47] [debug]  DCC_FindUserByName
+[11:21:47] [debug]  DCC_RemoveGuildMemberRole
+[11:21:47] [debug]  DCC_AddGuildMemberRole
+[11:21:47] [debug]  DCC_SetGuildMemberNickname
+[11:21:47] [debug]  SvAddKey
+[11:21:47] [debug]  SvRemoveKey
+[11:21:47] [debug]  SvDetachListenerFromStream
+[11:21:47] [debug]  mysql_query
+[11:21:47] [debug]  cache_delete
+[11:21:47] [debug]  SvMutePlayerDisable
+[11:21:47] [debug]  DCC_FindChannelById
+[11:21:47] [debug]  DCC_SendChannelMessage
+[11:21:47] [debug]  DCC_GetChannelName
+[11:21:47] [debug]  DCC_HasGuildMemberRole
+[11:21:47] [debug]  DCC_CreateEmbed
+[11:21:47] [debug]  DCC_SetEmbedColor
+[11:21:47] [debug]  DCC_SendChannelEmbedMessage
+[11:21:47] [debug]  DCC_SetEmbedFooter
+[11:21:47] [debug]  DCC_SetEmbedTitle
+[11:21:47] [debug]  DCC_SetEmbedDescription
+[11:21:47] [debug]  DCC_GetUserId
+[11:21:47] [debug]  DCC_GetUserName
+[11:21:47] [debug]  DCC_GetUserDiscriminator
+[11:21:47] [debug] Run time error 19: "File or function is not found"
+[11:21:47] [debug]  FreezeSyncData
+[11:21:47] [debug]  SetFakeFacingAngle
+[11:21:47] [debug]  SendLastSyncData
+[11:21:47] [debug]  ClearAnimationsForPlayer
+[11:21:47] [debug]  SetKnifeSync
+[11:21:47] [debug]  SetFakeHealth
+[11:21:47] [debug]  SetFakeArmour
+[11:21:47] [debug]  PlayerTextDrawSetPosition
+[11:21:47] [debug]  SpawnPlayerForWorld
+[11:21:47] [debug]  DCC_GetMessageContent
+[11:21:47] [debug]  DCC_GetMessageAuthor
+[11:21:47] [debug]  DCC_GetMessageChannel
+[11:21:47] [debug]  DCC_IsUserBot
+[11:21:47] [debug]  mysql_tquery
+[11:21:47] [debug]  cache_get_data
+[11:21:47] [debug]  cache_get_field_content
+[11:21:47] [debug]  cache_get_field_content_int
+[11:21:47] [debug]  cache_get_field_content_float
+[11:21:47] [debug]  mysql_format
+[11:21:47] [debug]  cache_insert_id
+[11:21:47] [debug]  mysql_escape_string
+[11:21:47] [debug]  mysql_unprocessed_queries
+[11:21:47] [debug]  cache_get_row_count
+[11:21:47] [debug]  cache_get_row_int
+[11:21:47] [debug]  cache_get_row
+[11:21:47] [debug]  DCC_SetBotActivity
+[11:21:47] [debug]  DCC_SetBotPresenceStatus
+[11:21:47] [debug]  SvMutePlayerEnable
+[11:21:47] [debug]  SvCreateGStream
+[11:21:47] [debug]  mysql_connect
+[11:21:47] [debug]  mysql_errno
+[11:21:47] [debug]  SvDeleteStream
+[11:21:47] [debug]  mysql_close
+[11:21:47] [debug]  SvAttachSpeakerToStream
+[11:21:47] [debug]  SvDetachSpeakerFromStream
+[11:21:47] [debug]  SvGetVersion
+[11:21:47] [debug]  SvHasMicro
+[11:21:47] [debug]  SvCreateDLStreamAtPlayer
+[11:21:47] [debug]  SvAttachListenerToStream
+[11:21:47] [debug]  DCC_FindGuildById
+[11:21:47] [debug]  DCC_FindRoleById
+[11:21:47] [debug]  DCC_FindUserByName
+[11:21:47] [debug]  DCC_RemoveGuildMemberRole
+[11:21:47] [debug]  DCC_AddGuildMemberRole
+[11:21:47] [debug]  DCC_SetGuildMemberNickname
+[11:21:47] [debug]  SvAddKey
+[11:21:47] [debug]  SvRemoveKey
+[11:21:47] [debug]  SvDetachListenerFromStream
+[11:21:47] [debug]  mysql_query
+[11:21:47] [debug]  cache_delete
+[11:21:47] [debug]  SvMutePlayerDisable
+[11:21:47] [debug]  DCC_FindChannelById
+[11:21:47] [debug]  DCC_SendChannelMessage
+[11:21:47] [debug]  DCC_GetChannelName
+[11:21:47] [debug]  DCC_HasGuildMemberRole
+[11:21:47] [debug]  DCC_CreateEmbed
+[11:21:47] [debug]  DCC_SetEmbedColor
+[11:21:47] [debug]  DCC_SendChannelEmbedMessage
+[11:21:47] [debug]  DCC_SetEmbedFooter
+[11:21:47] [debug]  DCC_SetEmbedTitle
+[11:21:47] [debug]  DCC_SetEmbedDescription
+[11:21:47] [debug]  DCC_GetUserId
+[11:21:47] [debug]  DCC_GetUserName
+[11:21:47] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:52] [debug] Run time error 19: "File or function is not found"
+[11:21:52] [debug]  FreezeSyncData
+[11:21:52] [debug]  SetFakeFacingAngle
+[11:21:52] [debug]  SendLastSyncData
+[11:21:52] [debug]  ClearAnimationsForPlayer
+[11:21:52] [debug]  SetKnifeSync
+[11:21:52] [debug]  SetFakeHealth
+[11:21:52] [debug]  SetFakeArmour
+[11:21:52] [debug]  PlayerTextDrawSetPosition
+[11:21:52] [debug]  SpawnPlayerForWorld
+[11:21:52] [debug]  DCC_GetMessageContent
+[11:21:52] [debug]  DCC_GetMessageAuthor
+[11:21:52] [debug]  DCC_GetMessageChannel
+[11:21:52] [debug]  DCC_IsUserBot
+[11:21:52] [debug]  mysql_tquery
+[11:21:52] [debug]  cache_get_data
+[11:21:52] [debug]  cache_get_field_content
+[11:21:52] [debug]  cache_get_field_content_int
+[11:21:52] [debug]  cache_get_field_content_float
+[11:21:52] [debug]  mysql_format
+[11:21:52] [debug]  cache_insert_id
+[11:21:52] [debug]  mysql_escape_string
+[11:21:52] [debug]  mysql_unprocessed_queries
+[11:21:52] [debug]  cache_get_row_count
+[11:21:52] [debug]  cache_get_row_int
+[11:21:52] [debug]  cache_get_row
+[11:21:52] [debug]  DCC_SetBotActivity
+[11:21:52] [debug]  DCC_SetBotPresenceStatus
+[11:21:52] [debug]  SvMutePlayerEnable
+[11:21:52] [debug]  SvCreateGStream
+[11:21:52] [debug]  mysql_connect
+[11:21:52] [debug]  mysql_errno
+[11:21:52] [debug]  SvDeleteStream
+[11:21:52] [debug]  mysql_close
+[11:21:52] [debug]  SvAttachSpeakerToStream
+[11:21:52] [debug]  SvDetachSpeakerFromStream
+[11:21:52] [debug]  SvGetVersion
+[11:21:52] [debug]  SvHasMicro
+[11:21:52] [debug]  SvCreateDLStreamAtPlayer
+[11:21:52] [debug]  SvAttachListenerToStream
+[11:21:52] [debug]  DCC_FindGuildById
+[11:21:52] [debug]  DCC_FindRoleById
+[11:21:52] [debug]  DCC_FindUserByName
+[11:21:52] [debug]  DCC_RemoveGuildMemberRole
+[11:21:52] [debug]  DCC_AddGuildMemberRole
+[11:21:52] [debug]  DCC_SetGuildMemberNickname
+[11:21:52] [debug]  SvAddKey
+[11:21:52] [debug]  SvRemoveKey
+[11:21:52] [debug]  SvDetachListenerFromStream
+[11:21:52] [debug]  mysql_query
+[11:21:52] [debug]  cache_delete
+[11:21:52] [debug]  SvMutePlayerDisable
+[11:21:52] [debug]  DCC_FindChannelById
+[11:21:52] [debug]  DCC_SendChannelMessage
+[11:21:52] [debug]  DCC_GetChannelName
+[11:21:52] [debug]  DCC_HasGuildMemberRole
+[11:21:52] [debug]  DCC_CreateEmbed
+[11:21:52] [debug]  DCC_SetEmbedColor
+[11:21:52] [debug]  DCC_SendChannelEmbedMessage
+[11:21:52] [debug]  DCC_SetEmbedFooter
+[11:21:52] [debug]  DCC_SetEmbedTitle
+[11:21:52] [debug]  DCC_SetEmbedDescription
+[11:21:52] [debug]  DCC_GetUserId
+[11:21:52] [debug]  DCC_GetUserName
+[11:21:52] [debug]  DCC_GetUserDiscriminator
+[11:21:54] [debug] Run time error 19: "File or function is not found"
+[11:21:54] [debug]  FreezeSyncData
+[11:21:54] [debug]  SetFakeFacingAngle
+[11:21:54] [debug]  SendLastSyncData
+[11:21:54] [debug]  ClearAnimationsForPlayer
+[11:21:54] [debug]  SetKnifeSync
+[11:21:54] [debug]  SetFakeHealth
+[11:21:54] [debug]  SetFakeArmour
+[11:21:54] [debug]  PlayerTextDrawSetPosition
+[11:21:54] [debug]  SpawnPlayerForWorld
+[11:21:54] [debug]  DCC_GetMessageContent
+[11:21:54] [debug]  DCC_GetMessageAuthor
+[11:21:54] [debug]  DCC_GetMessageChannel
+[11:21:54] [debug]  DCC_IsUserBot
+[11:21:54] [debug]  mysql_tquery
+[11:21:54] [debug]  cache_get_data
+[11:21:54] [debug]  cache_get_field_content
+[11:21:54] [debug]  cache_get_field_content_int
+[11:21:54] [debug]  cache_get_field_content_float
+[11:21:54] [debug]  mysql_format
+[11:21:54] [debug]  cache_insert_id
+[11:21:54] [debug]  mysql_escape_string
+[11:21:54] [debug]  mysql_unprocessed_queries
+[11:21:54] [debug]  cache_get_row_count
+[11:21:54] [debug]  cache_get_row_int
+[11:21:54] [debug]  cache_get_row
+[11:21:54] [debug]  DCC_SetBotActivity
+[11:21:54] [debug]  DCC_SetBotPresenceStatus
+[11:21:54] [debug]  SvMutePlayerEnable
+[11:21:54] [debug]  SvCreateGStream
+[11:21:54] [debug]  mysql_connect
+[11:21:54] [debug]  mysql_errno
+[11:21:54] [debug]  SvDeleteStream
+[11:21:54] [debug]  mysql_close
+[11:21:54] [debug]  SvAttachSpeakerToStream
+[11:21:54] [debug]  SvDetachSpeakerFromStream
+[11:21:54] [debug]  SvGetVersion
+[11:21:54] [debug]  SvHasMicro
+[11:21:54] [debug]  SvCreateDLStreamAtPlayer
+[11:21:54] [debug]  SvAttachListenerToStream
+[11:21:54] [debug]  DCC_FindGuildById
+[11:21:54] [debug]  DCC_FindRoleById
+[11:21:54] [debug]  DCC_FindUserByName
+[11:21:54] [debug]  DCC_RemoveGuildMemberRole
+[11:21:54] [debug]  DCC_AddGuildMemberRole
+[11:21:54] [debug]  DCC_SetGuildMemberNickname
+[11:21:54] [debug]  SvAddKey
+[11:21:54] [debug]  SvRemoveKey
+[11:21:54] [debug]  SvDetachListenerFromStream
+[11:21:54] [debug]  mysql_query
+[11:21:54] [debug]  cache_delete
+[11:21:54] [debug]  SvMutePlayerDisable
+[11:21:54] [debug]  DCC_FindChannelById
+[11:21:54] [debug]  DCC_SendChannelMessage
+[11:21:54] [debug]  DCC_GetChannelName
+[11:21:54] [debug]  DCC_HasGuildMemberRole
+[11:21:54] [debug]  DCC_CreateEmbed
+[11:21:54] [debug]  DCC_SetEmbedColor
+[11:21:54] [debug]  DCC_SendChannelEmbedMessage
+[11:21:54] [debug]  DCC_SetEmbedFooter
+[11:21:54] [debug]  DCC_SetEmbedTitle
+[11:21:54] [debug]  DCC_SetEmbedDescription
+[11:21:54] [debug]  DCC_GetUserId
+[11:21:54] [debug]  DCC_GetUserName
+[11:21:54] [debug]  DCC_GetUserDiscriminator
+[11:21:54] [part] Dwayne_Johnson has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[11:27:34] password = ""  (string)
+[11:27:34] 
+[11:27:34] Server Plugins
+[11:27:34] --------------
+[11:27:34]  Loading plugin: crashdetect
+[11:27:34]   CrashDetect v4.18.1 is OK.
+[11:27:34]   Loaded.
+[11:27:34]  Loading plugin: whirlpool
+[11:27:34]  
+[11:27:34]  ==================
+[11:27:34]  
+[11:27:34]   Whirlpool loaded
+[11:27:34]  
+[11:27:34]  ==================
+[11:27:34]  
+[11:27:34]   Loaded.
+[11:27:34]  Loading plugin: pawncmd
+[11:27:34] [Pawn.CMD] plugin v3.3.3 by urShadow loaded
+[11:27:34]   Loaded.
+[11:27:34]  Loading plugin: SKY
+[11:27:34]   Failed.
+[11:27:34]  Loading plugin: sscanf
+[11:27:34] 
+
+[11:27:34]  ===============================
+
+[11:27:34]       sscanf plugin loaded.     
+
+[11:27:34]          Version:  2.8.3        
+
+[11:27:34]   (c) 2018 Alex "Y_Less" Cole  
+
+[11:27:34]  ===============================
+
+[11:27:34]   Loaded.
+[11:27:34]  Loading plugin: streamer
+[11:27:34] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[11:27:34]   Loaded.
+[11:27:34]  Loading plugin: mysql_static
+[11:27:34]   Failed.
+[11:27:34]  Loading plugin: nativechecker
+[11:27:34]   Failed.
+[11:27:34]  Loading plugin: sampvoice
+[11:27:34]   Failed.
+[11:27:34]  Loading plugin: discord-connector
+[11:27:34]   Failed.
+[11:27:34]  Loaded 5 plugins.
+
+[11:27:34] 
+[11:27:34] Filterscripts
+[11:27:34] ---------------
+[11:27:34]   Loading filterscript 'Lex.amx'...
+[11:27:34]   Unable to load filterscript 'Lex.amx'.
+[11:27:34]   Loading filterscript 'android-check.amx'...
+[11:27:34] AMX (49386304) loaded
+[11:27:34] Android check has been successfully loaded.
+[11:27:34]   Loading filterscript 'yom_buttons.amx'...
+[11:27:34]   Unable to load filterscript 'yom_buttons.amx'.
+[11:27:34]   Loaded 1 filterscripts.
+
+[11:27:34] AMX (49228968) loaded
+[11:27:34] [Pawn.CMD] DoAmxLoad: Mismatch between the plugin (333) and include (314) versions
+[11:27:34] *** Streamer Plugin: Include file version (0x295) does not match plugin version (0x294) (script might need to be recompiled with the correct include file).
+[11:27:34] [debug] Run time error 19: "File or function is not found"
+[11:27:34] [debug]  FreezeSyncData
+[11:27:34] [debug]  SetFakeFacingAngle
+[11:27:34] [debug]  SendLastSyncData
+[11:27:34] [debug]  ClearAnimationsForPlayer
+[11:27:34] [debug]  SetKnifeSync
+[11:27:34] [debug]  SetFakeHealth
+[11:27:34] [debug]  SetFakeArmour
+[11:27:34] [debug]  PlayerTextDrawSetPosition
+[11:27:34] [debug]  SpawnPlayerForWorld
+[11:27:34] [debug]  DCC_GetMessageContent
+[11:27:34] [debug]  DCC_GetMessageAuthor
+[11:27:34] [debug]  DCC_GetMessageChannel
+[11:27:34] [debug]  DCC_IsUserBot
+[11:27:34] [debug]  mysql_tquery
+[11:27:34] [debug]  cache_get_data
+[11:27:34] [debug]  cache_get_field_content
+[11:27:34] [debug]  cache_get_field_content_int
+[11:27:34] [debug]  cache_get_field_content_float
+[11:27:34] [debug]  mysql_format
+[11:27:34] [debug]  cache_insert_id
+[11:27:34] [debug]  mysql_escape_string
+[11:27:34] [debug]  mysql_unprocessed_queries
+[11:27:34] [debug]  cache_get_row_count
+[11:27:34] [debug]  cache_get_row_int
+[11:27:34] [debug]  cache_get_row
+[11:27:34] [debug]  DCC_SetBotActivity
+[11:27:34] [debug]  DCC_SetBotPresenceStatus
+[11:27:34] [debug]  SvMutePlayerEnable
+[11:27:34] [debug]  SvCreateGStream
+[11:27:34] [debug]  mysql_connect
+[11:27:34] [debug]  mysql_errno
+[11:27:34] [debug]  SvDeleteStream
+[11:27:34] [debug]  mysql_close
+[11:27:34] [debug]  SvAttachSpeakerToStream
+[11:27:34] [debug]  SvDetachSpeakerFromStream
+[11:27:34] [debug]  SvGetVersion
+[11:27:34] [debug]  SvHasMicro
+[11:27:34] [debug]  SvCreateDLStreamAtPlayer
+[11:27:34] [debug]  SvAttachListenerToStream
+[11:27:34] [debug]  DCC_FindGuildById
+[11:27:34] [debug]  DCC_FindRoleById
+[11:27:34] [debug]  DCC_FindUserByName
+[11:27:34] [debug]  DCC_RemoveGuildMemberRole
+[11:27:34] [debug]  DCC_AddGuildMemberRole
+[11:27:34] [debug]  DCC_SetGuildMemberNickname
+[11:27:34] [debug]  SvAddKey
+[11:27:34] [debug]  SvRemoveKey
+[11:27:34] [debug]  SvDetachListenerFromStream
+[11:27:34] [debug]  mysql_query
+[11:27:34] [debug]  cache_delete
+[11:27:34] [debug]  SvMutePlayerDisable
+[11:27:34] [debug]  DCC_FindChannelById
+[11:27:34] [debug]  DCC_SendChannelMessage
+[11:27:34] [debug]  DCC_GetChannelName
+[11:27:34] [debug]  DCC_HasGuildMemberRole
+[11:27:34] [debug]  DCC_CreateEmbed
+[11:27:34] [debug]  DCC_SetEmbedColor
+[11:27:34] [debug]  DCC_SendChannelEmbedMessage
+[11:27:34] [debug]  DCC_SetEmbedFooter
+[11:27:34] [debug]  DCC_SetEmbedTitle
+[11:27:34] [debug]  DCC_SetEmbedDescription
+[11:27:34] [debug]  DCC_GetUserId
+[11:27:34] [debug]  DCC_GetUserName
+[11:27:34] [debug]  DCC_GetUserDiscriminator
+[11:27:34] [debug] Run time error 19: "File or function is not found"
+[11:27:34] [debug]  FreezeSyncData
+[11:27:34] [debug]  SetFakeFacingAngle
+[11:27:34] [debug]  SendLastSyncData
+[11:27:34] [debug]  ClearAnimationsForPlayer
+[11:27:34] [debug]  SetKnifeSync
+[11:27:34] [debug]  SetFakeHealth
+[11:27:34] [debug]  SetFakeArmour
+[11:27:34] [debug]  PlayerTextDrawSetPosition
+[11:27:34] [debug]  SpawnPlayerForWorld
+[11:27:34] [debug]  DCC_GetMessageContent
+[11:27:34] [debug]  DCC_GetMessageAuthor
+[11:27:34] [debug]  DCC_GetMessageChannel
+[11:27:34] [debug]  DCC_IsUserBot
+[11:27:34] [debug]  mysql_tquery
+[11:27:34] [debug]  cache_get_data
+[11:27:34] [debug]  cache_get_field_content
+[11:27:34] [debug]  cache_get_field_content_int
+[11:27:34] [debug]  cache_get_field_content_float
+[11:27:34] [debug]  mysql_format
+[11:27:34] [debug]  cache_insert_id
+[11:27:34] [debug]  mysql_escape_string
+[11:27:34] [debug]  mysql_unprocessed_queries
+[11:27:34] [debug]  cache_get_row_count
+[11:27:34] [debug]  cache_get_row_int
+[11:27:34] [debug]  cache_get_row
+[11:27:34] [debug]  DCC_SetBotActivity
+[11:27:34] [debug]  DCC_SetBotPresenceStatus
+[11:27:34] [debug]  SvMutePlayerEnable
+[11:27:34] [debug]  SvCreateGStream
+[11:27:34] [debug]  mysql_connect
+[11:27:34] [debug]  mysql_errno
+[11:27:34] [debug]  SvDeleteStream
+[11:27:34] [debug]  mysql_close
+[11:27:34] [debug]  SvAttachSpeakerToStream
+[11:27:34] [debug]  SvDetachSpeakerFromStream
+[11:27:34] [debug]  SvGetVersion
+[11:27:34] [debug]  SvHasMicro
+[11:27:34] [debug]  SvCreateDLStreamAtPlayer
+[11:27:34] [debug]  SvAttachListenerToStream
+[11:27:34] [debug]  DCC_FindGuildById
+[11:27:34] [debug]  DCC_FindRoleById
+[11:27:34] [debug]  DCC_FindUserByName
+[11:27:34] [debug]  DCC_RemoveGuildMemberRole
+[11:27:34] [debug]  DCC_AddGuildMemberRole
+[11:27:34] [debug]  DCC_SetGuildMemberNickname
+[11:27:34] [debug]  SvAddKey
+[11:27:34] [debug]  SvRemoveKey
+[11:27:34] [debug]  SvDetachListenerFromStream
+[11:27:34] [debug]  mysql_query
+[11:27:34] [debug]  cache_delete
+[11:27:34] [debug]  SvMutePlayerDisable
+[11:27:34] [debug]  DCC_FindChannelById
+[11:27:34] [debug]  DCC_SendChannelMessage
+[11:27:34] [debug]  DCC_GetChannelName
+[11:27:34] [debug]  DCC_HasGuildMemberRole
+[11:27:34] [debug]  DCC_CreateEmbed
+[11:27:34] [debug]  DCC_SetEmbedColor
+[11:27:34] [debug]  DCC_SendChannelEmbedMessage
+[11:27:34] [debug]  DCC_SetEmbedFooter
+[11:27:34] [debug]  DCC_SetEmbedTitle
+[11:27:34] [debug]  DCC_SetEmbedDescription
+[11:27:34] [debug]  DCC_GetUserId
+[11:27:34] [debug]  DCC_GetUserName
+[11:27:34] [debug]  DCC_GetUserDiscriminator
+[11:27:34] Script[gamemodes/haven.amx]: Run time error 19: "File or function is not found"
+[11:27:34] Number of vehicle models: 0
